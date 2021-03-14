@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* Uncompress.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* Uncompress.m */; };
-		F4FF95D7245B92E800C19C63 /*  Uncompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  Uncompress.swift */; };
-
+		B31A67B225FEA2620052DCB7 /* Compress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67AC25FEA2620052DCB7 /* Compress.swift */; };
+		B31A67B325FEA2620052DCB7 /* ZipFileArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67AD25FEA2620052DCB7 /* ZipFileArchive.swift */; };
+		B31A67B425FEA2620052DCB7 /* Decompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67AE25FEA2620052DCB7 /* Decompress.swift */; };
+		B31A67B525FEA2620052DCB7 /* FileArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67AF25FEA2620052DCB7 /* FileArchive.swift */; };
+		B31A67B625FEA2620052DCB7 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67B125FEA2620052DCB7 /* Type.swift */; };
+		F4FF95D7245B92E800C19C63 /* Uncompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* Uncompress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +29,14 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libUncompress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUncompress.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
+		B31A67AC25FEA2620052DCB7 /* Compress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compress.swift; sourceTree = "<group>"; };
+		B31A67AD25FEA2620052DCB7 /* ZipFileArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipFileArchive.swift; sourceTree = "<group>"; };
+		B31A67AE25FEA2620052DCB7 /* Decompress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decompress.swift; sourceTree = "<group>"; };
+		B31A67AF25FEA2620052DCB7 /* FileArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileArchive.swift; sourceTree = "<group>"; };
+		B31A67B125FEA2620052DCB7 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* Uncompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Uncompress.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* Uncompress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uncompress-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* Uncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +61,32 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
+				B31A67AB25FEA2620052DCB7 /* Adapters */,
+				B31A67B025FEA2620052DCB7 /* Enum */,
 				F4FF95D6245B92E800C19C63 /* Uncompress.swift */,
 				B3E7B5891CC2AC0600A0062D /* Uncompress.m */,
 				F4FF95D5245B92E700C19C63 /* Uncompress-Bridging-Header.h */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		B31A67AB25FEA2620052DCB7 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				B31A67AC25FEA2620052DCB7 /* Compress.swift */,
+				B31A67AD25FEA2620052DCB7 /* ZipFileArchive.swift */,
+				B31A67AE25FEA2620052DCB7 /* Decompress.swift */,
+				B31A67AF25FEA2620052DCB7 /* FileArchive.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		B31A67B025FEA2620052DCB7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B31A67B125FEA2620052DCB7 /* Type.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,10 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
+				B31A67B425FEA2620052DCB7 /* Decompress.swift in Sources */,
 				F4FF95D7245B92E800C19C63 /* Uncompress.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* Uncompress.m in Sources */,
-
+				B31A67B225FEA2620052DCB7 /* Compress.swift in Sources */,
+				B31A67B325FEA2620052DCB7 /* ZipFileArchive.swift in Sources */,
+				B31A67B525FEA2620052DCB7 /* FileArchive.swift in Sources */,
+				B31A67B625FEA2620052DCB7 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,11 +264,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Uncompress;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "Uncompress-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
@@ -259,10 +283,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Uncompress;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "Uncompress-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};
