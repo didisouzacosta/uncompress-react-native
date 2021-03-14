@@ -12,8 +12,8 @@ public protocol Compress {
     var type: Type { get }
     
     func compress(
-        _ filePath: URL,
-        to destination: URL,
+        _ filePath: String,
+        to destination: String,
         password: String?
     ) throws
     

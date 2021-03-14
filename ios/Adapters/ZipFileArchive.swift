@@ -8,44 +8,50 @@
 import Foundation
 import SSZipArchive
 
-public final class ZipFileArquive: FileArchive {
+public final class ZipFileArquive {
+    
+    // MARK: - Public Methods
+    
+    public init() {}
+    
+}
+
+extension ZipFileArquive: FileArchive {
     
     public var type: Type {
         return .zip
     }
     
     public func compress(
-        _ filePath: URL,
-        to destination: URL,
+        _ filePath: String,
+        to destination: String,
         password: String?
     ) throws {
         SSZipArchive.createZipFile(
-            atPath: destination.absoluteString,
+            atPath: destination,
             withFilesAtPaths: [
-                filePath.absoluteString
+                filePath
             ],
             withPassword: password
         )
     }
     
     public func decompress(
-        _ filePath: URL,
-        to destination: URL,
+        _ filePath: String,
+        to destination: String,
         overwrite: Bool,
         password: String?
     ) throws {
         try SSZipArchive.unzipFile(
-            atPath: filePath.absoluteURL.absoluteString,
-            toDestination: destination.absoluteURL.absoluteString,
+            atPath: filePath,
+            toDestination: destination,
             overwrite: overwrite,
             password: password
         )
     }
     
-    public func isFilePasswordProtected(_ filePath: URL) -> Bool {
-        return SSZipArchive.isFilePasswordProtected(
-            atPath: filePath.absoluteString
-        )
+    public func isFilePasswordProtected(_ filePath: String) -> Bool {
+        return SSZipArchive.isFilePasswordProtected(atPath: filePath)
     }
     
 }
