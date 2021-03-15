@@ -18,6 +18,7 @@
 		B31A687225FEAAB10052DCB7 /* mononoke.zip in Resources */ = {isa = PBXBuildFile; fileRef = B31A687125FEAAB10052DCB7 /* mononoke.zip */; };
 		B31A687825FEAB250052DCB7 /* mononoke_protected.zip in Resources */ = {isa = PBXBuildFile; fileRef = B31A687725FEAB250052DCB7 /* mononoke_protected.zip */; };
 		B31A68A525FEADB10052DCB7 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */; };
+		B3CE6E4625FF80F100F8C052 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B31A687125FEAAB10052DCB7 /* mononoke.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mononoke.zip; sourceTree = "<group>"; };
 		B31A687725FEAB250052DCB7 /* mononoke_protected.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mononoke_protected.zip; sourceTree = "<group>"; };
 		B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		CA3E69C5B9553B26FBA2DF04 /* libPods-UncompressExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UncompressExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00ACF0FDA8BF921659E2F9A /* Pods-UncompressExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncompressExample.release.xcconfig"; path = "Target Support Files/Pods-UncompressExample/Pods-UncompressExample.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */,
+				B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = UN37TCT97D;
 						LastSwiftMigration = 1120;
 					};
 					B31A67EE25FEA42A0052DCB7 = {
@@ -417,6 +421,7 @@
 			files = (
 				B31A680025FEA43B0052DCB7 /* ZipFileArchiveTests.swift in Sources */,
 				B31A68A525FEADB10052DCB7 /* Bundle+Extension.swift in Sources */,
+				B3CE6E4625FF80F100F8C052 /* FileManager+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,8 +443,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UN37TCT97D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = UncompressExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -461,7 +468,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UN37TCT97D;
 				INFOPLIST_FILE = UncompressExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -608,7 +617,7 @@
 				DEVELOPMENT_TEAM = UN37TCT97D;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UncompressExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -640,7 +649,7 @@
 				DEVELOPMENT_TEAM = UN37TCT97D;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UncompressExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uncompress.UncompressExampleTests;

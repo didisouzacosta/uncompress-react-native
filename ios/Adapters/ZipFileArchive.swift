@@ -25,7 +25,7 @@ extension ZipFileArquive: FileArchive {
     public func compress(
         _ filePath: String,
         to destination: String,
-        password: String?
+        password: String? = nil
     ) throws {
         SSZipArchive.createZipFile(
             atPath: destination,
@@ -39,8 +39,8 @@ extension ZipFileArquive: FileArchive {
     public func decompress(
         _ filePath: String,
         to destination: String,
-        overwrite: Bool,
-        password: String?
+        overwrite: Bool = false,
+        password: String? = nil
     ) throws {
         try SSZipArchive.unzipFile(
             atPath: filePath,

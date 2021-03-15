@@ -9,8 +9,8 @@ import Foundation
 
 extension Bundle {
   
-  static var test: Bundle? {
-    return Bundle(identifier: "com.uncompress.UncompressExampleTests")
+  static var test: Bundle {
+    return Bundle(identifier: "com.uncompress.UncompressExampleTests")!
   }
   
 }
