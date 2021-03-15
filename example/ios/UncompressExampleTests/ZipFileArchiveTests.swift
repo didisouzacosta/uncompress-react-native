@@ -56,8 +56,20 @@ class ZipFileArchiveTests: XCTestCase {
     expect(contents) == ["mononoke.jpg"]
   }
   
-  func testCompressFileIfCompressSucessful() throws {
-//    try zip.compress(defaultFile, to: tempDirectory)
+  func testExtractFileIfDecompressWithPasswordSucessful() throws {
+    try zip.decompress(
+      protectedZipFilePath,
+      to: tempDirectory,
+      password: "123"
+    )
+    
+    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    
+    expect(contents) == ["mononoke.jpg"]
+  }
+  
+  func testGenerateZipFileIfCompressSucessful() throws {
+    try zip.compress(defaultFile, to: tempDirectory)
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
 
