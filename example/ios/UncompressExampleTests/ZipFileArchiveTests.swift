@@ -57,7 +57,7 @@ class ZipFileArchiveTests: XCTestCase {
   }
   
   func testCompressFileIfCompressSucessful() throws {
-    try zip.compress(defaultFile, to: tempDirectory)
+//    try zip.compress(defaultFile, to: tempDirectory)
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
 

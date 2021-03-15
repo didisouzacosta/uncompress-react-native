@@ -10,9 +10,10 @@ import Foundation
 extension FileManager {
   
   func clearTempDirectory() throws {
-    let contents = try contentsOfDirectory(atPath: NSTemporaryDirectory())
+    let tempDirectory = NSTemporaryDirectory()
+    let contents = try contentsOfDirectory(atPath: tempDirectory)
     try contents.forEach { file in
-      try removeItem(atPath: file)
+      try removeItem(atPath: tempDirectory + file)
     }
   }
   

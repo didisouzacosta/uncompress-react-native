@@ -27,13 +27,15 @@ extension ZipFileArquive: FileArchive {
         to destination: String,
         password: String? = nil
     ) throws {
-        SSZipArchive.createZipFile(
-            atPath: destination,
-            withFilesAtPaths: [
-                filePath
-            ],
-            withPassword: password
-        )
+//        SSZipArchive.createZipFile(
+//            atPath: destination,
+//            withFilesAtPaths: [
+//                filePath
+//            ],
+//            withPassword: password
+//        )
+        
+        SSZipArchive.createZipFile(atPath: destination, withFilesAtPaths: [filePath])
     }
     
     public func decompress(
