@@ -15,15 +15,15 @@ class RarFileArchiveTests: XCTestCase {
   private let tempDirectory = NSTemporaryDirectory()
   
   private var defaultFile: String {
-    return Bundle.test.path(forResource: "mononoke", ofType: "jpg")!
+    return Bundle.test.path(forResource: "zelda", ofType: "jpeg")!
   }
   
   private var rarFilePath: String {
-    return Bundle.test.path(forResource: "mononoke", ofType: "rar")!
+    return Bundle.test.path(forResource: "zelda", ofType: "rar")!
   }
   
   private var protectedRarFilePath: String {
-    return Bundle.test.path(forResource: "mononoke_protected", ofType: "rar")!
+    return Bundle.test.path(forResource: "zelda_protected", ofType: "rar")!
   }
   
   private var failRarFilePath: String {
@@ -46,7 +46,7 @@ class RarFileArchiveTests: XCTestCase {
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
     
-    expect(contents.contains("mononoke.jpg")) == true
+    expect(contents.contains("zelda.jpeg")) == true
   }
   
   func testExtractFileIfDecompressWithPasswordSucessful() throws {
@@ -62,7 +62,7 @@ class RarFileArchiveTests: XCTestCase {
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
     
-    expect(contents.contains("mononoke.jpg")) == true
+    expect(contents.contains("zelda.jpeg")) == true
     expect(progressSpy) == 1
   }
   
@@ -91,7 +91,7 @@ class RarFileArchiveTests: XCTestCase {
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
 
-    expect(contents) == ["mononoke.rar"]
+    expect(contents) == ["zelda.rar"]
     expect(progressSpy) == 1
   }
   
@@ -108,7 +108,7 @@ class RarFileArchiveTests: XCTestCase {
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
     
-    expect(contents) == ["mononoke.rar"]
+    expect(contents) == ["zelda.rar"]
     expect(progressSpy) == 1
   }
 
