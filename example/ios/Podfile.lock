@@ -250,6 +250,10 @@ PODS:
   - uncompress (0.1.0):
     - React-Core
     - SSZipArchive
+    - UnrarKit
+  - UnrarKit (2.9):
+    - UnrarKit/unrar-lib (= 2.9)
+  - UnrarKit/unrar-lib (2.9)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -289,6 +293,7 @@ SPEC REPOS:
     - boost-for-react-native
     - Nimble
     - SSZipArchive
+    - UnrarKit
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -375,9 +380,10 @@ SPEC CHECKSUMS:
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
-  uncompress: 7aa2d23038eec8c90abe9d0cb4aa7e5fc123ed58
+  uncompress: 27dca1959c665528a1956be1d9b7bef87d931898
+  UnrarKit: 99e3f0222a98a212188e1a6975dcf5aa798d26dd
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: 4a371f95ad39eb4c7f09df2004453e758cc79a2f
+PODFILE CHECKSUM: 93fd472c1fc8c7c5d2ca26f1d84fbe54ad2aec59
 
 COCOAPODS: 1.10.0

@@ -72,8 +72,20 @@ class ZipFileArchiveTests: XCTestCase {
     try zip.compress(defaultFile, to: tempDirectory)
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    let isProtected = zip.isFilePasswordProtected(tempDirectory + "mononoke.zip")
 
     expect(contents) == ["mononoke.zip"]
+    expect(isProtected) == false
+  }
+  
+  func testGenerateZipProtectedFileIfCompressSucessful() throws {
+    try zip.compress(defaultFile, to: tempDirectory, password: "1234")
+    
+    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    let isProtected = zip.isFilePasswordProtected(tempDirectory + "mononoke.zip")
+    
+    expect(contents) == ["mononoke.zip"]
+    expect(isProtected) == true
   }
 
 }
