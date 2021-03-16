@@ -11,7 +11,6 @@ import uncompress
 
 class ZipFileArchiveTests: XCTestCase {
     
-  private let zip = ZipFileArquive()
   private let fileManager = FileManager()
   private let tempDirectory = NSTemporaryDirectory()
   
@@ -27,6 +26,10 @@ class ZipFileArchiveTests: XCTestCase {
     return Bundle.test.path(forResource: "mononoke_protected", ofType: "zip")!
   }
   
+  private var failZipFilePath: String {
+    return Bundle.test.path(forResource: "zip_fail", ofType: "zip")!
+  }
+  
   override func setUp() {
     do {
       try fileManager.clearTempDirectory()
@@ -35,57 +38,78 @@ class ZipFileArchiveTests: XCTestCase {
     }
   }
 
-  func testShouldBeReturnFalseToIsFilePasswordProtectedWhenFileIsNotProtected() throws {
-    let status = zip.isFilePasswordProtected(zipFilePath)
-    expect(status) == false
-  }
-  
-  func testShouldBeReturnTrueToIsFilePasswordProtectedWhenFileIsProtected() throws {
-    let status = zip.isFilePasswordProtected(protectedZipFilePath)
-    expect(status) == true
-  }
-  
   func testExtractFileIfDecompressSucessful() throws {
-    try zip.decompress(
+    try ZipFileArquive.decompress(
       zipFilePath,
       to: tempDirectory
     )
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
     
-    expect(contents) == ["mononoke.jpg"]
+    expect(contents.contains("mononoke.jpg")) == true
   }
   
   func testExtractFileIfDecompressWithPasswordSucessful() throws {
-    try zip.decompress(
+    var progressSpy: Double = 0
+    
+    try ZipFileArquive.decompress(
       protectedZipFilePath,
       to: tempDirectory,
       password: "123"
-    )
+    ) { progress in
+      progressSpy = progress
+    }
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
     
-    expect(contents) == ["mononoke.jpg"]
+    expect(contents.contains("mononoke.jpg")) == true
+    expect(progressSpy) == 1
+  }
+  
+  func testThrowErrorIfExtractFileIfDecompressFails() {
+    do {
+      try ZipFileArquive.decompress(
+        failZipFilePath,
+        to: tempDirectory
+      )
+      
+      fail()
+    } catch {
+      expect(error.localizedDescription) == "The operation couldn’t be completed. (Zip.ZipError error 1.)"
+    }
   }
   
   func testGenerateZipFileIfCompressSucessful() throws {
-    try zip.compress(defaultFile, to: tempDirectory)
+    var progressSpy: Double = 0
+    
+    try ZipFileArquive.compress(
+      defaultFile,
+      to: tempDirectory
+    ) { progress in
+        progressSpy = progress
+    }
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-    let isProtected = zip.isFilePasswordProtected(tempDirectory + "mononoke.zip")
 
     expect(contents) == ["mononoke.zip"]
-    expect(isProtected) == false
+    expect(progressSpy) == 1
   }
   
   func testGenerateZipProtectedFileIfCompressSucessful() throws {
-    try zip.compress(defaultFile, to: tempDirectory, password: "1234")
+    var progressSpy: Double = 0
+    
+    try ZipFileArquive.compress(
+      defaultFile,
+      to: tempDirectory,
+      password: "1234"
+    ) { progress in
+        progressSpy = progress
+    }
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-    let isProtected = zip.isFilePasswordProtected(tempDirectory + "mononoke.zip")
     
     expect(contents) == ["mononoke.zip"]
-    expect(isProtected) == true
+    expect(progressSpy) == 1
   }
 
 }

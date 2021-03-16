@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency "SSZipArchive"
+  s.dependency "Zip", "~> 2.1"
   s.dependency "UnrarKit"
 end

@@ -9,19 +9,23 @@ import Foundation
 
 public protocol Compress {
     
-    var type: Type { get }
+    static var type: Type { get }
     
-    func compress(
+    static func compress(
         _ filePath: String,
         to destination: String,
-        password: String?
+        password: String?,
+        progressHandler: ((Double) -> Void)?
     ) throws
     
 }
 
 extension Compress {
     
-    func destinationPath(filePath: String, destination: String) -> String {
+    static func destinationPath(
+        filePath: String,
+        destination: String
+    ) -> String {
         let lastPath = (filePath as NSString).lastPathComponent
         let pathPieces = lastPath.split(separator: ".")
         

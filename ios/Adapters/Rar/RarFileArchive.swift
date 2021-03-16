@@ -7,39 +7,31 @@
 
 import Foundation
 
-public class RarFileArchive {
-    
-    // MARK: - Public Methods
-    
-    public init() {}
-    
-}
+public class RarFileArchive {}
 
 extension RarFileArchive: FileArchive {
     
-    public var type: Type {
-        .rar
+    public static var type: Type {
+        return .rar
     }
     
-    public func compress(
+    public static func compress(
         _ filePath: String,
         to destination: String,
-        password: String?
+        password: String?,
+        progressHandler: ((Double) -> Void)? = nil
     ) throws {
         
     }
     
-    public func decompress(
+    public static func decompress(
         _ filePath: String,
         to destination: String,
         overwrite: Bool,
-        password: String?
+        password: String?,
+        progressHandler: ((Double) -> Void)? = nil
     ) throws {
         
-    }
-    
-    public func isFilePasswordProtected(_ filePath: String) -> Bool {
-        return false
     }
     
 }

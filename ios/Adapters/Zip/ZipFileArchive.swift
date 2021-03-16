@@ -6,57 +6,52 @@
 //
 
 import Foundation
-import SSZipArchive
+import Zip
 
-public final class ZipFileArquive {
-    
-    // MARK: - Public Methods
-    
-    public init() {}
-    
-}
+public final class ZipFileArquive {}
 
 extension ZipFileArquive: FileArchive {
     
-    public var type: Type {
+    public static var type: Type {
         return .zip
     }
     
-    public func compress(
+    public static func compress(
         _ filePath: String,
         to destination: String,
-        password: String? = nil
+        password: String? = nil,
+        progressHandler: ((Double) -> Void)? = nil
     ) throws {
         let destination = destinationPath(
             filePath: filePath,
             destination: destination
         )
         
-        SSZipArchive.createZipFile(
-            atPath: destination,
-            withFilesAtPaths: [
-                filePath
+        try Zip.zipFiles(
+            paths: [
+                URL(string: filePath)!
             ],
-            withPassword: password
+            zipFilePath: URL(string: destination)!,
+            password: password,
+            compression: .BestCompression,
+            progress: progressHandler
         )
     }
     
-    public func decompress(
+    public static func decompress(
         _ filePath: String,
         to destination: String,
         overwrite: Bool = false,
-        password: String? = nil
+        password: String? = nil,
+        progressHandler: ((Double) -> Void)? = nil
     ) throws {
-        try SSZipArchive.unzipFile(
-            atPath: filePath,
-            toDestination: destination,
+        try Zip.unzipFile(
+            URL(string: filePath)!,
+            destination: URL(string: destination)!,
             overwrite: overwrite,
-            password: password
+            password: password,
+            progress: progressHandler
         )
-    }
-    
-    public func isFilePasswordProtected(_ filePath: String) -> Bool {
-        return SSZipArchive.isFilePasswordProtected(atPath: filePath)
     }
     
 }

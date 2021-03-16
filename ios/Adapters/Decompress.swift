@@ -9,14 +9,12 @@ import Foundation
 
 public protocol Decompress {
 
-    var type: Type { get }
-    
-    func decompress(
+    static func decompress(
         _ filePath: String,
         to destination: String,
         overwrite: Bool,
-        password: String?
+        password: String?,
+        progressHandler: ((Double) -> Void)?
     ) throws
     
-    func isFilePasswordProtected(_ filePath: String) -> Bool
 }
