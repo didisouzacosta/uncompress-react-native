@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UnrarKit
 
-public class RarFileArchive: FileArchive {
+public final class RarFileArchive: FileArchive {
     
     public static var type: Type {
         return .rar
@@ -16,7 +17,7 @@ public class RarFileArchive: FileArchive {
     public static func compress(
         _ filePath: String,
         to destination: String,
-        password: String?,
+        password: String? = nil,
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
         
@@ -25,8 +26,8 @@ public class RarFileArchive: FileArchive {
     public static func decompress(
         _ filePath: String,
         to destination: String,
-        overwrite: Bool,
-        password: String?,
+        overwrite: Bool = true,
+        password: String? = nil,
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
         

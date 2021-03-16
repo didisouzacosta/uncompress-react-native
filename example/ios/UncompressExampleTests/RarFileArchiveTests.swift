@@ -1,5 +1,5 @@
 //
-//  ZipFileArchiveTests.swift
+//  RarFileArchiveTests.swift
 //  UncompressExampleTests
 //
 //  Created by Adriano Souza Costa on 14/03/21.
@@ -9,7 +9,7 @@ import XCTest
 import Nimble
 import uncompress
 
-class ZipFileArchiveTests: XCTestCase {
+class RarFileArchiveTests: XCTestCase {
     
   private let fileManager = FileManager()
   private let tempDirectory = NSTemporaryDirectory()
@@ -18,16 +18,16 @@ class ZipFileArchiveTests: XCTestCase {
     return Bundle.test.path(forResource: "mononoke", ofType: "jpg")!
   }
   
-  private var zipFilePath: String {
-    return Bundle.test.path(forResource: "mononoke", ofType: "zip")!
+  private var rarFilePath: String {
+    return Bundle.test.path(forResource: "mononoke", ofType: "rar")!
   }
   
-  private var protectedZipFilePath: String {
-    return Bundle.test.path(forResource: "mononoke_protected", ofType: "zip")!
+  private var protectedRarFilePath: String {
+    return Bundle.test.path(forResource: "mononoke_protected", ofType: "rar")!
   }
   
-  private var failZipFilePath: String {
-    return Bundle.test.path(forResource: "zip_fail", ofType: "zip")!
+  private var failRarFilePath: String {
+    return Bundle.test.path(forResource: "rar_fail", ofType: "rar")!
   }
   
   override func setUp() {
@@ -39,8 +39,8 @@ class ZipFileArchiveTests: XCTestCase {
   }
 
   func testExtractFileIfDecompressSucessful() throws {
-    try ZipFileArchive.decompress(
-      zipFilePath,
+    try RarFileArchive.decompress(
+      rarFilePath,
       to: tempDirectory
     )
     
@@ -52,8 +52,8 @@ class ZipFileArchiveTests: XCTestCase {
   func testExtractFileIfDecompressWithPasswordSucessful() throws {
     var progressSpy: Double = 0
     
-    try ZipFileArchive.decompress(
-      protectedZipFilePath,
+    try RarFileArchive.decompress(
+      protectedRarFilePath,
       to: tempDirectory,
       password: "123"
     ) { progress in
@@ -68,8 +68,8 @@ class ZipFileArchiveTests: XCTestCase {
   
   func testThrowErrorIfExtractFileIfDecompressFails() {
     do {
-      try ZipFileArchive.decompress(
-        failZipFilePath,
+      try RarFileArchive.decompress(
+        failRarFilePath,
         to: tempDirectory
       )
       
@@ -82,7 +82,7 @@ class ZipFileArchiveTests: XCTestCase {
   func testGenerateZipFileIfCompressSucessful() throws {
     var progressSpy: Double = 0
     
-    try ZipFileArchive.compress(
+    try RarFileArchive.compress(
       defaultFile,
       to: tempDirectory
     ) { progress in
@@ -91,14 +91,14 @@ class ZipFileArchiveTests: XCTestCase {
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
 
-    expect(contents) == ["mononoke.zip"]
+    expect(contents) == ["mononoke.rar"]
     expect(progressSpy) == 1
   }
   
   func testGenerateZipProtectedFileIfCompressSucessful() throws {
     var progressSpy: Double = 0
     
-    try ZipFileArchive.compress(
+    try RarFileArchive.compress(
       defaultFile,
       to: tempDirectory,
       password: "1234"
@@ -108,7 +108,7 @@ class ZipFileArchiveTests: XCTestCase {
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
     
-    expect(contents) == ["mononoke.zip"]
+    expect(contents) == ["mononoke.rar"]
     expect(progressSpy) == 1
   }
 
