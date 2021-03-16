@@ -7,9 +7,7 @@
 
 import Foundation
 
-public class RarFileArchive {}
-
-extension RarFileArchive: FileArchive {
+public class RarFileArchive: FileArchive {
     
     public static var type: Type {
         return .rar

@@ -8,9 +8,7 @@
 import Foundation
 import Zip
 
-public final class ZipFileArquive {}
-
-extension ZipFileArquive: FileArchive {
+public final class ZipFileArquive: FileArchive {
     
     public static var type: Type {
         return .zip
