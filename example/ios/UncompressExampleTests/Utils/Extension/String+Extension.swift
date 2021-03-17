@@ -8,9 +8,17 @@
 import Foundation
 
 extension String {
-  
+
   var fileName: String {
     return (self as NSString).lastPathComponent
   }
-  
+
+}
+
+extension String: LocalizedError {
+
+    public var errorDescription: String? {
+        return self
+    }
+
 }

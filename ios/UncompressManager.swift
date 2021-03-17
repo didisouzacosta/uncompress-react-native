@@ -1,5 +1,11 @@
 @objc(UncompressManager)
 class UncompressManager: NSObject {
+    
+    // MARK: - Private Properties
+    
+    private let decompressUseCase = UseCaseFactory.decompressUseCase()
+    
+    // MARK: - Public Methods
 
     @objc
     func multiply(

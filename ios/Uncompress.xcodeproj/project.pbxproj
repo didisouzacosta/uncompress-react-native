@@ -11,6 +11,8 @@
 		B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */; };
 		B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6726020E2E00E4DAEE /* Extractable.swift */; };
 		B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6926020E2E00E4DAEE /* ZipExtractor.swift */; };
+		B3E72EF42602210D00E4DAEE /* FileUncompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72EF02602210C00E4DAEE /* FileUncompress.swift */; };
+		B3E72EF52602210D00E4DAEE /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72EF22602210D00E4DAEE /* ComponentFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +36,9 @@
 		B3E72DBC2602173400E4DAEE /* Uncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
 		B3E72DBD2602173400E4DAEE /* UncompressManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncompressManager.m; sourceTree = "<group>"; };
 		B3E72DBE2602173400E4DAEE /* UncompressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompressManager.swift; sourceTree = "<group>"; };
-		B3E72E2F260219BE00E4DAEE /* FileUncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUncompress.swift; sourceTree = "<group>"; };
+		B3E72EF02602210C00E4DAEE /* FileUncompress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUncompress.swift; sourceTree = "<group>"; };
+		B3E72EF22602210D00E4DAEE /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
+		B3E72FF62602301200E4DAEE /* DecompressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecompressUseCase.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* Uncompress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uncompress-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +64,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E72E5A26021F0000E4DAEE /* Factories */,
+				B3E72FF42602301200E4DAEE /* Data */,
 				B3E72E5826021ECF00E4DAEE /* Infra */,
 				B3E72E5726021EC800E4DAEE /* Domain */,
 				B3E72E5626021EBB00E4DAEE /* Main */,
@@ -108,7 +112,8 @@
 		B3E72E5626021EBB00E4DAEE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B3E72E2F260219BE00E4DAEE /* FileUncompress.swift */,
+				B3E72EEF2602210C00E4DAEE /* Components */,
+				B3E72EF12602210D00E4DAEE /* Factories */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -138,11 +143,36 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		B3E72E5A26021F0000E4DAEE /* Factories */ = {
+		B3E72EEF2602210C00E4DAEE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B3E72EF02602210C00E4DAEE /* FileUncompress.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B3E72EF12602210D00E4DAEE /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B3E72EF22602210D00E4DAEE /* ComponentFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		B3E72FF42602301200E4DAEE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B3E72FF52602301200E4DAEE /* UseCase */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B3E72FF52602301200E4DAEE /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				B3E72FF62602301200E4DAEE /* DecompressUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +238,9 @@
 			files = (
 				B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */,
 				B31A67B625FEA2620052DCB7 /* Type.swift in Sources */,
+				B3E72EF42602210D00E4DAEE /* FileUncompress.swift in Sources */,
 				B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */,
+				B3E72EF52602210D00E4DAEE /* ComponentFactory.swift in Sources */,
 				B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

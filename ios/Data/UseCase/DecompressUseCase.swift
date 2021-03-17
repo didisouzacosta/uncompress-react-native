@@ -1,17 +1,17 @@
 //
-//  Uncompress.swift
-//  uncompress
+//  DecompressUseCase.swift
+//  DoubleConversion
 //
 //  Created by Adriano Souza Costa on 17/03/21.
 //
 
 import Foundation
 
-public protocol Uncompress {
+public protocol DecompressUseCaseProtocol {
     var engines: [Extractable] { get }
 }
 
-extension Uncompress {
+public extension DecompressUseCaseProtocol {
     
     var types: [Type] {
         return engines.map { $0.type }
@@ -41,6 +41,28 @@ extension Uncompress {
     
     private func engine(at type: Type) -> Extractable? {
         return engines.first { $0.type == type }
+    }
+    
+}
+
+final class DecompressUseCase {
+    
+    // MARK: - Private Properties
+    
+    private let _engines: [Extractable]
+    
+    // MARK: - Public Methods
+    
+    public init(engines: [Extractable]) {
+        self._engines = engines
+    }
+    
+}
+
+extension DecompressUseCase: DecompressUseCaseProtocol {
+    
+    var engines: [Extractable] {
+        return _engines
     }
     
 }
