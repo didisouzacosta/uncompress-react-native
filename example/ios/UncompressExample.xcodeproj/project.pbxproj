@@ -12,13 +12,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		ABD80E6172D57AA98B9A9209 /* Pods_UncompressExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0654B95F5D939D713ECEA1 /* Pods_UncompressExample.framework */; };
-		B31A680025FEA43B0052DCB7 /* ZipFileArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67FE25FEA43B0052DCB7 /* ZipFileArchiveTests.swift */; };
+		B31A680025FEA43B0052DCB7 /* ZipExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67FE25FEA43B0052DCB7 /* ZipExtractorTests.swift */; };
 		B31A686E25FEAA7E0052DCB7 /* mononoke.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B31A686D25FEAA7E0052DCB7 /* mononoke.jpg */; };
 		B31A687225FEAAB10052DCB7 /* mononoke.zip in Resources */ = {isa = PBXBuildFile; fileRef = B31A687125FEAAB10052DCB7 /* mononoke.zip */; };
 		B31A687825FEAB250052DCB7 /* mononoke_protected.zip in Resources */ = {isa = PBXBuildFile; fileRef = B31A687725FEAB250052DCB7 /* mononoke_protected.zip */; };
 		B31A68A525FEADB10052DCB7 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */; };
 		B34BE2BD2600CE3200310BA3 /* zip_fail.zip in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2BC2600CE3200310BA3 /* zip_fail.zip */; };
-		B34BE2C32600D23E00310BA3 /* RarFileArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BE2C22600D23E00310BA3 /* RarFileArchiveTests.swift */; };
+		B34BE2C32600D23E00310BA3 /* RarExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BE2C22600D23E00310BA3 /* RarExtractorTests.swift */; };
 		B34BE2ED2600D89C00310BA3 /* zelda.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2EB2600D89C00310BA3 /* zelda.jpeg */; };
 		B34BE2EE2600D89C00310BA3 /* zelda_protected.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2EC2600D89C00310BA3 /* zelda_protected.rar */; };
 		B34BE2F52600D8CD00310BA3 /* rar_fail.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2F32600D8CD00310BA3 /* rar_fail.rar */; };
@@ -52,14 +52,14 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UncompressExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC3381F2A442D382E3774793 /* Pods-UncompressExample-UncompressExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncompressExample-UncompressExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-UncompressExample-UncompressExampleTests/Pods-UncompressExample-UncompressExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B31A67EF25FEA42A0052DCB7 /* UncompressExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UncompressExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B31A67FE25FEA43B0052DCB7 /* ZipFileArchiveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipFileArchiveTests.swift; sourceTree = "<group>"; };
+		B31A67FE25FEA43B0052DCB7 /* ZipExtractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipExtractorTests.swift; sourceTree = "<group>"; };
 		B31A67FF25FEA43B0052DCB7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B31A686D25FEAA7E0052DCB7 /* mononoke.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mononoke.jpg; sourceTree = "<group>"; };
 		B31A687125FEAAB10052DCB7 /* mononoke.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mononoke.zip; sourceTree = "<group>"; };
 		B31A687725FEAB250052DCB7 /* mononoke_protected.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mononoke_protected.zip; sourceTree = "<group>"; };
 		B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		B34BE2BC2600CE3200310BA3 /* zip_fail.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = zip_fail.zip; sourceTree = "<group>"; };
-		B34BE2C22600D23E00310BA3 /* RarFileArchiveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RarFileArchiveTests.swift; sourceTree = "<group>"; };
+		B34BE2C22600D23E00310BA3 /* RarExtractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RarExtractorTests.swift; sourceTree = "<group>"; };
 		B34BE2EB2600D89C00310BA3 /* zelda.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zelda.jpeg; sourceTree = "<group>"; };
 		B34BE2EC2600D89C00310BA3 /* zelda_protected.rar */ = {isa = PBXFileReference; lastKnownFileType = file; path = zelda_protected.rar; sourceTree = "<group>"; };
 		B34BE2F32600D8CD00310BA3 /* rar_fail.rar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rar_fail.rar; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 			children = (
 				B31A68A225FEAD9C0052DCB7 /* Utils */,
 				B31A686C25FEAA600052DCB7 /* Assets */,
-				B31A67FE25FEA43B0052DCB7 /* ZipFileArchiveTests.swift */,
-				B34BE2C22600D23E00310BA3 /* RarFileArchiveTests.swift */,
+				B31A67FE25FEA43B0052DCB7 /* ZipExtractorTests.swift */,
+				B34BE2C22600D23E00310BA3 /* RarExtractorTests.swift */,
 				B31A67FF25FEA43B0052DCB7 /* Info.plist */,
 			);
 			path = UncompressExampleTests;
@@ -556,9 +556,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CE6E9025FF84EA00F8C052 /* String+Extension.swift in Sources */,
-				B31A680025FEA43B0052DCB7 /* ZipFileArchiveTests.swift in Sources */,
+				B31A680025FEA43B0052DCB7 /* ZipExtractorTests.swift in Sources */,
 				B31A68A525FEADB10052DCB7 /* Bundle+Extension.swift in Sources */,
-				B34BE2C32600D23E00310BA3 /* RarFileArchiveTests.swift in Sources */,
+				B34BE2C32600D23E00310BA3 /* RarExtractorTests.swift in Sources */,
 				B3CE6E4625FF80F100F8C052 /* FileManager+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

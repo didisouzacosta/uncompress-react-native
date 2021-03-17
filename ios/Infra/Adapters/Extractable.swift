@@ -1,5 +1,5 @@
 //
-//  FileArchive.swift
+//  Extractable.swift
 //  uncompress
 //
 //  Created by Adriano Souza Costa on 14/03/21.
@@ -7,15 +7,23 @@
 
 import Foundation
 
-public protocol FileArchive: Compress & Decompress {
+public protocol Extractable {
+
+    var type: Type { get }
     
-    static var type: Type { get }
+    func extract(
+        _ filePath: String,
+        to destination: String,
+        overwrite: Bool,
+        password: String?,
+        progressHandler: ((Double) -> Void)?
+    ) throws
     
 }
 
-extension FileArchive {
+private extension Extractable {
     
-    static func destinationPath(
+    func destinationPath(
         filePath: String,
         destination: String
     ) -> String {

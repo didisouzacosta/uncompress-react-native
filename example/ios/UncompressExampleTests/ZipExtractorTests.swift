@@ -1,5 +1,5 @@
 //
-//  ZipFileArchiveTests.swift
+//  ZipExtractorTests.swift
 //  UncompressExampleTests
 //
 //  Created by Adriano Souza Costa on 14/03/21.
@@ -9,10 +9,11 @@ import XCTest
 import Nimble
 import uncompress
 
-class ZipFileArchiveTests: XCTestCase {
+class ZipExtractorTests: XCTestCase {
     
   private let fileManager = FileManager()
   private let tempDirectory = NSTemporaryDirectory()
+  private let zipExtractor = ZipExtractor()
   
   private var defaultFile: String {
     return Bundle.test.path(forResource: "mononoke", ofType: "jpg")!
@@ -39,7 +40,7 @@ class ZipFileArchiveTests: XCTestCase {
   }
 
   func testExtractFileIfDecompressSucessful() throws {
-    try ZipFileArchive.decompress(
+    try zipExtractor.extract(
       zipFilePath,
       to: tempDirectory
     )
@@ -52,7 +53,7 @@ class ZipFileArchiveTests: XCTestCase {
   func testExtractFileIfDecompressWithPasswordSucessful() throws {
     var progressSpy: Double = 0
     
-    try ZipFileArchive.decompress(
+    try zipExtractor.extract(
       protectedZipFilePath,
       to: tempDirectory,
       password: "123"
@@ -68,7 +69,7 @@ class ZipFileArchiveTests: XCTestCase {
   
   func testThrowErrorIfExtractFileIfDecompressFails() {
     do {
-      try ZipFileArchive.decompress(
+      try zipExtractor.extract(
         failZipFilePath,
         to: tempDirectory
       )
@@ -77,39 +78,6 @@ class ZipFileArchiveTests: XCTestCase {
     } catch {
       expect(error.localizedDescription) == "The operation couldn’t be completed. (Zip.ZipError error 1.)"
     }
-  }
-  
-  func testGenerateZipFileIfCompressSucessful() throws {
-    var progressSpy: Double = 0
-    
-    try ZipFileArchive.compress(
-      defaultFile,
-      to: tempDirectory
-    ) { progress in
-        progressSpy = progress
-    }
-
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-
-    expect(contents) == ["mononoke.zip"]
-    expect(progressSpy) == 1
-  }
-  
-  func testGenerateZipProtectedFileIfCompressSucessful() throws {
-    var progressSpy: Double = 0
-    
-    try ZipFileArchive.compress(
-      defaultFile,
-      to: tempDirectory,
-      password: "1234"
-    ) { progress in
-        progressSpy = progress
-    }
-    
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-    
-    expect(contents) == ["mononoke.zip"]
-    expect(progressSpy) == 1
   }
 
 }

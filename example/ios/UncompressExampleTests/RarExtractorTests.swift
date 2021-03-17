@@ -1,5 +1,5 @@
 //
-//  RarFileArchiveTests.swift
+//  RarExtractorTests.swift
 //  UncompressExampleTests
 //
 //  Created by Adriano Souza Costa on 14/03/21.
@@ -9,10 +9,11 @@ import XCTest
 import Nimble
 import uncompress
 
-class RarFileArchiveTests: XCTestCase {
+class RarExtractorTests: XCTestCase {
     
   private let fileManager = FileManager()
   private let tempDirectory = NSTemporaryDirectory()
+  private let rarExtractor = RarExtractor()
   
   private var defaultFile: String {
     return Bundle.test.path(forResource: "zelda", ofType: "jpeg")!
@@ -39,7 +40,7 @@ class RarFileArchiveTests: XCTestCase {
   }
 
   func testExtractFileIfDecompressSucessful() throws {
-    try RarFileArchive.decompress(
+    try rarExtractor.extract(
       rarFilePath,
       to: tempDirectory
     )
@@ -52,7 +53,7 @@ class RarFileArchiveTests: XCTestCase {
   func testExtractFileIfDecompressWithPasswordSucessful() throws {
     var progressSpy: Double = 0
     
-    try RarFileArchive.decompress(
+    try rarExtractor.extract(
       protectedRarFilePath,
       to: tempDirectory,
       password: "123"
@@ -68,48 +69,15 @@ class RarFileArchiveTests: XCTestCase {
   
   func testThrowErrorIfExtractFileIfDecompressFails() {
     do {
-      try RarFileArchive.decompress(
+      try rarExtractor.extract(
         failRarFilePath,
         to: tempDirectory
       )
       
       fail()
     } catch {
-      expect(error.localizedDescription) == "The operation couldn’t be completed. (Zip.ZipError error 1.)"
+      expect(error.localizedDescription) == "File is not a valid RAR archive"
     }
-  }
-  
-  func testGenerateZipFileIfCompressSucessful() throws {
-    var progressSpy: Double = 0
-    
-    try RarFileArchive.compress(
-      defaultFile,
-      to: tempDirectory
-    ) { progress in
-        progressSpy = progress
-    }
-
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-
-    expect(contents) == ["zelda.rar"]
-    expect(progressSpy) == 1
-  }
-  
-  func testGenerateZipProtectedFileIfCompressSucessful() throws {
-    var progressSpy: Double = 0
-    
-    try RarFileArchive.compress(
-      defaultFile,
-      to: tempDirectory,
-      password: "1234"
-    ) { progress in
-        progressSpy = progress
-    }
-    
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-    
-    expect(contents) == ["zelda.rar"]
-    expect(progressSpy) == 1
   }
 
 }
