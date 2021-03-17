@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B31A67B625FEA2620052DCB7 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67B125FEA2620052DCB7 /* Type.swift */; };
 		B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */; };
 		B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6726020E2E00E4DAEE /* Extractable.swift */; };
 		B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6926020E2E00E4DAEE /* ZipExtractor.swift */; };
-		B3E72EF42602210D00E4DAEE /* FileUncompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72EF02602210C00E4DAEE /* FileUncompress.swift */; };
-		B3E72EF52602210D00E4DAEE /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72EF22602210D00E4DAEE /* ComponentFactory.swift */; };
+		B3E730662602331300E4DAEE /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E730652602331300E4DAEE /* Compatibility.swift */; };
+		B3E7306A2602333300E4DAEE /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E730692602333300E4DAEE /* UseCaseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,16 +28,14 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libUncompress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUncompress.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B31A67B125FEA2620052DCB7 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RarExtractor.swift; sourceTree = "<group>"; };
 		B3E72C6726020E2E00E4DAEE /* Extractable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extractable.swift; sourceTree = "<group>"; };
 		B3E72C6926020E2E00E4DAEE /* ZipExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipExtractor.swift; sourceTree = "<group>"; };
-		B3E72DBC2602173400E4DAEE /* Uncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
 		B3E72DBD2602173400E4DAEE /* UncompressManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncompressManager.m; sourceTree = "<group>"; };
 		B3E72DBE2602173400E4DAEE /* UncompressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompressManager.swift; sourceTree = "<group>"; };
-		B3E72EF02602210C00E4DAEE /* FileUncompress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUncompress.swift; sourceTree = "<group>"; };
-		B3E72EF22602210D00E4DAEE /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
 		B3E72FF62602301200E4DAEE /* DecompressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecompressUseCase.swift; sourceTree = "<group>"; };
+		B3E730652602331300E4DAEE /* Compatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
+		B3E730692602333300E4DAEE /* UseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* Uncompress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uncompress-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +85,7 @@
 		B31A67B025FEA2620052DCB7 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				B31A67B125FEA2620052DCB7 /* Type.swift */,
+				B3E730652602331300E4DAEE /* Compatibility.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -112,7 +109,6 @@
 		B3E72E5626021EBB00E4DAEE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B3E72EEF2602210C00E4DAEE /* Components */,
 				B3E72EF12602210D00E4DAEE /* Factories */,
 			);
 			path = Main;
@@ -121,7 +117,6 @@
 		B3E72E5726021EC800E4DAEE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				B3E72E5926021EE300E4DAEE /* Protocols */,
 				B31A67B025FEA2620052DCB7 /* Enum */,
 			);
 			path = Domain;
@@ -135,26 +130,10 @@
 			path = Infra;
 			sourceTree = "<group>";
 		};
-		B3E72E5926021EE300E4DAEE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				B3E72DBC2602173400E4DAEE /* Uncompress.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		B3E72EEF2602210C00E4DAEE /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				B3E72EF02602210C00E4DAEE /* FileUncompress.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		B3E72EF12602210D00E4DAEE /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				B3E72EF22602210D00E4DAEE /* ComponentFactory.swift */,
+				B3E730692602333300E4DAEE /* UseCaseFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -237,10 +216,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */,
-				B31A67B625FEA2620052DCB7 /* Type.swift in Sources */,
-				B3E72EF42602210D00E4DAEE /* FileUncompress.swift in Sources */,
+				B3E730662602331300E4DAEE /* Compatibility.swift in Sources */,
 				B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */,
-				B3E72EF52602210D00E4DAEE /* ComponentFactory.swift in Sources */,
+				B3E7306A2602333300E4DAEE /* UseCaseFactory.swift in Sources */,
 				B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

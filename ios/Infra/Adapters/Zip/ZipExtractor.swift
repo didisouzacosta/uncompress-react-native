@@ -10,7 +10,7 @@ import Zip
 
 public final class ZipExtractor: Extractable {
     
-    public var type: Type {
+    public var compatibility: Compatibility {
         return .zip
     }
     

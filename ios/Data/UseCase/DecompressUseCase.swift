@@ -13,8 +13,8 @@ public protocol DecompressUseCaseProtocol {
 
 public extension DecompressUseCaseProtocol {
     
-    var types: [Type] {
-        return engines.map { $0.type }
+    var Compatibilities: [Compatibility] {
+        return engines.map { $0.compatibility }
     }
     
     func extract(
@@ -25,7 +25,7 @@ public extension DecompressUseCaseProtocol {
         progressHandler: ((Double) -> Void)?
     ) throws {
         guard let fileExtension = filePath.fileExtension,
-              let type = Type.init(rawValue: fileExtension),
+              let type = Compatibility.init(rawValue: fileExtension),
               let engine = engine(at: type) else {
             return
         }
@@ -39,8 +39,8 @@ public extension DecompressUseCaseProtocol {
         )
     }
     
-    private func engine(at type: Type) -> Extractable? {
-        return engines.first { $0.type == type }
+    private func engine(at compatibility: Compatibility) -> Extractable? {
+        return engines.first { $0.compatibility == compatibility }
     }
     
 }
