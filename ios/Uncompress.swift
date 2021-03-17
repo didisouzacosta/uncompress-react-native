@@ -1,5 +1,5 @@
-@objc(UncompressManager)
-class UncompressManager: NSObject {
+@objc(Uncompress)
+class Uncompress: NSObject {
     
     // MARK: - Private Properties
     
