@@ -20,15 +20,3 @@ public protocol Extractable {
     ) throws
     
 }
-
-private extension Extractable {
-    
-    func destinationPath(
-        filePath: String,
-        destination: String
-    ) -> String {
-        let lastPath = (filePath as NSString).lastPathComponent
-        return destination + lastPath
-    }
-    
-}

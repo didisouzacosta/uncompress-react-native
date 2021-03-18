@@ -38,6 +38,11 @@ class RarExtractorTests: XCTestCase {
       print(error)
     }
   }
+  
+  func testEnsureCompatibilities() {
+    let compatibilities = rarExtractor.compatibilities
+    expect(compatibilities) == [.rar, .cbr]
+  }
 
   func testExtractFileIfDecompressSucessful() throws {
     try rarExtractor.extract(

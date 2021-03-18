@@ -38,6 +38,11 @@ class ZipExtractorTests: XCTestCase {
       print(error)
     }
   }
+  
+  func testEnsureCompatibilities() {
+    let compatibilities = zipExtractor.compatibilities
+    expect(compatibilities) == [.zip, .cbz]
+  }
 
   func testExtractFileIfDecompressSucessful() throws {
     try zipExtractor.extract(
