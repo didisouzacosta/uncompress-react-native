@@ -24,7 +24,7 @@ class ZipExtractorTests: XCTestCase {
   }
   
   private var protectedZipFilePath: String {
-    return Bundle.test.path(forResource: "mononoke_protected", ofType: "zip")!
+    return Bundle.test.path(forResource: "mononoke_protected", ofType: "cbz")!
   }
   
   private var failZipFilePath: String {
@@ -82,6 +82,32 @@ class ZipExtractorTests: XCTestCase {
       fail()
     } catch {
       expect(error.localizedDescription) == "The operation couldn’t be completed. (Zip.ZipError error 1.)"
+    }
+  }
+  
+  func testThrowErrorIfFilePathIsInvalid() {
+    do {
+      try zipExtractor.extract(
+        "",
+        to: tempDirectory
+      )
+      
+      fail()
+    } catch {
+      expect(error.localizedDescription) == "O caminho do arquivo não e válido"
+    }
+  }
+  
+  func testThrowErrorIfDestinationIsInvalid() {
+    do {
+      try zipExtractor.extract(
+        failZipFilePath,
+        to: ""
+      )
+      
+      fail()
+    } catch {
+      expect(error.localizedDescription) == "O destino da descompressão não e válido"
     }
   }
 

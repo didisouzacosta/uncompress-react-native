@@ -15,12 +15,12 @@
 		B31A680025FEA43B0052DCB7 /* ZipExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A67FE25FEA43B0052DCB7 /* ZipExtractorTests.swift */; };
 		B31A686E25FEAA7E0052DCB7 /* mononoke.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B31A686D25FEAA7E0052DCB7 /* mononoke.jpg */; };
 		B31A687225FEAAB10052DCB7 /* mononoke.zip in Resources */ = {isa = PBXBuildFile; fileRef = B31A687125FEAAB10052DCB7 /* mononoke.zip */; };
-		B31A687825FEAB250052DCB7 /* mononoke_protected.zip in Resources */ = {isa = PBXBuildFile; fileRef = B31A687725FEAB250052DCB7 /* mononoke_protected.zip */; };
+		B31A687825FEAB250052DCB7 /* mononoke_protected.cbz in Resources */ = {isa = PBXBuildFile; fileRef = B31A687725FEAB250052DCB7 /* mononoke_protected.cbz */; };
 		B31A68A525FEADB10052DCB7 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */; };
 		B34BE2BD2600CE3200310BA3 /* zip_fail.zip in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2BC2600CE3200310BA3 /* zip_fail.zip */; };
 		B34BE2C32600D23E00310BA3 /* RarExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BE2C22600D23E00310BA3 /* RarExtractorTests.swift */; };
 		B34BE2ED2600D89C00310BA3 /* zelda.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2EB2600D89C00310BA3 /* zelda.jpeg */; };
-		B34BE2EE2600D89C00310BA3 /* zelda_protected.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2EC2600D89C00310BA3 /* zelda_protected.rar */; };
+		B34BE2EE2600D89C00310BA3 /* zelda_protected.cbr in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2EC2600D89C00310BA3 /* zelda_protected.cbr */; };
 		B34BE2F52600D8CD00310BA3 /* rar_fail.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2F32600D8CD00310BA3 /* rar_fail.rar */; };
 		B34BE2F62600D8CD00310BA3 /* zelda.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2F42600D8CD00310BA3 /* zelda.rar */; };
 		B3CE6E4625FF80F100F8C052 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */; };
@@ -55,12 +55,12 @@
 		B31A67FF25FEA43B0052DCB7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B31A686D25FEAA7E0052DCB7 /* mononoke.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mononoke.jpg; sourceTree = "<group>"; };
 		B31A687125FEAAB10052DCB7 /* mononoke.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mononoke.zip; sourceTree = "<group>"; };
-		B31A687725FEAB250052DCB7 /* mononoke_protected.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mononoke_protected.zip; sourceTree = "<group>"; };
+		B31A687725FEAB250052DCB7 /* mononoke_protected.cbz */ = {isa = PBXFileReference; lastKnownFileType = file; path = mononoke_protected.cbz; sourceTree = "<group>"; };
 		B31A68A425FEADB10052DCB7 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		B34BE2BC2600CE3200310BA3 /* zip_fail.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = zip_fail.zip; sourceTree = "<group>"; };
 		B34BE2C22600D23E00310BA3 /* RarExtractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RarExtractorTests.swift; sourceTree = "<group>"; };
 		B34BE2EB2600D89C00310BA3 /* zelda.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zelda.jpeg; sourceTree = "<group>"; };
-		B34BE2EC2600D89C00310BA3 /* zelda_protected.rar */ = {isa = PBXFileReference; lastKnownFileType = file; path = zelda_protected.rar; sourceTree = "<group>"; };
+		B34BE2EC2600D89C00310BA3 /* zelda_protected.cbr */ = {isa = PBXFileReference; lastKnownFileType = file; path = zelda_protected.cbr; sourceTree = "<group>"; };
 		B34BE2F32600D8CD00310BA3 /* rar_fail.rar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rar_fail.rar; sourceTree = "<group>"; };
 		B34BE2F42600D8CD00310BA3 /* zelda.rar */ = {isa = PBXFileReference; lastKnownFileType = file; path = zelda.rar; sourceTree = "<group>"; };
 		B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			children = (
 				B34BE2F32600D8CD00310BA3 /* rar_fail.rar */,
 				B34BE2F42600D8CD00310BA3 /* zelda.rar */,
-				B34BE2EC2600D89C00310BA3 /* zelda_protected.rar */,
+				B34BE2EC2600D89C00310BA3 /* zelda_protected.cbr */,
 			);
 			path = rar;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				B34BE2BC2600CE3200310BA3 /* zip_fail.zip */,
-				B31A687725FEAB250052DCB7 /* mononoke_protected.zip */,
+				B31A687725FEAB250052DCB7 /* mononoke_protected.cbz */,
 				B31A687125FEAAB10052DCB7 /* mononoke.zip */,
 			);
 			path = zip;
@@ -317,8 +317,8 @@
 			files = (
 				B31A686E25FEAA7E0052DCB7 /* mononoke.jpg in Resources */,
 				B34BE2F52600D8CD00310BA3 /* rar_fail.rar in Resources */,
-				B34BE2EE2600D89C00310BA3 /* zelda_protected.rar in Resources */,
-				B31A687825FEAB250052DCB7 /* mononoke_protected.zip in Resources */,
+				B34BE2EE2600D89C00310BA3 /* zelda_protected.cbr in Resources */,
+				B31A687825FEAB250052DCB7 /* mononoke_protected.cbz in Resources */,
 				B34BE2F62600D8CD00310BA3 /* zelda.rar in Resources */,
 				B34BE2ED2600D89C00310BA3 /* zelda.jpeg in Resources */,
 				B31A687225FEAAB10052DCB7 /* mononoke.zip in Resources */,

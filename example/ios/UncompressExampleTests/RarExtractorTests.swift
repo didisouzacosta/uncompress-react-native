@@ -24,7 +24,7 @@ class RarExtractorTests: XCTestCase {
   }
   
   private var protectedRarFilePath: String {
-    return Bundle.test.path(forResource: "zelda_protected", ofType: "rar")!
+    return Bundle.test.path(forResource: "zelda_protected", ofType: "cbr")!
   }
   
   private var failRarFilePath: String {
