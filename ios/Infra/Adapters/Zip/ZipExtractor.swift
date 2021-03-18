@@ -23,9 +23,17 @@ public final class ZipExtractor: Extractable {
         password: String? = nil,
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
+        guard let filePathUrl = URL(string: filePath) else {
+            throw "O caminho do arquivo não e válido"
+        }
+        
+        guard let destinationUrl = URL(string: destination) else {
+            throw "O destino da descompressão não e válido"
+        }
+        
         try Zip.unzipFile(
-            URL(string: filePath)!,
-            destination: URL(string: destination)!,
+            filePathUrl,
+            destination: destinationUrl,
             overwrite: overwrite,
             password: password,
             progress: progressHandler

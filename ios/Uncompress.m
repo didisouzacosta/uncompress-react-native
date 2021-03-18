@@ -2,6 +2,13 @@
 
 @interface RCT_EXTERN_MODULE(Uncompress, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(
+                  decompress:(nonnull NSString *)filePath
+                  to:(nonnull NSString *)destination
+                  overwrite:(BOOL)overwrite
+                  password:(NSString *)password
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject
+                  )
 
 @end

@@ -1,18 +1,20 @@
-import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import Uncompress from 'uncompress';
+import React from 'react';
+import { StyleSheet, View, Button, Alert } from 'react-native';
+import { decompress } from 'uncompress';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    Uncompress.multiply(3, 7).then(setResult);
-  }, []);
+  const extract = () => {
+    decompress({
+      filePath: 'teste.zip',
+      destination: '',
+    })
+      .then(() => Alert.alert('deu certo'))
+      .catch((e) => Alert.alert(e.message));
+  };
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button title="Extrair arquivos" onPress={() => extract()} />
     </View>
   );
 }
@@ -22,10 +24,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });

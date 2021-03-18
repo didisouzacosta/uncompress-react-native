@@ -8,13 +8,25 @@ class Uncompress: NSObject {
     // MARK: - Public Methods
 
     @objc
-    func multiply(
-        a: Float,
-        b: Float,
+    func decompress(
+        _ filePath: String,
+        to destination: String,
+        overwrite: Bool = true,
+        password: String? = nil,
         resolver resolve: RCTPromiseResolveBlock,
         rejecter reject: RCTPromiseRejectBlock
-    ) -> Void {
-        resolve(a * b)
+    ) {
+        do {
+            try decompressUseCase.extract(
+                filePath,
+                to: destination,
+                overwrite: overwrite,
+                password: password
+            )
+            resolve(())
+        } catch {
+            reject("0", error.localizedDescription, error)
+        }
     }
     
 }

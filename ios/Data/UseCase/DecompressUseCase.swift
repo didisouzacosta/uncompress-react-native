@@ -21,13 +21,16 @@ public extension DecompressUseCaseProtocol {
         _ filePath: String,
         to destination: String,
         overwrite: Bool,
-        password: String?,
-        progressHandler: ((Double) -> Void)?
+        password: String? = nil,
+        progressHandler: ((Double) -> Void)? = nil
     ) throws {
-        guard let fileExtension = filePath.fileExtension,
-              let type = Compatibility.init(rawValue: fileExtension),
+        guard let fileExtension = filePath.fileExtension else {
+            throw "Não foi possível determinar a extensão do arquivo"
+        }
+        
+        guard let type = Compatibility.init(rawValue: fileExtension),
               let engine = engine(at: type) else {
-            return
+            throw "Atualmente a lib não oferece recursos de descompressão para a extensão \(fileExtension)"
         }
         
         try engine.extract(
@@ -77,6 +80,14 @@ fileprivate extension String {
         }
         
         return String(fileExtension)
+    }
+    
+}
+
+extension String: LocalizedError {
+    
+    public var errorDescription: String? {
+        return self
     }
     
 }
