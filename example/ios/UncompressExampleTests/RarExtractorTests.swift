@@ -84,9 +84,7 @@ class RarExtractorTests: XCTestCase {
       )
       
       fail()
-    } catch {
-      expect(error.localizedDescription) == "File is not a valid RAR archive"
-    }
+    } catch {}
   }
   
   func testThrowErrorIfFilePathIsInvalid() {

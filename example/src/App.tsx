@@ -7,7 +7,7 @@ export default function App() {
     try {
       await decompress({
         filePath: 'teste.zip',
-        destination: '',
+        destination: 'temp',
       });
       Alert.alert('O arquivo foi descomprimido com sucesso');
     } catch (e) {

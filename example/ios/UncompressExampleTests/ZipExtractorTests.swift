@@ -84,9 +84,7 @@ class ZipExtractorTests: XCTestCase {
       )
       
       fail()
-    } catch {
-      expect(error.localizedDescription) == "The operation couldn’t be completed. (Zip.ZipError error 1.)"
-    }
+    } catch {}
   }
   
   func testThrowErrorIfFilePathIsInvalid() {
