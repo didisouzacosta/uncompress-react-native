@@ -12,23 +12,27 @@ import uncompress
 class ZipExtractorTests: XCTestCase {
     
   private let fileManager = FileManager()
-  private let tempDirectory = NSTemporaryDirectory()
+  private let tempDirectory = URL(string: NSTemporaryDirectory())!
   private let zipExtractor = ZipExtractor()
   
-  private var defaultFile: String {
-    return Bundle.test.path(forResource: "mononoke", ofType: "jpg")!
+  private var defaultFile: URL {
+    let path = Bundle.test.path(forResource: "mononoke", ofType: "jpg")!
+    return URL(string: path)!
   }
   
-  private var zipFilePath: String {
-    return Bundle.test.path(forResource: "mononoke", ofType: "zip")!
+  private var zipFilePath: URL {
+    let path = Bundle.test.path(forResource: "mononoke", ofType: "zip")!
+    return URL(string: path)!
   }
   
-  private var protectedZipFilePath: String {
-    return Bundle.test.path(forResource: "mononoke_protected", ofType: "cbz")!
+  private var protectedZipFilePath: URL {
+    let path = Bundle.test.path(forResource: "mononoke_protected", ofType: "cbz")!
+    return URL(string: path)!
   }
   
-  private var failZipFilePath: String {
-    return Bundle.test.path(forResource: "zip_fail", ofType: "zip")!
+  private var failZipFilePath: URL {
+    let path = Bundle.test.path(forResource: "zip_fail", ofType: "zip")!
+    return URL(string: path)!
   }
   
   override func setUp() {
@@ -50,7 +54,7 @@ class ZipExtractorTests: XCTestCase {
       to: tempDirectory
     )
     
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory.absoluteString)
     
     expect(contents.contains("mononoke.jpg")) == true
   }
@@ -66,7 +70,7 @@ class ZipExtractorTests: XCTestCase {
       progressSpy = progress
     }
     
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory.absoluteString)
     
     expect(contents.contains("mononoke.jpg")) == true
     expect(progressSpy) == 1
@@ -88,27 +92,23 @@ class ZipExtractorTests: XCTestCase {
   func testThrowErrorIfFilePathIsInvalid() {
     do {
       try zipExtractor.extract(
-        "",
+        URL(string: "fail/path")!,
         to: tempDirectory
       )
       
       fail()
-    } catch {
-      expect(error.localizedDescription) == "O caminho do arquivo não e válido"
-    }
+    } catch {}
   }
   
   func testThrowErrorIfDestinationIsInvalid() {
     do {
       try zipExtractor.extract(
         failZipFilePath,
-        to: ""
+        to: URL(string: "fail/destination")!
       )
       
       fail()
-    } catch {
-      expect(error.localizedDescription) == "O destino da descompressão não e válido"
-    }
+    } catch {}
   }
 
 }

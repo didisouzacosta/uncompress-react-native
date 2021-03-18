@@ -18,19 +18,19 @@ public final class RarExtractor: Extractable {
     public init() {}
     
     public func extract(
-        _ filePath: String,
-        to destination: String,
+        _ filePath: URL,
+        to destination: URL,
         overwrite: Bool = true,
         password: String? = nil,
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
-        let archive = try URKArchive(path: filePath)
+        let archive = try URKArchive(path: filePath.absoluteString)
         
         if let password = password {
             archive.password = password
         }
         
-        try archive.extractFiles(to: destination, overwrite: overwrite)
+        try archive.extractFiles(to: destination.absoluteString, overwrite: overwrite)
         
         progressHandler?(1)
     }

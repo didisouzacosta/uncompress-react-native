@@ -12,8 +12,8 @@ public protocol Extractable {
     var compatibilities: [Compatibility] { get }
     
     func extract(
-        _ filePath: String,
-        to destination: String,
+        _ filePath: URL,
+        to destination: URL,
         overwrite: Bool,
         password: String?,
         progressHandler: ((Double) -> Void)?

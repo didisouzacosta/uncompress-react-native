@@ -17,23 +17,15 @@ public final class ZipExtractor: Extractable {
     public init() {}
     
     public func extract(
-        _ filePath: String,
-        to destination: String,
+        _ filePath: URL,
+        to destination: URL,
         overwrite: Bool = false,
         password: String? = nil,
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
-        guard let filePathUrl = URL(string: filePath) else {
-            throw "O caminho do arquivo não e válido"
-        }
-        
-        guard let destinationUrl = URL(string: destination) else {
-            throw "O destino da descompressão não e válido"
-        }
-        
         try Zip.unzipFile(
-            filePathUrl,
-            destination: destinationUrl,
+            filePath,
+            destination: destination,
             overwrite: overwrite,
             password: password,
             progress: progressHandler

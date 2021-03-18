@@ -33,18 +33,22 @@ public extension DecompressUseCaseProtocol {
         password: String? = nil,
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
-        guard let fileExtension = filePath.fileExtension else {
-            throw "Não foi possível determinar a extensão do arquivo"
+        guard let filePathUrl = URL(string: filePath) else {
+            throw "O caminho do arquivo é inválido"
         }
         
-        guard let type = Compatibility.init(rawValue: fileExtension),
+        guard let destinationUrl = URL(string: destination) else {
+            throw "O destino da descompressão é inválido"
+        }
+        
+        guard let type = Compatibility.init(rawValue: filePathUrl.pathExtension),
               let engine = engine(at: type) else {
-            throw "Atualmente a lib não oferece recursos de descompressão para a extensão \(fileExtension)"
+            throw "Atualmente a lib não oferece recursos de descompressão para a extensão \(filePathUrl.pathExtension)"
         }
         
         try engine.extract(
-            filePath,
-            to: destination,
+            filePathUrl,
+            to: destinationUrl,
             overwrite: overwrite,
             password: password,
             progressHandler: progressHandler
@@ -53,24 +57,16 @@ public extension DecompressUseCaseProtocol {
     
 }
 
-final class DecompressUseCase {
+final class DecompressUseCase: DecompressUseCaseProtocol {
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
-    private let _engines: [Extractable]
+    private(set) var engines: [Extractable]
     
     // MARK: - Public Methods
     
     public init(engines: [Extractable]) {
-        self._engines = engines
-    }
-    
-}
-
-extension DecompressUseCase: DecompressUseCaseProtocol {
-    
-    var engines: [Extractable] {
-        return _engines
+        self.engines = engines
     }
     
 }

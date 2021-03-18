@@ -12,23 +12,27 @@ import uncompress
 class RarExtractorTests: XCTestCase {
     
   private let fileManager = FileManager()
-  private let tempDirectory = NSTemporaryDirectory()
+  private let tempDirectory = URL(string: NSTemporaryDirectory())!
   private let rarExtractor = RarExtractor()
   
-  private var defaultFile: String {
-    return Bundle.test.path(forResource: "zelda", ofType: "jpeg")!
+  private var defaultFile: URL {
+    let path = Bundle.test.path(forResource: "zelda", ofType: "jpeg")!
+    return URL(string: path)!
   }
   
-  private var rarFilePath: String {
-    return Bundle.test.path(forResource: "zelda", ofType: "rar")!
+  private var rarFilePath: URL {
+    let path = Bundle.test.path(forResource: "zelda", ofType: "rar")!
+    return URL(string: path)!
   }
   
-  private var protectedRarFilePath: String {
-    return Bundle.test.path(forResource: "zelda_protected", ofType: "cbr")!
+  private var protectedRarFilePath: URL {
+    let path = Bundle.test.path(forResource: "zelda_protected", ofType: "cbr")!
+    return URL(string: path)!
   }
   
-  private var failRarFilePath: String {
-    return Bundle.test.path(forResource: "rar_fail", ofType: "rar")!
+  private var failRarFilePath: URL {
+    let path = Bundle.test.path(forResource: "rar_fail", ofType: "rar")!
+    return URL(string: path)!
   }
   
   override func setUp() {
@@ -50,7 +54,7 @@ class RarExtractorTests: XCTestCase {
       to: tempDirectory
     )
     
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory.absoluteString)
     
     expect(contents.contains("zelda.jpeg")) == true
   }
@@ -66,7 +70,7 @@ class RarExtractorTests: XCTestCase {
       progressSpy = progress
     }
     
-    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+    let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory.absoluteString)
     
     expect(contents.contains("zelda.jpeg")) == true
     expect(progressSpy) == 1
@@ -83,6 +87,28 @@ class RarExtractorTests: XCTestCase {
     } catch {
       expect(error.localizedDescription) == "File is not a valid RAR archive"
     }
+  }
+  
+  func testThrowErrorIfFilePathIsInvalid() {
+    do {
+      try rarExtractor.extract(
+        URL(string: "fail/path")!,
+        to: tempDirectory
+      )
+      
+      fail()
+    } catch {}
+  }
+  
+  func testThrowErrorIfDestinationIsInvalid() {
+    do {
+      try rarExtractor.extract(
+        failRarFilePath,
+        to: URL(string: "fail/destination")!
+      )
+      
+      fail()
+    } catch {}
   }
 
 }
