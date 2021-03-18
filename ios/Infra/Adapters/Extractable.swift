@@ -9,7 +9,7 @@ import Foundation
 
 public protocol Extractable {
 
-    var compatibility: Compatibility { get }
+    var compatibilities: [Compatibility] { get }
     
     func extract(
         _ filePath: String,
@@ -28,9 +28,7 @@ private extension Extractable {
         destination: String
     ) -> String {
         let lastPath = (filePath as NSString).lastPathComponent
-        let pathPieces = lastPath.split(separator: ".")
-        
-        return destination + pathPieces[0] + ".\(compatibility.rawValue)"
+        return destination + lastPath
     }
     
 }

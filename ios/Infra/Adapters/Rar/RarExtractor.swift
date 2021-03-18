@@ -11,8 +11,8 @@ import UnrarKit
 
 public final class RarExtractor: Extractable {
     
-    public var compatibility: Compatibility {
-        return .rar
+    public var compatibilities: [Compatibility] {
+        return [.rar, .cbr]
     }
     
     public init() {}

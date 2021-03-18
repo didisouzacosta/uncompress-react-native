@@ -10,8 +10,8 @@ import Zip
 
 public final class ZipExtractor: Extractable {
     
-    public var compatibility: Compatibility {
-        return .zip
+    public var compatibilities: [Compatibility] {
+        return [.zip, .cbz]
     }
     
     public init() {}

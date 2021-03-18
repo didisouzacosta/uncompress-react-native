@@ -11,11 +11,20 @@ public protocol DecompressUseCaseProtocol {
     var engines: [Extractable] { get }
 }
 
-public extension DecompressUseCaseProtocol {
+extension DecompressUseCaseProtocol {
     
-    var Compatibilities: [Compatibility] {
-        return engines.map { $0.compatibility }
+    var compatibilities: [Compatibility] {
+        return engines.flatMap { $0.compatibilities }
     }
+    
+    private func engine(at compatibility: Compatibility) -> Extractable? {
+        return engines.first { (engine) -> Bool in
+            return engine.compatibilities.contains(compatibility)
+        }
+    }
+}
+
+public extension DecompressUseCaseProtocol {
     
     func extract(
         _ filePath: String,
@@ -40,10 +49,6 @@ public extension DecompressUseCaseProtocol {
             password: password,
             progressHandler: progressHandler
         )
-    }
-    
-    private func engine(at compatibility: Compatibility) -> Extractable? {
-        return engines.first { $0.compatibility == compatibility }
     }
     
 }
