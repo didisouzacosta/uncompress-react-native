@@ -3,13 +3,16 @@ import { StyleSheet, View, Button, Alert } from 'react-native';
 import { decompress } from 'uncompress';
 
 export default function App() {
-  const extract = () => {
-    decompress({
-      filePath: 'teste.zip',
-      destination: '',
-    })
-      .then(() => Alert.alert('deu certo'))
-      .catch((e) => Alert.alert(e.message));
+  const extract = async () => {
+    try {
+      await decompress({
+        filePath: 'teste.zip',
+        destination: '',
+      });
+      Alert.alert('O arquivo foi descomprimido com sucesso');
+    } catch (e) {
+      Alert.alert(e.message);
+    }
   };
 
   return (

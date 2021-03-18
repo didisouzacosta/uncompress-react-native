@@ -28,11 +28,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libUncompress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUncompress.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31FBBBE26035E400031B2C4 /* Uncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
+		B31FBBBF26035E400031B2C4 /* Uncompress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Uncompress.m; sourceTree = "<group>"; };
+		B31FBBC226035E630031B2C4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RarExtractor.swift; sourceTree = "<group>"; };
 		B3E72C6726020E2E00E4DAEE /* Extractable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extractable.swift; sourceTree = "<group>"; };
 		B3E72C6926020E2E00E4DAEE /* ZipExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipExtractor.swift; sourceTree = "<group>"; };
-		B3E72DBD2602173400E4DAEE /* UncompressManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncompressManager.m; sourceTree = "<group>"; };
-		B3E72DBE2602173400E4DAEE /* UncompressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompressManager.swift; sourceTree = "<group>"; };
 		B3E72FF62602301200E4DAEE /* DecompressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecompressUseCase.swift; sourceTree = "<group>"; };
 		B3E730652602331300E4DAEE /* Compatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
 		B3E730692602333300E4DAEE /* UseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
@@ -61,12 +62,13 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				B31FBBC026035E630031B2C4 /* Utils */,
+				B31FBBBF26035E400031B2C4 /* Uncompress.m */,
+				B31FBBBE26035E400031B2C4 /* Uncompress.swift */,
 				B3E72FF42602301200E4DAEE /* Data */,
 				B3E72E5826021ECF00E4DAEE /* Infra */,
 				B3E72E5726021EC800E4DAEE /* Domain */,
 				B3E72E5626021EBB00E4DAEE /* Main */,
-				B3E72DBD2602173400E4DAEE /* UncompressManager.m */,
-				B3E72DBE2602173400E4DAEE /* UncompressManager.swift */,
 				F4FF95D5245B92E700C19C63 /* Uncompress-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
@@ -88,6 +90,22 @@
 				B3E730652602331300E4DAEE /* Compatibility.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		B31FBBC026035E630031B2C4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B31FBBC126035E630031B2C4 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B31FBBC126035E630031B2C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B31FBBC226035E630031B2C4 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B3E72C6526020E2E00E4DAEE /* Rar */ = {
