@@ -17,15 +17,6 @@ public extension DecompressUseCaseProtocol {
         return engines.flatMap { $0.compatibilities }
     }
     
-    private func engine(at compatibility: Compatibility) -> Extractable? {
-        return engines.first { (engine) -> Bool in
-            return engine.compatibilities.contains(compatibility)
-        }
-    }
-}
-
-public extension DecompressUseCaseProtocol {
-    
     func extract(
         _ filePath: String,
         to destination: String,
@@ -34,17 +25,14 @@ public extension DecompressUseCaseProtocol {
         progressHandler: ((Double) -> Void)? = nil
     ) throws {
         guard let filePathUrl = URL(string: filePath) else {
-            throw "O caminho do arquivo é inválido"
+            throw "The file path is invalid"
         }
         
         guard let destinationUrl = URL(string: destination) else {
-            throw "O destino da descompressão é inválido"
+            throw "The destination path is invalid"
         }
         
-        guard let type = Compatibility(rawValue: filePathUrl.pathExtension),
-              let engine = engine(at: type) else {
-            throw "Atualmente a lib não oferece recursos de descompressão para a extensão \(filePathUrl.pathExtension)"
-        }
+        let engine = try selectEngineAt(fileExtension: filePathUrl.pathExtension)
         
         try engine.extract(
             filePathUrl,
@@ -53,6 +41,17 @@ public extension DecompressUseCaseProtocol {
             password: password,
             progressHandler: progressHandler
         )
+    }
+    
+    fileprivate func selectEngineAt(fileExtension: String) throws -> Extractable {
+        if let compatibility = Compatibility(rawValue: fileExtension),
+           let engine = engines.first(where: { (engine) -> Bool in
+            return engine.compatibilities.contains(compatibility)
+        }) {
+            return engine
+        }
+        
+        throw "\(fileExtension) is not supported"
     }
     
 }
