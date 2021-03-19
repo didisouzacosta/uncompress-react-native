@@ -24,6 +24,8 @@
 		B34BE2F52600D8CD00310BA3 /* rar_fail.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2F32600D8CD00310BA3 /* rar_fail.rar */; };
 		B34BE2F62600D8CD00310BA3 /* zelda.rar in Resources */ = {isa = PBXBuildFile; fileRef = B34BE2F42600D8CD00310BA3 /* zelda.rar */; };
 		B3CE6E4625FF80F100F8C052 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */; };
+		B3F6BE962604B8430074131A /* ExtractableSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F6BE952604B8430074131A /* ExtractableSpy.swift */; };
+		B3F6BE9C2604BD320074131A /* DecompressUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F6BE9B2604BD320074131A /* DecompressUseCaseTests.swift */; };
 		ECA37AD1ABBB46ADCA71A160 /* Pods_UncompressExample_UncompressExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F05AC6AE33E28C8AB06F921 /* Pods_UncompressExample_UncompressExampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		B34BE2F32600D8CD00310BA3 /* rar_fail.rar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rar_fail.rar; sourceTree = "<group>"; };
 		B34BE2F42600D8CD00310BA3 /* zelda.rar */ = {isa = PBXFileReference; lastKnownFileType = file; path = zelda.rar; sourceTree = "<group>"; };
 		B3CE6E4525FF80F100F8C052 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		B3F6BE952604B8430074131A /* ExtractableSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractableSpy.swift; sourceTree = "<group>"; };
+		B3F6BE9B2604BD320074131A /* DecompressUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecompressUseCaseTests.swift; sourceTree = "<group>"; };
 		E00ACF0FDA8BF921659E2F9A /* Pods-UncompressExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncompressExample.release.xcconfig"; path = "Target Support Files/Pods-UncompressExample/Pods-UncompressExample.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -160,11 +164,13 @@
 		B31A67FD25FEA43B0052DCB7 /* UncompressExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				B3F6BE942604B8190074131A /* Spy */,
 				B31A68A225FEAD9C0052DCB7 /* Utils */,
 				B31A686C25FEAA600052DCB7 /* Assets */,
 				B31A67FE25FEA43B0052DCB7 /* ZipExtractorTests.swift */,
 				B34BE2C22600D23E00310BA3 /* RarExtractorTests.swift */,
 				B31A67FF25FEA43B0052DCB7 /* Info.plist */,
+				B3F6BE9B2604BD320074131A /* DecompressUseCaseTests.swift */,
 			);
 			path = UncompressExampleTests;
 			sourceTree = "<group>";
@@ -215,6 +221,14 @@
 				B31A687125FEAAB10052DCB7 /* mononoke.zip */,
 			);
 			path = zip;
+			sourceTree = "<group>";
+		};
+		B3F6BE942604B8190074131A /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				B3F6BE952604B8430074131A /* ExtractableSpy.swift */,
+			);
+			path = Spy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,8 +572,10 @@
 			files = (
 				B31A680025FEA43B0052DCB7 /* ZipExtractorTests.swift in Sources */,
 				B31A68A525FEADB10052DCB7 /* Bundle+Extension.swift in Sources */,
+				B3F6BE9C2604BD320074131A /* DecompressUseCaseTests.swift in Sources */,
 				B34BE2C32600D23E00310BA3 /* RarExtractorTests.swift in Sources */,
 				B3CE6E4625FF80F100F8C052 /* FileManager+Extension.swift in Sources */,
+				B3F6BE962604B8430074131A /* ExtractableSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

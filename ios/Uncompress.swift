@@ -23,7 +23,7 @@ class Uncompress: NSObject {
                 overwrite: overwrite,
                 password: password
             )
-            resolve(())
+            resolve(NSNull())
         } catch {
             reject("0", error.localizedDescription, error)
         }

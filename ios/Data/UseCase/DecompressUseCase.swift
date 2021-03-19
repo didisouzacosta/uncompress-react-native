@@ -11,7 +11,7 @@ public protocol DecompressUseCaseProtocol {
     var engines: [Extractable] { get }
 }
 
-extension DecompressUseCaseProtocol {
+public extension DecompressUseCaseProtocol {
     
     var compatibilities: [Compatibility] {
         return engines.flatMap { $0.compatibilities }
@@ -41,7 +41,7 @@ public extension DecompressUseCaseProtocol {
             throw "O destino da descompressão é inválido"
         }
         
-        guard let type = Compatibility.init(rawValue: filePathUrl.pathExtension),
+        guard let type = Compatibility(rawValue: filePathUrl.pathExtension),
               let engine = engine(at: type) else {
             throw "Atualmente a lib não oferece recursos de descompressão para a extensão \(filePathUrl.pathExtension)"
         }
@@ -57,11 +57,11 @@ public extension DecompressUseCaseProtocol {
     
 }
 
-final class DecompressUseCase: DecompressUseCaseProtocol {
+public final class DecompressUseCase: DecompressUseCaseProtocol {
     
     // MARK: - Public Properties
     
-    private(set) var engines: [Extractable]
+    private(set) public var engines: [Extractable]
     
     // MARK: - Public Methods
     
