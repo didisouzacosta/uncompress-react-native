@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, ActivityIndicator } from 'react-native';
 import { decompress } from 'uncompress';
-import RNFS from 'react-native-fs';
+import { Paths, readFilesIn, downloadFile, unlink } from './utils/file-manager';
 
-const tempDir = RNFS.TemporaryDirectoryPath;
-const documentDir = RNFS.DocumentDirectoryPath;
 const fileUrl =
   'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
 
@@ -12,51 +10,38 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const clearTempAndDocumentDir = async () => {
-    const tempFiles = await RNFS.readDir(tempDir);
-    const documentFiles = await RNFS.readDir(documentDir);
+    const tempFiles = await readFilesIn(Paths.temp);
+    const documentFiles = await readFilesIn(Paths.document);
 
     const files = tempFiles.concat(documentFiles);
 
     files.forEach(async (file) => {
-      await RNFS.unlink(file.path);
+      await unlink(file.path);
     });
   };
 
-  const downloadSample = async () => {
+  const downloadSample = async (): Promise<void> => {
+    const destinationPath = `${Paths.temp}/sample_comic.cbr`;
+
     setIsLoading(true);
 
     await clearTempAndDocumentDir();
 
-    const fromUrl = fileUrl;
-    const toFile = `${tempDir}/sample_comic.cbr`;
-
-    RNFS.downloadFile({
-      fromUrl,
-      toFile,
+    return downloadFile({
+      fileUrl,
+      destinationPath,
     })
-      .promise.then((infos) => {
-        if (infos.statusCode === 200) {
-          extract(toFile);
-        } else {
-          console.log(
-            `Não foi possível fazer o download do arquivo ${fileUrl}`
-          );
-        }
-        setIsLoading(false);
-      })
-      .catch((e) => {
-        console.log(e);
-        setIsLoading(false);
-      });
+      .then(() => extract(destinationPath))
+      .finally(() => setIsLoading(false));
   };
 
   const readFiles = async (path: string): Promise<string[]> => {
-    const files = await RNFS.readDir(path);
+    const files = await readFilesIn(path);
     return files.map((file) => file.path);
   };
 
   const extract = async (filePath: string) => {
-    const destination = `${documentDir}/comic`;
+    const destination = `${Paths.temp}/comic`;
 
     try {
       await decompress({
