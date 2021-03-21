@@ -6,7 +6,7 @@ import RNFS from 'react-native-fs';
 const tempDir = RNFS.TemporaryDirectoryPath;
 const documentDir = RNFS.DocumentDirectoryPath;
 const zipFileUrl =
-  'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbz';
+  'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
 
 export default function App() {
   const [filePath, setFilePath] = useState<string>();
