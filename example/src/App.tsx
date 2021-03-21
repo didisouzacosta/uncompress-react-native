@@ -1,11 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import {
-  StyleSheet,
-  View,
-  Button,
-  Alert,
-  ActivityIndicator,
-} from 'react-native';
+import { StyleSheet, View, Button, ActivityIndicator } from 'react-native';
 import { decompress } from 'uncompress';
 import RNFS from 'react-native-fs';
 
@@ -64,10 +58,8 @@ export default function App() {
       const sampleFiles = await readFiles(destination);
 
       console.log(sampleFiles);
-
-      Alert.alert('O arquivo foi descomprimido com sucesso');
     } catch (e) {
-      Alert.alert(e.message);
+      console.log(e);
     }
   };
 
