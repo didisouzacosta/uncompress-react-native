@@ -78,7 +78,7 @@ export default function App() {
       />
       <View style={styles.container}>
         <Button
-          title="(CBR) Extração e visualização"
+          title="Extração e visualização"
           onPress={() => downloadRarSample()}
         />
         {isLoading && <ActivityIndicator color="black" />}
