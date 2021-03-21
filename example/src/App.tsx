@@ -5,7 +5,7 @@ import RNFS from 'react-native-fs';
 
 const tempDir = RNFS.TemporaryDirectoryPath;
 const documentDir = RNFS.DocumentDirectoryPath;
-const zipFileUrl =
+const fileUrl =
   'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
 
 export default function App() {
@@ -17,12 +17,25 @@ export default function App() {
     return false;
   }, [filePath]);
 
+  const clearTempAndDocumentDir = async () => {
+    const tempFiles = await RNFS.readDir(tempDir);
+    const documentFiles = await RNFS.readDir(documentDir);
+
+    const files = tempFiles.concat(documentFiles);
+
+    files.forEach(async (file) => {
+      await RNFS.unlink(file.path);
+    });
+  };
+
   const downloadSample = async () => {
     setIsLoading(true);
 
+    await clearTempAndDocumentDir();
+
     RNFS.downloadFile({
-      fromUrl: zipFileUrl,
-      toFile: `${tempDir}.sample-zip-file.zip`,
+      fromUrl: fileUrl,
+      toFile: `${tempDir}/sample_comic.cbr`,
     })
       .promise.then(() => readFiles(tempDir))
       .then((files) => {
