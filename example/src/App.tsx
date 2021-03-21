@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, ActivityIndicator } from 'react-native';
 import { decompress } from 'uncompress';
+import ComicPreviewModal from './components/comic-preview-modal';
 import { Paths, readFilesIn, downloadFile, unlink } from './utils/file-manager';
 
 const fileUrl =
@@ -8,6 +9,8 @@ const fileUrl =
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [visibleModal, setVisibleModal] = useState(false);
+  const [comics, setComic] = useState<string[]>([]);
 
   const clearTempAndDocumentDir = async () => {
     const tempFiles = await readFilesIn(Paths.temp);
@@ -51,30 +54,37 @@ export default function App() {
 
       const extractedFiles = await readFiles(destination);
 
-      console.log(extractedFiles);
-
       const comicDir = extractedFiles[0];
 
       if (!comicDir) {
         return;
       }
 
-      const comicFiles = await readFiles(comicDir);
+      const files = await readFiles(comicDir);
+      const sortedFiles = files.sort((a, b) => (a < b ? -1 : 1));
 
-      console.log(comicFiles);
+      setComic(sortedFiles);
+      setVisibleModal(true);
     } catch (e) {
       console.log(e);
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Button
-        title="Download e extração do exemplo"
-        onPress={() => downloadSample()}
+    <>
+      <ComicPreviewModal
+        visible={visibleModal}
+        files={comics}
+        close={() => setVisibleModal(false)}
       />
-      {isLoading && <ActivityIndicator color="black" />}
-    </View>
+      <View style={styles.container}>
+        <Button
+          title="Download e extração do exemplo"
+          onPress={() => downloadSample()}
+        />
+        {isLoading && <ActivityIndicator color="black" />}
+      </View>
+    </>
   );
 }
 
