@@ -4,9 +4,6 @@ import { decompress } from 'uncompress';
 import ComicPreviewModal from './components/comic-preview-modal';
 import { Paths, readFilesIn, downloadFile, unlink } from './utils/file-manager';
 
-const fileUrl =
-  'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
-
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [visibleModal, setVisibleModal] = useState(false);
@@ -23,7 +20,9 @@ export default function App() {
     });
   };
 
-  const downloadSample = async (): Promise<void> => {
+  const downloadRarSample = async (): Promise<void> => {
+    const fileUrl =
+      'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
     const destinationPath = `${Paths.temp}/sample_comic.cbr`;
 
     setIsLoading(true);
@@ -79,8 +78,8 @@ export default function App() {
       />
       <View style={styles.container}>
         <Button
-          title="Download e extração do exemplo"
-          onPress={() => downloadSample()}
+          title="(CBR) Extração e visualização"
+          onPress={() => downloadRarSample()}
         />
         {isLoading && <ActivityIndicator color="black" />}
       </View>
