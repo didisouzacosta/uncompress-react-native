@@ -33,14 +33,20 @@ export default function App() {
 
     await clearTempAndDocumentDir();
 
+    const fromUrl = fileUrl;
+    const toFile = `${tempDir}/sample_comic.cbr`;
+
     RNFS.downloadFile({
-      fromUrl: fileUrl,
-      toFile: `${tempDir}/sample_comic.cbr`,
+      fromUrl,
+      toFile,
     })
-      .promise.then(() => readFiles(tempDir))
-      .then((files) => {
-        if (files[0]) {
-          setFilePath(files[0]);
+      .promise.then((infos) => {
+        if (infos.statusCode === 200) {
+          setFilePath(toFile);
+        } else {
+          console.log(
+            `Não foi possível fazer o download do arquivo ${fileUrl}`
+          );
         }
         setIsLoading(false);
       })
