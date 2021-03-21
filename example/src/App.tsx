@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Button, ActivityIndicator } from 'react-native';
 import { decompress } from 'uncompress';
 import RNFS from 'react-native-fs';
@@ -9,13 +9,7 @@ const fileUrl =
   'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
 
 export default function App() {
-  const [filePath, setFilePath] = useState<string>();
   const [isLoading, setIsLoading] = useState(false);
-
-  const disabled = useMemo(() => {
-    if (!filePath) return true;
-    return false;
-  }, [filePath]);
 
   const clearTempAndDocumentDir = async () => {
     const tempFiles = await RNFS.readDir(tempDir);
@@ -42,7 +36,7 @@ export default function App() {
     })
       .promise.then((infos) => {
         if (infos.statusCode === 200) {
-          setFilePath(toFile);
+          extract(toFile);
         } else {
           console.log(
             `Não foi possível fazer o download do arquivo ${fileUrl}`
@@ -61,12 +55,8 @@ export default function App() {
     return files.map((file) => file.path);
   };
 
-  const extract = async () => {
+  const extract = async (filePath: string) => {
     const destination = `${documentDir}/comic`;
-
-    if (!filePath) {
-      return;
-    }
 
     try {
       await decompress({
@@ -74,9 +64,19 @@ export default function App() {
         destination,
       });
 
-      const sampleFiles = await readFiles(destination);
+      const extractedFiles = await readFiles(destination);
 
-      console.log(sampleFiles);
+      console.log(extractedFiles);
+
+      const comicDir = extractedFiles[0];
+
+      if (!comicDir) {
+        return;
+      }
+
+      const comicFiles = await readFiles(comicDir);
+
+      console.log(comicFiles);
     } catch (e) {
       console.log(e);
     }
@@ -84,13 +84,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button title="Download exemplo" onPress={() => downloadSample()} />
-      {isLoading && <ActivityIndicator color="black" />}
       <Button
-        title="Extrair arquivo"
-        disabled={disabled}
-        onPress={() => extract()}
+        title="Download e extração do exemplo"
+        onPress={() => downloadSample()}
       />
+      {isLoading && <ActivityIndicator color="black" />}
     </View>
   );
 }
