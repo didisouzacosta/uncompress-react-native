@@ -78,7 +78,7 @@ export default function App() {
       />
       <View style={styles.container}>
         <Button
-          title="Extração e visualização"
+          title="Extrair e visualização"
           onPress={() => downloadRarSample()}
         />
         {isLoading && <ActivityIndicator color="black" />}
