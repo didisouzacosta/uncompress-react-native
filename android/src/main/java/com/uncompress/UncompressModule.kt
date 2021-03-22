@@ -11,14 +11,15 @@ class UncompressModule(reactContext: ReactApplicationContext) : ReactContextBase
         return "Uncompress"
     }
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    fun multiply(a: Int, b: Int, promise: Promise) {
-    
-      promise.resolve(a * b)
-    
+    fun decompress(
+      filePath: String,
+      destination: String,
+      overwrite: Boolean = true,
+      password: String? = null,
+      promise: Promise
+    ) {
+      promise.resolve(null);
     }
 
-    
 }

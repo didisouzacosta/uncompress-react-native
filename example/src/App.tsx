@@ -52,7 +52,6 @@ export default function App() {
       });
 
       const extractedFiles = await readFiles(destination);
-
       const comicDir = extractedFiles[0];
 
       if (!comicDir) {
