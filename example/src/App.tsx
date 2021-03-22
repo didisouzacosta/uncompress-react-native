@@ -23,7 +23,7 @@ export default function App() {
   const downloadRarSample = async (): Promise<void> => {
     const fileUrl =
       'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
-    const destinationPath = `${Paths.temp}/sample_comic.cbr`;
+    const destinationPath = Paths.temp + 'sample_comic.cbr';
 
     setIsLoading(true);
 
@@ -43,7 +43,7 @@ export default function App() {
   };
 
   const extract = async (filePath: string) => {
-    const destination = `${Paths.temp}/comic`;
+    const destination = Paths.temp + 'comic';
 
     try {
       await decompress({

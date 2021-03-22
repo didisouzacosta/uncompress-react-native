@@ -5,6 +5,8 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Promise
 
+import com.uncompress.main.factories.UseCaseFactory
+
 class UncompressModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
     override fun getName(): String {
@@ -19,6 +21,7 @@ class UncompressModule(reactContext: ReactApplicationContext) : ReactContextBase
       password: String? = null,
       promise: Promise
     ) {
+      UseCaseFactory.decompress()
       promise.resolve(null);
     }
 
