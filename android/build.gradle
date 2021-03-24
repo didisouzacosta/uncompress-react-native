@@ -128,4 +128,5 @@ dependencies {
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   implementation "net.lingala.zip4j:zip4j:2.7.0"
+  implementation "com.github.junrar:junrar:7.4.0"
 }
