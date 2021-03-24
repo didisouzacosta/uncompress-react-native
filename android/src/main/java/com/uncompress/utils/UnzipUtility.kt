@@ -24,6 +24,7 @@ class UnzipUtility {
       destDir.mkdir()
     }
     val zipIn = ZipInputStream(FileInputStream(zipFilePath))
+
     var entry = zipIn.nextEntry
     // iterates over entries in the zip file
     while (entry != null) {
@@ -53,6 +54,7 @@ class UnzipUtility {
     val bos = BufferedOutputStream(FileOutputStream(filePath))
     val bytesIn = ByteArray(BUFFER_SIZE)
     var read = 0
+
     while (zipIn.read(bytesIn).also { read = it } != -1) {
       bos.write(bytesIn, 0, read)
     }
