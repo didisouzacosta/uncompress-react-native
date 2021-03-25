@@ -7,8 +7,8 @@ import java.lang.Exception
 
 final class RarExtractor: Extractable {
 
-  override val compatibilities: Array<Compatibility>
-    get() = arrayOf(Compatibility.CBR, Compatibility.RAR)
+  override val compatibilities: List<Compatibility>
+    get() = listOf(Compatibility.CBR, Compatibility.RAR)
 
   @Throws(IOException::class)
   override fun extract(

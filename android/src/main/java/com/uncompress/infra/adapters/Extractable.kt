@@ -4,7 +4,7 @@ import com.uncompress.domain.enum.Compatibility
 import java.io.IOException
 
 interface Extractable {
-  val compatibilities: Array<Compatibility>
+  val compatibilities: List<Compatibility>
 
   @Throws(IOException::class)
   fun extract(

@@ -2,12 +2,14 @@ package com.uncompress.infra.adapters.zip
 
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.Extractable
+import net.lingala.zip4j.ZipFile
+import net.lingala.zip4j.exception.ZipException
 import java.io.IOException
 
 final class ZipExtractor: Extractable {
 
-  override val compatibilities: Array<Compatibility>
-    get() = arrayOf(Compatibility.CBZ, Compatibility.ZIP)
+  override val compatibilities: List<Compatibility>
+    get() = listOf(Compatibility.CBZ, Compatibility.ZIP)
 
   @Throws(IOException::class)
   override fun extract(
@@ -16,7 +18,11 @@ final class ZipExtractor: Extractable {
     override: Boolean,
     password: String?
   ) {
-    TODO("Not yet implemented")
+    try {
+      ZipFile(filePath, password?.toCharArray()).extractAll(destination)
+    } catch(e: ZipException) {
+      throw e
+    }
   }
 
 }
