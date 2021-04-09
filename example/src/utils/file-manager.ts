@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import RNFS from 'react-native-fs';
 
 type File = Pick<RNFS.ReadDirItem, 'name' | 'path' | 'isDirectory'>;
@@ -10,7 +11,9 @@ export const Paths = {
 export const readFilesIn = async (directory: string): Promise<File[]> => {
   const files = await RNFS.readDir(directory);
   return files.map(({ name, path, isDirectory }) => {
-    return { name, path, isDirectory };
+    let prefix = Platform.OS === 'ios' ? '' : 'file://';
+    let finalPath = `${prefix}${path}`;
+    return { name, path: finalPath, isDirectory };
   });
 };
 
@@ -35,4 +38,8 @@ export const downloadFile = async ({
 
 export const unlink = async (filePath: string): Promise<void> => {
   return RNFS.unlink(filePath);
+};
+
+export const exists = async (filePath: string): Promise<Boolean> => {
+  return RNFS.exists(filePath);
 };

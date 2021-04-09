@@ -1,9 +1,12 @@
 package com.uncompress.infra.adapters.rar
 
+import com.github.junrar.Junrar
+import com.github.junrar.crc.RarCRC
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.Extractable
 import net.lingala.zip4j.ZipFile
 import net.lingala.zip4j.exception.ZipException
+import java.io.File
 import java.io.IOException
 import java.lang.Exception
 
@@ -19,11 +22,33 @@ final class RarExtractor: Extractable {
     override: Boolean,
     password: String?
   ) {
-    try {
-      throw IOException("Componente de extração ainda não concluído")
-    } catch(e: Exception) {
-      throw e
-    }
+    resolveOverride(destination, override)
+    Junrar.extract(filePath, destination, password)
   }
 
+  @Throws(IOException::class)
+  private fun resolveOverride(destination: String, override: Boolean) {
+    val file = File(destination)
+    val exists = file.exists()
+
+    if (!override) return;
+    if (!exists) return;
+
+    if (!file.deleteRecursively()) {
+      throw IOException("Não foi possível deletar o arquivo já existente")
+    }
+
+    createIfNotExistsDestination(destination)
+  }
+
+  @Throws(IOException::class)
+  private fun createIfNotExistsDestination(destination: String) {
+    val file = File(destination)
+
+    if(file.exists()) return;
+
+    if (!file.mkdir()) {
+      throw IOException("Não foi possível criar o diretório $destination")
+    }
+  }
 }
