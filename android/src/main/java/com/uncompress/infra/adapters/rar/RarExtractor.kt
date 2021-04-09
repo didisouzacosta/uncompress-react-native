@@ -2,6 +2,8 @@ package com.uncompress.infra.adapters.rar
 
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.Extractable
+import net.lingala.zip4j.ZipFile
+import net.lingala.zip4j.exception.ZipException
 import java.io.IOException
 import java.lang.Exception
 
@@ -17,7 +19,11 @@ final class RarExtractor: Extractable {
     override: Boolean,
     password: String?
   ) {
-    throw Exception("Simulação de erro")
+    try {
+      throw IOException("Componente de extração ainda não concluído")
+    } catch(e: Exception) {
+      throw e
+    }
   }
 
 }

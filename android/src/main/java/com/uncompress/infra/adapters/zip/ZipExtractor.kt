@@ -20,7 +20,7 @@ final class ZipExtractor: Extractable {
   ) {
     try {
       ZipFile(filePath, password?.toCharArray()).extractAll(destination)
-    } catch(e: ZipException) {
+    } catch(e: Exception) {
       throw e
     }
   }

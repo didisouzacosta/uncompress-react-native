@@ -12,11 +12,11 @@ public protocol DecompressUseCaseProtocol {
 }
 
 public extension DecompressUseCaseProtocol {
-    
+
     var compatibilities: [Compatibility] {
         return engines.flatMap { $0.compatibilities }
     }
-    
+
     func extract(
         _ filePath: String,
         to destination: String,
@@ -27,13 +27,13 @@ public extension DecompressUseCaseProtocol {
         guard let filePathUrl = URL(string: filePath) else {
             throw "The file path is invalid"
         }
-        
+
         guard let destinationUrl = URL(string: destination) else {
             throw "The destination path is invalid"
         }
-        
+
         let engine = try selectEngineAt(fileExtension: filePathUrl.pathExtension)
-        
+
         try engine.extract(
             filePathUrl,
             to: destinationUrl,
@@ -42,30 +42,30 @@ public extension DecompressUseCaseProtocol {
             progressHandler: progressHandler
         )
     }
-    
-    fileprivate func selectEngineAt(fileExtension: String) throws -> Extractable {
+
+    private func selectEngineAt(fileExtension: String) throws -> Extractable {
         if let compatibility = Compatibility(rawValue: fileExtension),
            let engine = engines.first(where: { (engine) -> Bool in
             return engine.compatibilities.contains(compatibility)
         }) {
             return engine
         }
-        
+
         throw "\(fileExtension) is not supported"
     }
-    
+
 }
 
 public final class DecompressUseCase: DecompressUseCaseProtocol {
-    
+
     // MARK: - Public Properties
-    
+
     private(set) public var engines: [Extractable]
-    
+
     // MARK: - Public Methods
-    
+
     public init(engines: [Extractable]) {
         self.engines = engines
     }
-    
+
 }
