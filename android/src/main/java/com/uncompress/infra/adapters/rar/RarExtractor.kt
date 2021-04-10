@@ -1,14 +1,10 @@
 package com.uncompress.infra.adapters.rar
 
 import com.github.junrar.Junrar
-import com.github.junrar.crc.RarCRC
 import com.uncompress.domain.enum.Compatibility
-import com.uncompress.infra.adapters.Extractable
-import net.lingala.zip4j.ZipFile
-import net.lingala.zip4j.exception.ZipException
+import com.uncompress.data.intefaces.Extractable
 import java.io.File
 import java.io.IOException
-import java.lang.Exception
 
 final class RarExtractor: Extractable {
 

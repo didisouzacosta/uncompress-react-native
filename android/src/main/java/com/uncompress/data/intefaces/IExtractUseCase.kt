@@ -1,7 +1,6 @@
-package com.uncompress.data.usecase
+package com.uncompress.data.intefaces
 
 import com.uncompress.domain.enum.Compatibility
-import com.uncompress.infra.adapters.Extractable
 import java.io.File
 import java.io.IOException
 

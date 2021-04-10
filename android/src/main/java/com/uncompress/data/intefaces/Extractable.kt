@@ -1,4 +1,4 @@
-package com.uncompress.infra.adapters
+package com.uncompress.data.intefaces
 
 import com.uncompress.domain.enum.Compatibility
 import java.io.IOException

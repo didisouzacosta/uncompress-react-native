@@ -1,9 +1,8 @@
 package com.uncompress.infra.adapters.zip
 
 import com.uncompress.domain.enum.Compatibility
-import com.uncompress.infra.adapters.Extractable
+import com.uncompress.data.intefaces.Extractable
 import net.lingala.zip4j.ZipFile
-import net.lingala.zip4j.exception.ZipException
 import java.io.IOException
 
 final class ZipExtractor: Extractable {
