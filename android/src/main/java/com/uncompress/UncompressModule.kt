@@ -14,16 +14,17 @@ class UncompressModule(reactContext: ReactApplicationContext) : ReactContextBase
     }
 
     @ReactMethod
-    fun decompress(
+    fun extract(
       filePath: String,
       destination: String,
       overwrite: Boolean = true,
       password: String? = null,
       promise: Promise
     ) {
-      val decompressUseCase = UseCaseFactory.useCaseDecompress()
+      val extractUseCase = UseCaseFactory.makeExtractUseCase()
+
       try {
-        decompressUseCase.extract(filePath, destination, overwrite, password)
+        extractUseCase.run(filePath, destination, overwrite, password)
         promise.resolve(null)
       } catch(e: Exception) {
         promise.reject(e)

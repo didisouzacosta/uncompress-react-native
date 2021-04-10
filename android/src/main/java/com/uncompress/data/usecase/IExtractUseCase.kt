@@ -5,13 +5,13 @@ import com.uncompress.infra.adapters.Extractable
 import java.io.File
 import java.io.IOException
 
-abstract class IDecompressUseCase {
+abstract class IExtractUseCase {
   abstract val engines: List<Extractable>
 
   val compatibilities: List<Compatibility> get() = engines.flatMap { it.compatibilities }
 
   @Throws(IOException::class)
-  fun extract(
+  fun run(
     filePath: String,
     destination: String,
     override: Boolean = true,

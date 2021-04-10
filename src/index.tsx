@@ -2,7 +2,7 @@ import { NativeModules } from 'react-native';
 
 const { Uncompress } = NativeModules;
 
-export const decompress = async ({
+const extract = async ({
   filePath,
   destination,
   overwrite = true,
@@ -13,5 +13,9 @@ export const decompress = async ({
   overwrite?: boolean;
   password?: string;
 }) => {
-  await Uncompress.decompress(filePath, destination, overwrite, password);
+  await Uncompress.extract(filePath, destination, overwrite, password);
+};
+
+export default {
+  extract,
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, ActivityIndicator } from 'react-native';
-import { decompress } from 'uncompress';
+import Uncompress from 'uncompress';
 import ComicPreviewModal from './components/comic-preview-modal';
 import { Paths, readFilesIn, downloadFile, unlink } from './utils/file-manager';
 
@@ -46,7 +46,7 @@ export default function App() {
     const destination = Paths.temp + 'comic';
 
     try {
-      await decompress({
+      await Uncompress.extract({
         filePath,
         destination,
       });
