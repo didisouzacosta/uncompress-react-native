@@ -21,9 +21,9 @@ export default function App() {
   };
 
   const downloadRarSample = async (): Promise<void> => {
-    const fileName = 'sample_comic.cbz';
+    const fileName = 'sample_comic.cbr';
     const fileUrl =
-      'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/' +
+      'https://github.com/Free-Comic-Reader/Uncompress/raw/main/assets/' +
       fileName;
     const destinationPath = Paths.temp + fileName;
 
@@ -53,14 +53,7 @@ export default function App() {
         destination,
       });
 
-      const extractedFiles = await readFiles(destination);
-      const comicDir = extractedFiles[0];
-
-      if (!comicDir) {
-        return;
-      }
-
-      const files = await readFiles(comicDir);
+      const files = await readFiles(destination);
       const sortedFiles = files.sort((a, b) => (a < b ? -1 : 1));
 
       setComic(sortedFiles);
