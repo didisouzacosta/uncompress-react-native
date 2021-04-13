@@ -8,7 +8,7 @@ class Uncompress: NSObject {
     // MARK: - Public Methods
 
     @objc
-    func decompress(
+    func extract(
         _ filePath: String,
         to destination: String,
         overwrite: Bool = true,

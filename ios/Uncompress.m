@@ -3,7 +3,7 @@
 @interface RCT_EXTERN_MODULE(Uncompress, NSObject)
 
 RCT_EXTERN_METHOD(
-                  decompress:(nonnull NSString *)filePath
+                  extract:(nonnull NSString *)filePath
                   to:(nonnull NSString *)destination
                   overwrite:(BOOL)overwrite
                   password:(NSString *)password
