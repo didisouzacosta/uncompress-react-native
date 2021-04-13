@@ -21,9 +21,11 @@ export default function App() {
   };
 
   const downloadRarSample = async (): Promise<void> => {
+    const fileName = 'sample_comic.cbz';
     const fileUrl =
-      'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/sample_comic.cbr';
-    const destinationPath = Paths.temp + 'sample_comic.cbr';
+      'https://github.com/Free-Comic-Reader/Landing-Page-Free-Comic-Reader/raw/main/assets/' +
+      fileName;
+    const destinationPath = Paths.temp + fileName;
 
     setIsLoading(true);
 

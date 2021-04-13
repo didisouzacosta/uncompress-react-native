@@ -1,9 +1,10 @@
 package com.uncompress.infra.adapters.zip
 
-import com.uncompress.domain.enum.Compatibility
 import com.uncompress.data.intefaces.Extractable
+import com.uncompress.domain.enum.Compatibility
 import net.lingala.zip4j.ZipFile
 import java.io.IOException
+
 
 final class ZipExtractor: Extractable {
 
@@ -17,11 +18,8 @@ final class ZipExtractor: Extractable {
     override: Boolean,
     password: String?
   ) {
-    try {
-      ZipFile(filePath, password?.toCharArray()).extractAll(destination)
-    } catch(e: Exception) {
-      throw e
-    }
+    super.extract(filePath, destination, override, password)
+    ZipFile(filePath, password?.toCharArray()).extractAll(destination)
   }
 
 }
