@@ -3,7 +3,7 @@ class Uncompress: NSObject {
     
     // MARK: - Private Properties
     
-    private let decompressUseCase = UseCaseFactory.decompressUseCase()
+    private let extractUseCase = UseCaseFactory.extractUseCase()
     
     // MARK: - Public Methods
 
@@ -17,7 +17,7 @@ class Uncompress: NSObject {
         rejecter reject: RCTPromiseRejectBlock
     ) {
         do {
-            try decompressUseCase.extract(
+            try extractUseCase.run(
                 filePath,
                 to: destination,
                 overwrite: overwrite,

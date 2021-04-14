@@ -1,23 +1,23 @@
 //
-//  DecompressUseCase.swift
-//  DoubleConversion
+//  ExtractUseCase.swift
+//  Uncompress
 //
 //  Created by Adriano Souza Costa on 17/03/21.
 //
 
 import Foundation
 
-public protocol DecompressUseCaseProtocol {
+public protocol ExtractUseCaseProtocol {
     var engines: [Extractable] { get }
 }
 
-public extension DecompressUseCaseProtocol {
+public extension ExtractUseCaseProtocol {
 
     var compatibilities: [Compatibility] {
         return engines.flatMap { $0.compatibilities }
     }
 
-    func extract(
+    func run(
         _ filePath: String,
         to destination: String,
         overwrite: Bool,
@@ -56,7 +56,7 @@ public extension DecompressUseCaseProtocol {
 
 }
 
-public final class DecompressUseCase: DecompressUseCaseProtocol {
+public final class ExtractUseCase: ExtractUseCaseProtocol {
 
     // MARK: - Public Properties
 
