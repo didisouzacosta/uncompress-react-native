@@ -1,0 +1,6 @@
+# Melhorias para o VVSPlayer
+
+1. Melhorar localização para atender idiomas pt_BR, us, en.
+2. Melhorar aquitetura para organizar melhor as funcionalidades e fluxo de dados.
+3. Criar testes unitários
+4. Trabalhar melhor a questão do iOS 11 ou menor, pois pela maneira atual o app irá crashar caso não atenda o sistema operacional mínimo. E possível criar um fallback.
