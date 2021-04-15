@@ -20,10 +20,8 @@ interface Extractable {
   @Throws(Throwable::class)
   private fun resolveOverride(destination: String, override: Boolean) {
     val file = File(destination)
-    val exists = file.exists()
 
     if (!override) return
-    if (!exists) return
 
     if (!file.deleteRecursively()) {
       throw Error("Could not delete file")
