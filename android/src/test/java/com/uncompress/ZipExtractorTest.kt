@@ -2,7 +2,6 @@ package com.uncompress
 import com.google.common.truth.Truth.assertThat
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.zip.ZipExtractor
-import net.lingala.zip4j.exception.ZipException
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -46,7 +45,7 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract(filePath, directory, true, null);
-    } catch(e: Error) {
+    } catch(e: Throwable) {
       Fail(e)
     }
   }
@@ -58,7 +57,7 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract(filePath, directory, true, "123");
-    } catch(e: Error) {
+    } catch(e: Throwable) {
       Fail(e)
     }
   }
@@ -70,8 +69,8 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract(filePath, directory, true, null);
-      Fail(Error("Fail"))
-    } catch(e: ZipException) {
+      Fail(Error("throw error if extract fail"))
+    } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("Zip headers not found. Probably not a zip file")
     }
   }
@@ -82,8 +81,8 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract("", directory, true, null);
-      Fail(Error("Fail"))
-    } catch(e: ZipException) {
+      Fail(Error("throw error if file path is invalid fail"))
+    } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("java.io.FileNotFoundException:  (No such file or directory)")
     }
   }
@@ -94,8 +93,8 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract(filePath, "", true, null);
-      Fail(Error("Fail"))
-    } catch(e: ZipException) {
+      Fail(Error("throw error if destination is invalid fail"))
+    } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("output path is null or invalid")
     }
   }
