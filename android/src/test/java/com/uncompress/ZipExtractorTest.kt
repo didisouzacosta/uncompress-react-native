@@ -2,6 +2,7 @@ package com.uncompress
 import com.google.common.truth.Truth.assertThat
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.zip.ZipExtractor
+import junit.framework.Assert.fail
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -43,11 +44,7 @@ class ZipExtractorTest {
     val filePath = zipFile.path
     val directory = tempDirectory.path
 
-    try {
-      zipExtractor.extract(filePath, directory, true, null)
-    } catch(e: Throwable) {
-      Fail(e)
-    }
+    zipExtractor.extract(filePath, directory, true, null)
   }
 
   @Test
@@ -55,11 +52,17 @@ class ZipExtractorTest {
     val filePath = protectedRarFile.path
     val directory = tempDirectory.path
 
-    try {
-      zipExtractor.extract(filePath, directory, true, "123")
-    } catch(e: Throwable) {
-      Fail(e)
-    }
+    zipExtractor.extract(filePath, directory, true, "123")
+  }
+
+  @Test
+  fun `create destination if destination not exists`() {
+    val filePath = zipFile.path
+    val directory = tempDirectory.path
+
+    tempDirectory.deleteRecursively()
+
+    zipExtractor.extract(filePath, directory, true, null)
   }
 
   @Test
@@ -69,7 +72,7 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract(filePath, directory, true, null)
-      Fail(Error("throw error if extract fail"))
+      fail("throw error if extract fail")
     } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("Zip headers not found. Probably not a zip file")
     }
@@ -81,7 +84,7 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract("", directory, true, null)
-      Fail(Error("throw error if file path is invalid fail"))
+      fail("throw error if file path is invalid fail")
     } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("java.io.FileNotFoundException:  (No such file or directory)")
     }
@@ -93,7 +96,7 @@ class ZipExtractorTest {
 
     try {
       zipExtractor.extract(filePath, "", true, null)
-      Fail(Error("throw error if destination is invalid fail"))
+      fail("throw error if destination is invalid fail")
     } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("output path is null or invalid")
     }

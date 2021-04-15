@@ -3,6 +3,7 @@ package com.uncompress.infra.adapters.zip
 import com.uncompress.data.intefaces.Extractable
 import com.uncompress.domain.enum.Compatibility
 import net.lingala.zip4j.ZipFile
+import net.lingala.zip4j.model.UnzipParameters
 import java.io.IOException
 
 
