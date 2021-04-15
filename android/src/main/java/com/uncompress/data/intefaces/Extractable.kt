@@ -7,7 +7,7 @@ import java.io.IOException
 interface Extractable {
   val compatibilities: List<Compatibility>
 
-  @Throws(IOException::class)
+  @Throws(Throwable::class)
   fun extract(
     filePath: String,
     destination: String,
@@ -17,29 +17,29 @@ interface Extractable {
     resolveOverride(destination, override)
   }
 
-  @Throws(IOException::class)
+  @Throws(Throwable::class)
   private fun resolveOverride(destination: String, override: Boolean) {
     val file = File(destination)
     val exists = file.exists()
 
-    if (!override) return;
-    if (!exists) return;
+    if (!override) return
+    if (!exists) return
 
     if (!file.deleteRecursively()) {
-      throw IOException("Não foi possível deletar o arquivo já existente")
+      throw Error("Could not delete file")
     }
 
     createIfNotExistsDestination(destination)
   }
 
-  @Throws(IOException::class)
+  @Throws(Throwable::class)
   private fun createIfNotExistsDestination(destination: String) {
     val file = File(destination)
 
-    if(file.exists()) return;
+    if(file.exists()) return
 
     if (!file.mkdir()) {
-      throw IOException("Não foi possível criar o diretório $destination")
+      throw Error("Could not create directory $destination")
     }
   }
 }

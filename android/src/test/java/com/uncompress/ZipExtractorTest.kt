@@ -44,7 +44,7 @@ class ZipExtractorTest {
     val directory = tempDirectory.path
 
     try {
-      zipExtractor.extract(filePath, directory, true, null);
+      zipExtractor.extract(filePath, directory, true, null)
     } catch(e: Throwable) {
       Fail(e)
     }
@@ -56,7 +56,7 @@ class ZipExtractorTest {
     val directory = tempDirectory.path
 
     try {
-      zipExtractor.extract(filePath, directory, true, "123");
+      zipExtractor.extract(filePath, directory, true, "123")
     } catch(e: Throwable) {
       Fail(e)
     }
@@ -68,7 +68,7 @@ class ZipExtractorTest {
     val directory = tempDirectory.path
 
     try {
-      zipExtractor.extract(filePath, directory, true, null);
+      zipExtractor.extract(filePath, directory, true, null)
       Fail(Error("throw error if extract fail"))
     } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("Zip headers not found. Probably not a zip file")
@@ -80,7 +80,7 @@ class ZipExtractorTest {
     val directory = tempDirectory.path
 
     try {
-      zipExtractor.extract("", directory, true, null);
+      zipExtractor.extract("", directory, true, null)
       Fail(Error("throw error if file path is invalid fail"))
     } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("java.io.FileNotFoundException:  (No such file or directory)")
@@ -92,7 +92,7 @@ class ZipExtractorTest {
     val filePath = zipFile.path
 
     try {
-      zipExtractor.extract(filePath, "", true, null);
+      zipExtractor.extract(filePath, "", true, null)
       Fail(Error("throw error if destination is invalid fail"))
     } catch(e: Throwable) {
       assertThat(e.message).isEqualTo("output path is null or invalid")
