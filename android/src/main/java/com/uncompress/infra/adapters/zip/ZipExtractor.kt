@@ -11,7 +11,7 @@ final class ZipExtractor: Extractable {
   override val compatibilities: List<Compatibility>
     get() = listOf(Compatibility.CBZ, Compatibility.ZIP)
 
-  @Throws(IOException::class)
+  @Throws(java.lang.Exception::class)
   override fun extract(
     filePath: String,
     destination: String,
