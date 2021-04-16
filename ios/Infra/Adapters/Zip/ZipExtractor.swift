@@ -20,15 +20,13 @@ public final class ZipExtractor: Extractable {
         _ filePath: URL,
         to destination: URL,
         overwrite: Bool = false,
-        password: String? = nil,
-        progressHandler: ((Double) -> Void)? = nil
+        password: String? = nil
     ) throws {
         try Zip.unzipFile(
             filePath,
             destination: destination,
             overwrite: overwrite,
-            password: password,
-            progress: progressHandler
+            password: password
         )
     }
     

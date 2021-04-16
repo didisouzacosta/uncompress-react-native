@@ -21,8 +21,7 @@ public extension ExtractUseCaseProtocol {
         _ filePath: String,
         to destination: String,
         overwrite: Bool,
-        password: String? = nil,
-        progressHandler: ((Double) -> Void)? = nil
+        password: String? = nil
     ) throws {
         guard let filePathUrl = URL(string: filePath) else {
             throw "The file path is invalid"
@@ -38,8 +37,7 @@ public extension ExtractUseCaseProtocol {
             filePathUrl,
             to: destinationUrl,
             overwrite: overwrite,
-            password: password,
-            progressHandler: progressHandler
+            password: password
         )
     }
 

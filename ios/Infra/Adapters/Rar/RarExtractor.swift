@@ -21,8 +21,7 @@ public final class RarExtractor: Extractable {
         _ filePath: URL,
         to destination: URL,
         overwrite: Bool = true,
-        password: String? = nil,
-        progressHandler: ((Double) -> Void)? = nil
+        password: String? = nil
     ) throws {
         let archive = try URKArchive(path: filePath.absoluteString)
         
@@ -31,8 +30,6 @@ public final class RarExtractor: Extractable {
         }
         
         try archive.extractFiles(to: destination.absoluteString, overwrite: overwrite)
-        
-        progressHandler?(1)
     }
     
 }

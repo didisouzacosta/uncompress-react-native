@@ -60,20 +60,15 @@ class RarExtractorTests: XCTestCase {
   }
 
   func testDecompressFileIfExtractWithPasswordSucessful() throws {
-    var progressSpy: Double = 0
-
     try rarExtractor.extract(
       protectedRarFilePath,
       to: tempDirectory,
       password: "123"
-    ) { progress in
-      progressSpy = progress
-    }
+    )
 
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory.absoluteString)
 
     expect(contents.contains("zelda.jpeg")) == true
-    expect(progressSpy) == 1
   }
 
   func testThrowErrorIfExtractFileFails() {

@@ -15,8 +15,7 @@ public protocol Extractable {
         _ filePath: URL,
         to destination: URL,
         overwrite: Bool,
-        password: String?,
-        progressHandler: ((Double) -> Void)?
+        password: String?
     ) throws
     
 }

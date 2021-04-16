@@ -60,20 +60,15 @@ class ZipExtractorTests: XCTestCase {
   }
   
   func testExtractFileIfDecompressWithPasswordSucessful() throws {
-    var progressSpy: Double = 0
-    
     try zipExtractor.extract(
       protectedZipFilePath,
       to: tempDirectory,
       password: "123"
-    ) { progress in
-      progressSpy = progress
-    }
+    )
     
     let contents = try fileManager.contentsOfDirectory(atPath: tempDirectory.absoluteString)
     
     expect(contents.contains("mononoke.jpg")) == true
-    expect(progressSpy) == 1
   }
   
   func testThrowErrorIfExtractFileIfDecompressFails() {
