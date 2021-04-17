@@ -48,7 +48,7 @@ class ExtractUseCaseTests: XCTestCase {
 
     expect(zipEngine.filePath).to(beNil())
     expect(zipEngine.destination).to(beNil())
-    expect(zipEngine.overwrite) == true
+    expect(zipEngine.overwrite).to(beNil())
     expect(zipEngine.password).to(beNil())
   }
 
@@ -125,7 +125,7 @@ class ExtractUseCaseTests: XCTestCase {
       )
       fail()
     } catch {
-      expect(error.localizedDescription) == "7zip is not supported"
+      expect(error.localizedDescription) == "Does not have a 7zip extension engine"
     }
   }
 

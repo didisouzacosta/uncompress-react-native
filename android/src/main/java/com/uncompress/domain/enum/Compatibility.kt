@@ -8,14 +8,14 @@ enum class Compatibility {
   ZIP, CBZ, RAR, CBR;
 
   companion object {
-    @Throws(IOException::class)
+    @Throws(Error::class)
     fun compatibilityWith(extension: String): Compatibility {
       return when(extension.toLowerCase()) {
         "zip" -> Compatibility.ZIP
         "cbz" -> Compatibility.CBZ
         "rar" -> Compatibility.RAR
         "cbr" -> Compatibility.CBR
-        else -> throw Exception("Format does not compatible");
+        else -> throw Error("$extension is not supported");
       }
     }
   }

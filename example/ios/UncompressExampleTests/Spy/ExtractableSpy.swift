@@ -13,7 +13,7 @@ final class ExtractableSpy: Extractable {
   var compatibilities: [Compatibility] = []
   var filePath: URL?
   var destination: URL?
-  var overwrite = true
+  var overwrite: Bool?
   var password: String?
   var error: Error?
 

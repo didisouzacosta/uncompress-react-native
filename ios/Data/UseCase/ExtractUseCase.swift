@@ -49,7 +49,7 @@ public extension ExtractUseCaseProtocol {
             return engine
         }
 
-        throw "\(fileExtension) is not supported"
+        throw "Does not have a \(fileExtension) extension engine"
     }
 
 }
