@@ -77,15 +77,16 @@ export default function App() {
       />
       <View style={styles.container}>
         <TouchableOpacity
-          style={styles.cover}
           activeOpacity={0.8}
           onPress={() => downloadRarSample()}
         >
-          <Image
-            source={require('./assets/cover.jpeg')}
-            width={186}
-            height={271}
-          />
+          <View style={styles.cover}>
+            <Image
+              source={require('./assets/cover.jpeg')}
+              width={186}
+              height={271}
+            />
+          </View>
         </TouchableOpacity>
         {isLoading && <ActivityIndicator color="black" />}
       </View>
@@ -101,10 +102,10 @@ const styles = StyleSheet.create({
   },
   cover: {
     marginBottom: 16,
+    elevation: 10,
     shadowOffset: { width: 0, height: 8 },
     shadowColor: 'black',
     shadowOpacity: 0.2,
     shadowRadius: 16,
-    elevation: 4,
   },
 });
