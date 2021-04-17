@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, ActivityIndicator } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  ActivityIndicator,
+  Image,
+} from 'react-native';
 import Uncompress from 'uncompress';
 import ComicPreviewModal from './components/comic-preview-modal';
 import { Paths, readFilesIn, downloadFile, unlink } from './utils/file-manager';
@@ -71,10 +77,17 @@ export default function App() {
         close={() => setVisibleModal(false)}
       />
       <View style={styles.container}>
-        <Button
-          title="Extrair e visualizar"
+        <TouchableOpacity
+          style={styles.cover}
+          activeOpacity={0.8}
           onPress={() => downloadRarSample()}
-        />
+        >
+          <Image
+            source={require('./assets/cover.jpeg')}
+            width={186}
+            height={271}
+          />
+        </TouchableOpacity>
         {isLoading && <ActivityIndicator color="black" />}
       </View>
     </>
@@ -86,5 +99,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  cover: {
+    marginBottom: 16,
+    shadowOffset: { width: 0, height: 8 },
+    shadowColor: 'black',
+    shadowOpacity: 0.2,
+    shadowRadius: 16,
   },
 });
