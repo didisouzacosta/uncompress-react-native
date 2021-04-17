@@ -18,7 +18,6 @@ export default function App() {
   const clearTempAndDocumentDir = async () => {
     const tempFiles = await readFilesIn(Paths.temp);
     const documentFiles = await readFilesIn(Paths.document);
-
     const files = tempFiles.concat(documentFiles);
 
     files.forEach(async (file) => {
@@ -106,5 +105,6 @@ const styles = StyleSheet.create({
     shadowColor: 'black',
     shadowOpacity: 0.2,
     shadowRadius: 16,
+    elevation: 4,
   },
 });
