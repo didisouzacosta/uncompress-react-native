@@ -1,13 +1,19 @@
 name: PublishLibrary
 
-on: [push]
+on:
+  push:
+    branches: [main]
 
 jobs:
-  install-and-test:
-    runs-on: ubuntu-latest
+  build-test-distribution:
+    runs-on: macos-latest
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
       - name: Install yarn dependencies
         run: |
           yarn
@@ -21,3 +27,10 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Publish in NPM and Yarn
+        run: |
+          yarn prepare
+          yarn release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
