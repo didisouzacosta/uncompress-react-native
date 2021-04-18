@@ -1,4 +1,4 @@
-# Uncompress
+# Uncompress React Native
 
 ![CI](https://github.com/didisouzacosta/uncompress/workflows/PublishLibrary/badge.svg)
 [![codecov](https://codecov.io/gh/didisouzacosta/uncompress/branch/main/graph/badge.svg?token=WWswGL8bsi)](https://codecov.io/gh/didisouzacosta/uncompress)
@@ -16,17 +16,17 @@ Simple library to decompress files `.zip`, `.rar`, `.cbz` and `.cbr` in React Na
 ## Installation
 
 ```sh
-yarn add uncompress
+yarn add uncompress-react-native
 
 or
 
-npm install uncompress
+npm install uncompress-react-native
 ```
 
 ## Usage
 
 ```js
-import Uncompress from 'uncompress';
+import Uncompress from 'uncompress-react-native';
 
 // ...
 

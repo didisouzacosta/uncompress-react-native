@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   Image,
 } from 'react-native';
-import Uncompress from 'uncompress';
+import Uncompress from 'uncompress-react-native';
 import ComicPreviewModal from './components/comic-preview-modal';
 import { Paths, readFilesIn, downloadFile, unlink } from './utils/file-manager';
 

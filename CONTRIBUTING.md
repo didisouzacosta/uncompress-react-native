@@ -49,9 +49,9 @@ Remember to add tests for your change if possible. Run the unit tests by:
 yarn test
 ```
 
-To edit the Objective-C files, open `example/ios/UncompressExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > uncompress`.
+To edit the Objective-C files, open `example/ios/UncompressExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > uncompress-react-native`.
 
-To edit the Kotlin files, open `example/android` in Android studio and find the source files at `uncompress` under `Android`.
+To edit the Kotlin files, open `example/android` in Android studio and find the source files at `uncompress-react-native` under `Android`.
 
 ### Commit message convention
 

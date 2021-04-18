@@ -10,7 +10,7 @@ target 'UncompressExample' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-  pod 'uncompress', :path => '../..'
+  pod 'uncompress-react-native', :path => '../..'
 
 
   target 'UncompressExampleTests' do

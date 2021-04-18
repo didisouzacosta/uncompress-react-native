@@ -248,7 +248,7 @@ PODS:
     - React-jsi (= 0.63.4)
   - RNFS (2.16.6):
     - React
-  - uncompress (0.1.0):
+  - uncompress-react-native (1.0.0):
     - React-Core
     - UnrarKit
     - Zip (~> 2.1)
@@ -288,7 +288,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNFS (from `../node_modules/react-native-fs`)
-  - uncompress (from `../..`)
+  - uncompress-react-native (from `../..`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -351,7 +351,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNFS:
     :path: "../node_modules/react-native-fs"
-  uncompress:
+  uncompress-react-native:
     :path: "../.."
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
@@ -385,11 +385,11 @@ SPEC CHECKSUMS:
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   RNFS: 2bd9eb49dc82fa9676382f0585b992c424cd59df
-  uncompress: b21131970620c61f23f8b10ae06b94a9ba4808ac
+  uncompress-react-native: ac761cb620e3a38a6e862d2a1696194f978e26a5
   UnrarKit: 99e3f0222a98a212188e1a6975dcf5aa798d26dd
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   Zip: 414f59909701fda9a84ab774ebe0f5449b1082cc
 
-PODFILE CHECKSUM: 46e96d945612ba6044696b61a4754c8b0f1bbb38
+PODFILE CHECKSUM: 2d8a0865403699275194db45514de9fd4f144abd
 
 COCOAPODS: 1.10.1
