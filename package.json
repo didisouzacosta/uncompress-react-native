@@ -36,16 +36,15 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/didisouzacosta/uncompress",
+  "repository": "https://github.com/didisouzacosta/uncompress-react-native",
   "author": "didisouzacosta <adrianosouzacostaios@gmail.com> (https://github.com/didisouzacosta)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/didisouzacosta/uncompress/issues"
+    "url": "https://github.com/didisouzacosta/uncompress-react-native/issues"
   },
-  "homepage": "https://github.com/didisouzacosta/uncompress#readme",
+  "homepage": "https://github.com/didisouzacosta/uncompress-react-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
