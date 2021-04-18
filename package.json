@@ -22,7 +22,7 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
