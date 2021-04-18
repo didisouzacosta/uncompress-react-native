@@ -2,7 +2,7 @@
 
 Simple library to decompress files .zip, .rar, .cbz, .cbr in React Native.
 
-<table>
+<table border="0">
   <tr>
     <td><img src="./assets/preview_ios.gif" height="500" alt="Preview iOS" /></td>
     <td><img src="./assets/preview_android.gif" height="500" alt="Preview Android" /></td>
