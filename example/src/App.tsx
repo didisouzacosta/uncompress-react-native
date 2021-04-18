@@ -28,7 +28,7 @@ export default function App() {
   const downloadRarSample = async (): Promise<void> => {
     const fileName = 'sample_comic.cbr';
     const fileUrl =
-      'https://github.com/Free-Comic-Reader/Uncompress/raw/main/assets/' +
+      'https://github.com/didisouzacosta/uncompress/raw/main/assets/' +
       fileName;
     const destinationPath = Paths.temp + fileName;
 
