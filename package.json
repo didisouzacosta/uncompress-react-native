@@ -127,6 +127,7 @@
   },
   "eslintIgnore": [
     "node_modules/",
+    "coverage/",
     "lib/"
   ],
   "prettier": {
