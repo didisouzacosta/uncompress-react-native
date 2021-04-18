@@ -26,6 +26,10 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Configure git
+        run: |
+          git config user.email "adrianosouzacostaios@gmail.com"
+          git config user.name "Adriano Souza Costa"
       - name: Publish in NPM and Yarn
         run: |
           yarn prepare
