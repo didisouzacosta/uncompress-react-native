@@ -1,4 +1,4 @@
-name: Build Library
+name: PublishLibrary
 
 on:
   push:
