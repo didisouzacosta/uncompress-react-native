@@ -1,6 +1,6 @@
-# uncompress
+# Uncompress
 
-Em breve
+Simple library to decompress files .zip, .rar, .cbz, .cbr in React Native.
 
 ## Installation
 
@@ -11,11 +11,16 @@ npm install uncompress
 ## Usage
 
 ```js
-import Uncompress from "uncompress";
+import Uncompress from 'uncompress';
 
 // ...
 
-const result = await Uncompress.multiply(3, 7);
+await Uncompress.extract({
+  filePath: 'temp/sample_comic.cbr',
+  destination: 'data/comic',
+});
+
+// ...
 ```
 
 ## Contributing
