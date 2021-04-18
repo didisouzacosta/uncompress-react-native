@@ -1,0 +1,19 @@
+name: Build Library
+
+on: [push]
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+      - name: Install yarn dependencies
+        run: |
+          yarn
+      - name: Run lint
+        run: |
+          yarn lint
+      - name: Run tests
+        run: |
+          yarn test
