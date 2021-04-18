@@ -1,7 +1,7 @@
 # Uncompress
 
 [![codecov](https://codecov.io/gh/didisouzacosta/uncompress/branch/main/graph/badge.svg?token=WWswGL8bsi)](https://codecov.io/gh/didisouzacosta/uncompress)
-[![License](https://img.shields.io/cocoapods/l/Forms.svg?style=flat)](https://cocoapods.org/pods/Forms)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Simple library to decompress files .zip, .rar, .cbz, .cbr in React Native.
 
