@@ -1,0 +1,18 @@
+name: PublishLibrary
+
+on: [pull_request]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install yarn dependencies
+        run: |
+          yarn
+      - name: Run lint
+        run: |
+          yarn lint
+      - name: Run tests
+        run: |
+          yarn test
