@@ -18,4 +18,9 @@ Pod::Spec.new do |s|
   s.dependency "React-Core"
   s.dependency "Zip", "~> 2.1"
   s.dependency "UnrarKit"
+  
+  s.pod_target_xcconfig = {
+      'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/UnrarKit',
+      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+  }
 end

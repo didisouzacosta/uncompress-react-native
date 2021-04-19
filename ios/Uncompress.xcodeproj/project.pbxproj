@@ -7,6 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31D04D1262D97C3006874B2 /* URKArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = B31D0429262D97C3006874B2 /* URKArchive.mm */; };
+		B31D04D2262D97C3006874B2 /* URKFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B31D042B262D97C3006874B2 /* URKFileInfo.m */; };
+		B31D04D3262D97C3006874B2 /* NSString+UnrarKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = B31D042D262D97C3006874B2 /* NSString+UnrarKit.mm */; };
+		B31D04D4262D97C3006874B2 /* scantree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0431262D97C3006874B2 /* scantree.cpp */; };
+		B31D04D5262D97C3006874B2 /* unpack30.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0434262D97C3006874B2 /* unpack30.cpp */; };
+		B31D04D6262D97C3006874B2 /* crypt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0435262D97C3006874B2 /* crypt.cpp */; };
+		B31D04D7262D97C3006874B2 /* qopen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0436262D97C3006874B2 /* qopen.cpp */; };
+		B31D04D8262D97C3006874B2 /* filcreat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0437262D97C3006874B2 /* filcreat.cpp */; };
+		B31D04D9262D97C3006874B2 /* crypt1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0438262D97C3006874B2 /* crypt1.cpp */; };
+		B31D04DA262D97C3006874B2 /* ui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D043B262D97C3006874B2 /* ui.cpp */; };
+		B31D04DB262D97C3006874B2 /* blake2sp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D043C262D97C3006874B2 /* blake2sp.cpp */; };
+		B31D04DC262D97C3006874B2 /* crypt3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D043D262D97C3006874B2 /* crypt3.cpp */; };
+		B31D04DD262D97C3006874B2 /* crc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D043E262D97C3006874B2 /* crc.cpp */; };
+		B31D04DE262D97C3006874B2 /* uicommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0442262D97C3006874B2 /* uicommon.cpp */; };
+		B31D04DF262D97C3006874B2 /* win32lnk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0444262D97C3006874B2 /* win32lnk.cpp */; };
+		B31D04E0262D97C3006874B2 /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0445262D97C3006874B2 /* log.cpp */; };
+		B31D04E1262D97C3006874B2 /* crypt2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0446262D97C3006874B2 /* crypt2.cpp */; };
+		B31D04E2262D97C3006874B2 /* errhnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0447262D97C3006874B2 /* errhnd.cpp */; };
+		B31D04E3262D97C3006874B2 /* strfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D044A262D97C3006874B2 /* strfn.cpp */; };
+		B31D04E4262D97C3006874B2 /* unpack50frag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D044D262D97C3006874B2 /* unpack50frag.cpp */; };
+		B31D04E5262D97C3006874B2 /* rdwrfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D044E262D97C3006874B2 /* rdwrfn.cpp */; };
+		B31D04E6262D97C3006874B2 /* crypt5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0450262D97C3006874B2 /* crypt5.cpp */; };
+		B31D04E7262D97C3006874B2 /* uowners.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0451262D97C3006874B2 /* uowners.cpp */; };
+		B31D04E8262D97C3006874B2 /* cmdfilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0454262D97C3006874B2 /* cmdfilter.cpp */; };
+		B31D04E9262D97C3006874B2 /* unpack20.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0455262D97C3006874B2 /* unpack20.cpp */; };
+		B31D04EA262D97C3006874B2 /* blake2s_sse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0458262D97C3006874B2 /* blake2s_sse.cpp */; };
+		B31D04EB262D97C3006874B2 /* resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D045A262D97C3006874B2 /* resource.cpp */; };
+		B31D04EC262D97C3006874B2 /* rarvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D045B262D97C3006874B2 /* rarvm.cpp */; };
+		B31D04ED262D97C3006874B2 /* threadmisc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0460262D97C3006874B2 /* threadmisc.cpp */; };
+		B31D04EE262D97C3006874B2 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = B31D0462262D97C3006874B2 /* makefile */; };
+		B31D04EF262D97C3006874B2 /* find.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0467262D97C3006874B2 /* find.cpp */; };
+		B31D04F0262D97C3006874B2 /* timefn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0468262D97C3006874B2 /* timefn.cpp */; };
+		B31D04F1262D97C3006874B2 /* unpack50.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D046B262D97C3006874B2 /* unpack50.cpp */; };
+		B31D04F2262D97C3006874B2 /* arccmt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D046E262D97C3006874B2 /* arccmt.cpp */; };
+		B31D04F3262D97C3006874B2 /* sha1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0470262D97C3006874B2 /* sha1.cpp */; };
+		B31D04F4262D97C3006874B2 /* match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0475262D97C3006874B2 /* match.cpp */; };
+		B31D04F5262D97C3006874B2 /* options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0477262D97C3006874B2 /* options.cpp */; };
+		B31D04F6262D97C3006874B2 /* blake2s.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D047C262D97C3006874B2 /* blake2s.cpp */; };
+		B31D04F7262D97C3006874B2 /* filefn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0481262D97C3006874B2 /* filefn.cpp */; };
+		B31D04F8262D97C3006874B2 /* recvol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0482262D97C3006874B2 /* recvol.cpp */; };
+		B31D04F9262D97C3006874B2 /* isnt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0483262D97C3006874B2 /* isnt.cpp */; };
+		B31D04FA262D97C3006874B2 /* consio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0486262D97C3006874B2 /* consio.cpp */; };
+		B31D04FB262D97C3006874B2 /* encname.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0488262D97C3006874B2 /* encname.cpp */; };
+		B31D04FC262D97C3006874B2 /* uiconsole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0489262D97C3006874B2 /* uiconsole.cpp */; };
+		B31D04FD262D97C3006874B2 /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D048A262D97C3006874B2 /* file.cpp */; };
+		B31D04FE262D97C3006874B2 /* unpack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D048D262D97C3006874B2 /* unpack.cpp */; };
+		B31D04FF262D97C3006874B2 /* rs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D048E262D97C3006874B2 /* rs.cpp */; };
+		B31D0500262D97C3006874B2 /* pathfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D048F262D97C3006874B2 /* pathfn.cpp */; };
+		B31D0501262D97C3006874B2 /* sha256.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0491262D97C3006874B2 /* sha256.cpp */; };
+		B31D0502262D97C3006874B2 /* unpackinline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0492262D97C3006874B2 /* unpackinline.cpp */; };
+		B31D0503262D97C3006874B2 /* list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0493262D97C3006874B2 /* list.cpp */; };
+		B31D0504262D97C3006874B2 /* rawread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0494262D97C3006874B2 /* rawread.cpp */; };
+		B31D0505262D97C3006874B2 /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0496262D97C3006874B2 /* system.cpp */; };
+		B31D0506262D97C3006874B2 /* hardlinks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0497262D97C3006874B2 /* hardlinks.cpp */; };
+		B31D0507262D97C3006874B2 /* rs16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D0499262D97C3006874B2 /* rs16.cpp */; };
+		B31D0508262D97C3006874B2 /* rijndael.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D049A262D97C3006874B2 /* rijndael.cpp */; };
+		B31D0509262D97C3006874B2 /* ulinks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D049B262D97C3006874B2 /* ulinks.cpp */; };
+		B31D050A262D97C3006874B2 /* extinfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D049E262D97C3006874B2 /* extinfo.cpp */; };
+		B31D050B262D97C3006874B2 /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D049F262D97C3006874B2 /* model.cpp */; };
+		B31D050C262D97C3006874B2 /* rar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A0262D97C3006874B2 /* rar.cpp */; };
+		B31D050D262D97C3006874B2 /* win32acl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A1262D97C3006874B2 /* win32acl.cpp */; };
+		B31D050E262D97C3006874B2 /* getbits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A2262D97C3006874B2 /* getbits.cpp */; };
+		B31D050F262D97C3006874B2 /* rarpch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A3262D97C3006874B2 /* rarpch.cpp */; };
+		B31D0510262D97C3006874B2 /* secpassword.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A4262D97C3006874B2 /* secpassword.cpp */; };
+		B31D0511262D97C3006874B2 /* smallfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A6262D97C3006874B2 /* smallfn.cpp */; };
+		B31D0512262D97C3006874B2 /* threadpool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04A8262D97C3006874B2 /* threadpool.cpp */; };
+		B31D0513262D97C3006874B2 /* suballoc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04AC262D97C3006874B2 /* suballoc.cpp */; };
+		B31D0514262D97C3006874B2 /* filestr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04AD262D97C3006874B2 /* filestr.cpp */; };
+		B31D0515262D97C3006874B2 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B1262D97C3006874B2 /* hash.cpp */; };
+		B31D0516262D97C3006874B2 /* unpack50mt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B2262D97C3006874B2 /* unpack50mt.cpp */; };
+		B31D0517262D97C3006874B2 /* strlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B3262D97C3006874B2 /* strlist.cpp */; };
+		B31D0518262D97C3006874B2 /* global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B5262D97C3006874B2 /* global.cpp */; };
+		B31D0519262D97C3006874B2 /* recvol3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B6262D97C3006874B2 /* recvol3.cpp */; };
+		B31D051A262D97C3006874B2 /* headers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B7262D97C3006874B2 /* headers.cpp */; };
+		B31D051B262D97C3006874B2 /* uisilent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04B8262D97C3006874B2 /* uisilent.cpp */; };
+		B31D051C262D97C3006874B2 /* cmdmix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04BA262D97C3006874B2 /* cmdmix.cpp */; };
+		B31D051D262D97C3006874B2 /* win32stm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04BD262D97C3006874B2 /* win32stm.cpp */; };
+		B31D051E262D97C3006874B2 /* cmddata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04BF262D97C3006874B2 /* cmddata.cpp */; };
+		B31D051F262D97C3006874B2 /* extract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C1262D97C3006874B2 /* extract.cpp */; };
+		B31D0520262D97C3006874B2 /* dll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C2262D97C3006874B2 /* dll.cpp */; };
+		B31D0521262D97C3006874B2 /* unicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C3262D97C3006874B2 /* unicode.cpp */; };
+		B31D0522262D97C3006874B2 /* unpack15.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C4262D97C3006874B2 /* unpack15.cpp */; };
+		B31D0523262D97C3006874B2 /* archive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C5262D97C3006874B2 /* archive.cpp */; };
+		B31D0524262D97C3006874B2 /* recvol5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C6262D97C3006874B2 /* recvol5.cpp */; };
+		B31D0525262D97C3006874B2 /* volume.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04C9262D97C3006874B2 /* volume.cpp */; };
+		B31D0526262D97C3006874B2 /* coder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04CA262D97C3006874B2 /* coder.cpp */; };
+		B31D0527262D97C3006874B2 /* arcread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B31D04CB262D97C3006874B2 /* arcread.cpp */; };
 		B31DD4D92626FC7A00C777C6 /* ExtractUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31DD4D82626FC7A00C777C6 /* ExtractUseCase.swift */; };
 		B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */; };
 		B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6726020E2E00E4DAEE /* Extractable.swift */; };
@@ -29,6 +116,169 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libUncompress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUncompress.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31D0426262D97C3006874B2 /* UnrarKitMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnrarKitMacros.h; sourceTree = "<group>"; };
+		B31D0427262D97C3006874B2 /* URKFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URKFileInfo.h; sourceTree = "<group>"; };
+		B31D0428262D97C3006874B2 /* URKArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URKArchive.h; sourceTree = "<group>"; };
+		B31D0429262D97C3006874B2 /* URKArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = URKArchive.mm; sourceTree = "<group>"; };
+		B31D042A262D97C3006874B2 /* UnrarKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnrarKit.h; sourceTree = "<group>"; };
+		B31D042B262D97C3006874B2 /* URKFileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URKFileInfo.m; sourceTree = "<group>"; };
+		B31D042D262D97C3006874B2 /* NSString+UnrarKit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+UnrarKit.mm"; sourceTree = "<group>"; };
+		B31D042E262D97C3006874B2 /* NSString+UnrarKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UnrarKit.h"; sourceTree = "<group>"; };
+		B31D0431262D97C3006874B2 /* scantree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scantree.cpp; sourceTree = "<group>"; };
+		B31D0432262D97C3006874B2 /* rarlang.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rarlang.hpp; sourceTree = "<group>"; };
+		B31D0433262D97C3006874B2 /* threadpool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = threadpool.hpp; sourceTree = "<group>"; };
+		B31D0434262D97C3006874B2 /* unpack30.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack30.cpp; sourceTree = "<group>"; };
+		B31D0435262D97C3006874B2 /* crypt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypt.cpp; sourceTree = "<group>"; };
+		B31D0436262D97C3006874B2 /* qopen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qopen.cpp; sourceTree = "<group>"; };
+		B31D0437262D97C3006874B2 /* filcreat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filcreat.cpp; sourceTree = "<group>"; };
+		B31D0438262D97C3006874B2 /* crypt1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypt1.cpp; sourceTree = "<group>"; };
+		B31D0439262D97C3006874B2 /* filestr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filestr.hpp; sourceTree = "<group>"; };
+		B31D043A262D97C3006874B2 /* suballoc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = suballoc.hpp; sourceTree = "<group>"; };
+		B31D043B262D97C3006874B2 /* ui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ui.cpp; sourceTree = "<group>"; };
+		B31D043C262D97C3006874B2 /* blake2sp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blake2sp.cpp; sourceTree = "<group>"; };
+		B31D043D262D97C3006874B2 /* crypt3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypt3.cpp; sourceTree = "<group>"; };
+		B31D043E262D97C3006874B2 /* crc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crc.cpp; sourceTree = "<group>"; };
+		B31D043F262D97C3006874B2 /* strlist.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = strlist.hpp; sourceTree = "<group>"; };
+		B31D0440262D97C3006874B2 /* hash.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hash.hpp; sourceTree = "<group>"; };
+		B31D0441262D97C3006874B2 /* headers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = headers.hpp; sourceTree = "<group>"; };
+		B31D0442262D97C3006874B2 /* uicommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uicommon.cpp; sourceTree = "<group>"; };
+		B31D0443262D97C3006874B2 /* global.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = global.hpp; sourceTree = "<group>"; };
+		B31D0444262D97C3006874B2 /* win32lnk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = win32lnk.cpp; sourceTree = "<group>"; };
+		B31D0445262D97C3006874B2 /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
+		B31D0446262D97C3006874B2 /* crypt2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypt2.cpp; sourceTree = "<group>"; };
+		B31D0447262D97C3006874B2 /* errhnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = errhnd.cpp; sourceTree = "<group>"; };
+		B31D0448262D97C3006874B2 /* raros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = raros.hpp; sourceTree = "<group>"; };
+		B31D0449262D97C3006874B2 /* acknow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = acknow.txt; sourceTree = "<group>"; };
+		B31D044A262D97C3006874B2 /* strfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strfn.cpp; sourceTree = "<group>"; };
+		B31D044B262D97C3006874B2 /* dll.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dll.rc; sourceTree = "<group>"; };
+		B31D044C262D97C3006874B2 /* cmddata.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cmddata.hpp; sourceTree = "<group>"; };
+		B31D044D262D97C3006874B2 /* unpack50frag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack50frag.cpp; sourceTree = "<group>"; };
+		B31D044E262D97C3006874B2 /* rdwrfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rdwrfn.cpp; sourceTree = "<group>"; };
+		B31D044F262D97C3006874B2 /* unicode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = unicode.hpp; sourceTree = "<group>"; };
+		B31D0450262D97C3006874B2 /* crypt5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypt5.cpp; sourceTree = "<group>"; };
+		B31D0451262D97C3006874B2 /* uowners.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uowners.cpp; sourceTree = "<group>"; };
+		B31D0452262D97C3006874B2 /* dll.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dll.hpp; sourceTree = "<group>"; };
+		B31D0453262D97C3006874B2 /* extract.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = extract.hpp; sourceTree = "<group>"; };
+		B31D0454262D97C3006874B2 /* cmdfilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cmdfilter.cpp; sourceTree = "<group>"; };
+		B31D0455262D97C3006874B2 /* unpack20.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack20.cpp; sourceTree = "<group>"; };
+		B31D0456262D97C3006874B2 /* compress.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = compress.hpp; sourceTree = "<group>"; };
+		B31D0457262D97C3006874B2 /* archive.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = archive.hpp; sourceTree = "<group>"; };
+		B31D0458262D97C3006874B2 /* blake2s_sse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blake2s_sse.cpp; sourceTree = "<group>"; };
+		B31D0459262D97C3006874B2 /* loclang.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = loclang.hpp; sourceTree = "<group>"; };
+		B31D045A262D97C3006874B2 /* resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
+		B31D045B262D97C3006874B2 /* rarvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rarvm.cpp; sourceTree = "<group>"; };
+		B31D045C262D97C3006874B2 /* coder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = coder.hpp; sourceTree = "<group>"; };
+		B31D045D262D97C3006874B2 /* volume.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = volume.hpp; sourceTree = "<group>"; };
+		B31D045E262D97C3006874B2 /* recvol.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = recvol.hpp; sourceTree = "<group>"; };
+		B31D045F262D97C3006874B2 /* filefn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filefn.hpp; sourceTree = "<group>"; };
+		B31D0460262D97C3006874B2 /* threadmisc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = threadmisc.cpp; sourceTree = "<group>"; };
+		B31D0461262D97C3006874B2 /* isnt.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = isnt.hpp; sourceTree = "<group>"; };
+		B31D0462262D97C3006874B2 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		B31D0463262D97C3006874B2 /* array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = array.hpp; sourceTree = "<group>"; };
+		B31D0464262D97C3006874B2 /* dll_nocrypt.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dll_nocrypt.def; sourceTree = "<group>"; };
+		B31D0465262D97C3006874B2 /* consio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = consio.hpp; sourceTree = "<group>"; };
+		B31D0466262D97C3006874B2 /* encname.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = encname.hpp; sourceTree = "<group>"; };
+		B31D0467262D97C3006874B2 /* find.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = find.cpp; sourceTree = "<group>"; };
+		B31D0468262D97C3006874B2 /* timefn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timefn.cpp; sourceTree = "<group>"; };
+		B31D0469262D97C3006874B2 /* file.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = file.hpp; sourceTree = "<group>"; };
+		B31D046A262D97C3006874B2 /* unpack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = unpack.hpp; sourceTree = "<group>"; };
+		B31D046B262D97C3006874B2 /* unpack50.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack50.cpp; sourceTree = "<group>"; };
+		B31D046C262D97C3006874B2 /* rs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rs.hpp; sourceTree = "<group>"; };
+		B31D046D262D97C3006874B2 /* pathfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pathfn.hpp; sourceTree = "<group>"; };
+		B31D046E262D97C3006874B2 /* arccmt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arccmt.cpp; sourceTree = "<group>"; };
+		B31D046F262D97C3006874B2 /* sha256.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sha256.hpp; sourceTree = "<group>"; };
+		B31D0470262D97C3006874B2 /* sha1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sha1.cpp; sourceTree = "<group>"; };
+		B31D0471262D97C3006874B2 /* system.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = system.hpp; sourceTree = "<group>"; };
+		B31D0472262D97C3006874B2 /* rawint.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rawint.hpp; sourceTree = "<group>"; };
+		B31D0473262D97C3006874B2 /* rawread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rawread.hpp; sourceTree = "<group>"; };
+		B31D0474262D97C3006874B2 /* list.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = list.hpp; sourceTree = "<group>"; };
+		B31D0475262D97C3006874B2 /* match.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = match.cpp; sourceTree = "<group>"; };
+		B31D0476262D97C3006874B2 /* rs16.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rs16.hpp; sourceTree = "<group>"; };
+		B31D0477262D97C3006874B2 /* options.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = options.cpp; sourceTree = "<group>"; };
+		B31D0478262D97C3006874B2 /* rijndael.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rijndael.hpp; sourceTree = "<group>"; };
+		B31D0479262D97C3006874B2 /* rar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rar.hpp; sourceTree = "<group>"; };
+		B31D047A262D97C3006874B2 /* extinfo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = extinfo.hpp; sourceTree = "<group>"; };
+		B31D047B262D97C3006874B2 /* model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = model.hpp; sourceTree = "<group>"; };
+		B31D047C262D97C3006874B2 /* blake2s.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blake2s.cpp; sourceTree = "<group>"; };
+		B31D047D262D97C3006874B2 /* dll.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dll.def; sourceTree = "<group>"; };
+		B31D047E262D97C3006874B2 /* smallfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = smallfn.hpp; sourceTree = "<group>"; };
+		B31D047F262D97C3006874B2 /* getbits.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = getbits.hpp; sourceTree = "<group>"; };
+		B31D0480262D97C3006874B2 /* secpassword.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = secpassword.hpp; sourceTree = "<group>"; };
+		B31D0481262D97C3006874B2 /* filefn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filefn.cpp; sourceTree = "<group>"; };
+		B31D0482262D97C3006874B2 /* recvol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = recvol.cpp; sourceTree = "<group>"; };
+		B31D0483262D97C3006874B2 /* isnt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = isnt.cpp; sourceTree = "<group>"; };
+		B31D0484262D97C3006874B2 /* version.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = version.hpp; sourceTree = "<group>"; };
+		B31D0485262D97C3006874B2 /* savepos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = savepos.hpp; sourceTree = "<group>"; };
+		B31D0486262D97C3006874B2 /* consio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = consio.cpp; sourceTree = "<group>"; };
+		B31D0487262D97C3006874B2 /* rartypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rartypes.hpp; sourceTree = "<group>"; };
+		B31D0488262D97C3006874B2 /* encname.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = encname.cpp; sourceTree = "<group>"; };
+		B31D0489262D97C3006874B2 /* uiconsole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uiconsole.cpp; sourceTree = "<group>"; };
+		B31D048A262D97C3006874B2 /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file.cpp; sourceTree = "<group>"; };
+		B31D048B262D97C3006874B2 /* timefn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = timefn.hpp; sourceTree = "<group>"; };
+		B31D048C262D97C3006874B2 /* find.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = find.hpp; sourceTree = "<group>"; };
+		B31D048D262D97C3006874B2 /* unpack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack.cpp; sourceTree = "<group>"; };
+		B31D048E262D97C3006874B2 /* rs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rs.cpp; sourceTree = "<group>"; };
+		B31D048F262D97C3006874B2 /* pathfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pathfn.cpp; sourceTree = "<group>"; };
+		B31D0490262D97C3006874B2 /* sha1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sha1.hpp; sourceTree = "<group>"; };
+		B31D0491262D97C3006874B2 /* sha256.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sha256.cpp; sourceTree = "<group>"; };
+		B31D0492262D97C3006874B2 /* unpackinline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpackinline.cpp; sourceTree = "<group>"; };
+		B31D0493262D97C3006874B2 /* list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list.cpp; sourceTree = "<group>"; };
+		B31D0494262D97C3006874B2 /* rawread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rawread.cpp; sourceTree = "<group>"; };
+		B31D0495262D97C3006874B2 /* match.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = match.hpp; sourceTree = "<group>"; };
+		B31D0496262D97C3006874B2 /* system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = system.cpp; sourceTree = "<group>"; };
+		B31D0497262D97C3006874B2 /* hardlinks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hardlinks.cpp; sourceTree = "<group>"; };
+		B31D0498262D97C3006874B2 /* options.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = options.hpp; sourceTree = "<group>"; };
+		B31D0499262D97C3006874B2 /* rs16.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rs16.cpp; sourceTree = "<group>"; };
+		B31D049A262D97C3006874B2 /* rijndael.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rijndael.cpp; sourceTree = "<group>"; };
+		B31D049B262D97C3006874B2 /* ulinks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ulinks.cpp; sourceTree = "<group>"; };
+		B31D049C262D97C3006874B2 /* headers5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = headers5.hpp; sourceTree = "<group>"; };
+		B31D049D262D97C3006874B2 /* blake2s.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = blake2s.hpp; sourceTree = "<group>"; };
+		B31D049E262D97C3006874B2 /* extinfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = extinfo.cpp; sourceTree = "<group>"; };
+		B31D049F262D97C3006874B2 /* model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
+		B31D04A0262D97C3006874B2 /* rar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rar.cpp; sourceTree = "<group>"; };
+		B31D04A1262D97C3006874B2 /* win32acl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = win32acl.cpp; sourceTree = "<group>"; };
+		B31D04A2262D97C3006874B2 /* getbits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = getbits.cpp; sourceTree = "<group>"; };
+		B31D04A3262D97C3006874B2 /* rarpch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rarpch.cpp; sourceTree = "<group>"; };
+		B31D04A4262D97C3006874B2 /* secpassword.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = secpassword.cpp; sourceTree = "<group>"; };
+		B31D04A5262D97C3006874B2 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		B31D04A6262D97C3006874B2 /* smallfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = smallfn.cpp; sourceTree = "<group>"; };
+		B31D04A7262D97C3006874B2 /* scantree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = scantree.hpp; sourceTree = "<group>"; };
+		B31D04A8262D97C3006874B2 /* threadpool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = threadpool.cpp; sourceTree = "<group>"; };
+		B31D04A9262D97C3006874B2 /* filcreat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filcreat.hpp; sourceTree = "<group>"; };
+		B31D04AA262D97C3006874B2 /* rardefs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rardefs.hpp; sourceTree = "<group>"; };
+		B31D04AB262D97C3006874B2 /* ui.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ui.hpp; sourceTree = "<group>"; };
+		B31D04AC262D97C3006874B2 /* suballoc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = suballoc.cpp; sourceTree = "<group>"; };
+		B31D04AD262D97C3006874B2 /* filestr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filestr.cpp; sourceTree = "<group>"; };
+		B31D04AE262D97C3006874B2 /* qopen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = qopen.hpp; sourceTree = "<group>"; };
+		B31D04AF262D97C3006874B2 /* crypt.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = crypt.hpp; sourceTree = "<group>"; };
+		B31D04B0262D97C3006874B2 /* crc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = crc.hpp; sourceTree = "<group>"; };
+		B31D04B1262D97C3006874B2 /* hash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hash.cpp; sourceTree = "<group>"; };
+		B31D04B2262D97C3006874B2 /* unpack50mt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack50mt.cpp; sourceTree = "<group>"; };
+		B31D04B3262D97C3006874B2 /* strlist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strlist.cpp; sourceTree = "<group>"; };
+		B31D04B4262D97C3006874B2 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		B31D04B5262D97C3006874B2 /* global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = global.cpp; sourceTree = "<group>"; };
+		B31D04B6262D97C3006874B2 /* recvol3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = recvol3.cpp; sourceTree = "<group>"; };
+		B31D04B7262D97C3006874B2 /* headers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = headers.cpp; sourceTree = "<group>"; };
+		B31D04B8262D97C3006874B2 /* uisilent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uisilent.cpp; sourceTree = "<group>"; };
+		B31D04B9262D97C3006874B2 /* log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = log.hpp; sourceTree = "<group>"; };
+		B31D04BA262D97C3006874B2 /* cmdmix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cmdmix.cpp; sourceTree = "<group>"; };
+		B31D04BB262D97C3006874B2 /* errhnd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = errhnd.hpp; sourceTree = "<group>"; };
+		B31D04BC262D97C3006874B2 /* os.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = os.hpp; sourceTree = "<group>"; };
+		B31D04BD262D97C3006874B2 /* win32stm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = win32stm.cpp; sourceTree = "<group>"; };
+		B31D04BE262D97C3006874B2 /* strfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = strfn.hpp; sourceTree = "<group>"; };
+		B31D04BF262D97C3006874B2 /* cmddata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cmddata.cpp; sourceTree = "<group>"; };
+		B31D04C0262D97C3006874B2 /* rdwrfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rdwrfn.hpp; sourceTree = "<group>"; };
+		B31D04C1262D97C3006874B2 /* extract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = extract.cpp; sourceTree = "<group>"; };
+		B31D04C2262D97C3006874B2 /* dll.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dll.cpp; sourceTree = "<group>"; };
+		B31D04C3262D97C3006874B2 /* unicode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unicode.cpp; sourceTree = "<group>"; };
+		B31D04C4262D97C3006874B2 /* unpack15.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unpack15.cpp; sourceTree = "<group>"; };
+		B31D04C5262D97C3006874B2 /* archive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = archive.cpp; sourceTree = "<group>"; };
+		B31D04C6262D97C3006874B2 /* recvol5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = recvol5.cpp; sourceTree = "<group>"; };
+		B31D04C7262D97C3006874B2 /* rarvm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rarvm.hpp; sourceTree = "<group>"; };
+		B31D04C8262D97C3006874B2 /* resource.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = resource.hpp; sourceTree = "<group>"; };
+		B31D04C9262D97C3006874B2 /* volume.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = volume.cpp; sourceTree = "<group>"; };
+		B31D04CA262D97C3006874B2 /* coder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coder.cpp; sourceTree = "<group>"; };
+		B31D04CB262D97C3006874B2 /* arcread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arcread.cpp; sourceTree = "<group>"; };
 		B31DD4D82626FC7A00C777C6 /* ExtractUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractUseCase.swift; sourceTree = "<group>"; };
 		B31FBBBE26035E400031B2C4 /* Uncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
 		B31FBBBF26035E400031B2C4 /* Uncompress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Uncompress.m; sourceTree = "<group>"; };
@@ -93,6 +343,216 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		B31D0423262D97B2006874B2 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				B31D0424262D97C3006874B2 /* UnrarKit-2.10-lib */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		B31D0424262D97C3006874B2 /* UnrarKit-2.10-lib */ = {
+			isa = PBXGroup;
+			children = (
+				B31D0425262D97C3006874B2 /* Classes */,
+				B31D042F262D97C3006874B2 /* Libraries */,
+			);
+			path = "UnrarKit-2.10-lib";
+			sourceTree = "<group>";
+		};
+		B31D0425262D97C3006874B2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B31D0426262D97C3006874B2 /* UnrarKitMacros.h */,
+				B31D0427262D97C3006874B2 /* URKFileInfo.h */,
+				B31D0428262D97C3006874B2 /* URKArchive.h */,
+				B31D0429262D97C3006874B2 /* URKArchive.mm */,
+				B31D042A262D97C3006874B2 /* UnrarKit.h */,
+				B31D042B262D97C3006874B2 /* URKFileInfo.m */,
+				B31D042C262D97C3006874B2 /* Categories */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B31D042C262D97C3006874B2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B31D042D262D97C3006874B2 /* NSString+UnrarKit.mm */,
+				B31D042E262D97C3006874B2 /* NSString+UnrarKit.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B31D042F262D97C3006874B2 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B31D0430262D97C3006874B2 /* unrar */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		B31D0430262D97C3006874B2 /* unrar */ = {
+			isa = PBXGroup;
+			children = (
+				B31D0431262D97C3006874B2 /* scantree.cpp */,
+				B31D0432262D97C3006874B2 /* rarlang.hpp */,
+				B31D0433262D97C3006874B2 /* threadpool.hpp */,
+				B31D0434262D97C3006874B2 /* unpack30.cpp */,
+				B31D0435262D97C3006874B2 /* crypt.cpp */,
+				B31D0436262D97C3006874B2 /* qopen.cpp */,
+				B31D0437262D97C3006874B2 /* filcreat.cpp */,
+				B31D0438262D97C3006874B2 /* crypt1.cpp */,
+				B31D0439262D97C3006874B2 /* filestr.hpp */,
+				B31D043A262D97C3006874B2 /* suballoc.hpp */,
+				B31D043B262D97C3006874B2 /* ui.cpp */,
+				B31D043C262D97C3006874B2 /* blake2sp.cpp */,
+				B31D043D262D97C3006874B2 /* crypt3.cpp */,
+				B31D043E262D97C3006874B2 /* crc.cpp */,
+				B31D043F262D97C3006874B2 /* strlist.hpp */,
+				B31D0440262D97C3006874B2 /* hash.hpp */,
+				B31D0441262D97C3006874B2 /* headers.hpp */,
+				B31D0442262D97C3006874B2 /* uicommon.cpp */,
+				B31D0443262D97C3006874B2 /* global.hpp */,
+				B31D0444262D97C3006874B2 /* win32lnk.cpp */,
+				B31D0445262D97C3006874B2 /* log.cpp */,
+				B31D0446262D97C3006874B2 /* crypt2.cpp */,
+				B31D0447262D97C3006874B2 /* errhnd.cpp */,
+				B31D0448262D97C3006874B2 /* raros.hpp */,
+				B31D0449262D97C3006874B2 /* acknow.txt */,
+				B31D044A262D97C3006874B2 /* strfn.cpp */,
+				B31D044B262D97C3006874B2 /* dll.rc */,
+				B31D044C262D97C3006874B2 /* cmddata.hpp */,
+				B31D044D262D97C3006874B2 /* unpack50frag.cpp */,
+				B31D044E262D97C3006874B2 /* rdwrfn.cpp */,
+				B31D044F262D97C3006874B2 /* unicode.hpp */,
+				B31D0450262D97C3006874B2 /* crypt5.cpp */,
+				B31D0451262D97C3006874B2 /* uowners.cpp */,
+				B31D0452262D97C3006874B2 /* dll.hpp */,
+				B31D0453262D97C3006874B2 /* extract.hpp */,
+				B31D0454262D97C3006874B2 /* cmdfilter.cpp */,
+				B31D0455262D97C3006874B2 /* unpack20.cpp */,
+				B31D0456262D97C3006874B2 /* compress.hpp */,
+				B31D0457262D97C3006874B2 /* archive.hpp */,
+				B31D0458262D97C3006874B2 /* blake2s_sse.cpp */,
+				B31D0459262D97C3006874B2 /* loclang.hpp */,
+				B31D045A262D97C3006874B2 /* resource.cpp */,
+				B31D045B262D97C3006874B2 /* rarvm.cpp */,
+				B31D045C262D97C3006874B2 /* coder.hpp */,
+				B31D045D262D97C3006874B2 /* volume.hpp */,
+				B31D045E262D97C3006874B2 /* recvol.hpp */,
+				B31D045F262D97C3006874B2 /* filefn.hpp */,
+				B31D0460262D97C3006874B2 /* threadmisc.cpp */,
+				B31D0461262D97C3006874B2 /* isnt.hpp */,
+				B31D0462262D97C3006874B2 /* makefile */,
+				B31D0463262D97C3006874B2 /* array.hpp */,
+				B31D0464262D97C3006874B2 /* dll_nocrypt.def */,
+				B31D0465262D97C3006874B2 /* consio.hpp */,
+				B31D0466262D97C3006874B2 /* encname.hpp */,
+				B31D0467262D97C3006874B2 /* find.cpp */,
+				B31D0468262D97C3006874B2 /* timefn.cpp */,
+				B31D0469262D97C3006874B2 /* file.hpp */,
+				B31D046A262D97C3006874B2 /* unpack.hpp */,
+				B31D046B262D97C3006874B2 /* unpack50.cpp */,
+				B31D046C262D97C3006874B2 /* rs.hpp */,
+				B31D046D262D97C3006874B2 /* pathfn.hpp */,
+				B31D046E262D97C3006874B2 /* arccmt.cpp */,
+				B31D046F262D97C3006874B2 /* sha256.hpp */,
+				B31D0470262D97C3006874B2 /* sha1.cpp */,
+				B31D0471262D97C3006874B2 /* system.hpp */,
+				B31D0472262D97C3006874B2 /* rawint.hpp */,
+				B31D0473262D97C3006874B2 /* rawread.hpp */,
+				B31D0474262D97C3006874B2 /* list.hpp */,
+				B31D0475262D97C3006874B2 /* match.cpp */,
+				B31D0476262D97C3006874B2 /* rs16.hpp */,
+				B31D0477262D97C3006874B2 /* options.cpp */,
+				B31D0478262D97C3006874B2 /* rijndael.hpp */,
+				B31D0479262D97C3006874B2 /* rar.hpp */,
+				B31D047A262D97C3006874B2 /* extinfo.hpp */,
+				B31D047B262D97C3006874B2 /* model.hpp */,
+				B31D047C262D97C3006874B2 /* blake2s.cpp */,
+				B31D047D262D97C3006874B2 /* dll.def */,
+				B31D047E262D97C3006874B2 /* smallfn.hpp */,
+				B31D047F262D97C3006874B2 /* getbits.hpp */,
+				B31D0480262D97C3006874B2 /* secpassword.hpp */,
+				B31D0481262D97C3006874B2 /* filefn.cpp */,
+				B31D0482262D97C3006874B2 /* recvol.cpp */,
+				B31D0483262D97C3006874B2 /* isnt.cpp */,
+				B31D0484262D97C3006874B2 /* version.hpp */,
+				B31D0485262D97C3006874B2 /* savepos.hpp */,
+				B31D0486262D97C3006874B2 /* consio.cpp */,
+				B31D0487262D97C3006874B2 /* rartypes.hpp */,
+				B31D0488262D97C3006874B2 /* encname.cpp */,
+				B31D0489262D97C3006874B2 /* uiconsole.cpp */,
+				B31D048A262D97C3006874B2 /* file.cpp */,
+				B31D048B262D97C3006874B2 /* timefn.hpp */,
+				B31D048C262D97C3006874B2 /* find.hpp */,
+				B31D048D262D97C3006874B2 /* unpack.cpp */,
+				B31D048E262D97C3006874B2 /* rs.cpp */,
+				B31D048F262D97C3006874B2 /* pathfn.cpp */,
+				B31D0490262D97C3006874B2 /* sha1.hpp */,
+				B31D0491262D97C3006874B2 /* sha256.cpp */,
+				B31D0492262D97C3006874B2 /* unpackinline.cpp */,
+				B31D0493262D97C3006874B2 /* list.cpp */,
+				B31D0494262D97C3006874B2 /* rawread.cpp */,
+				B31D0495262D97C3006874B2 /* match.hpp */,
+				B31D0496262D97C3006874B2 /* system.cpp */,
+				B31D0497262D97C3006874B2 /* hardlinks.cpp */,
+				B31D0498262D97C3006874B2 /* options.hpp */,
+				B31D0499262D97C3006874B2 /* rs16.cpp */,
+				B31D049A262D97C3006874B2 /* rijndael.cpp */,
+				B31D049B262D97C3006874B2 /* ulinks.cpp */,
+				B31D049C262D97C3006874B2 /* headers5.hpp */,
+				B31D049D262D97C3006874B2 /* blake2s.hpp */,
+				B31D049E262D97C3006874B2 /* extinfo.cpp */,
+				B31D049F262D97C3006874B2 /* model.cpp */,
+				B31D04A0262D97C3006874B2 /* rar.cpp */,
+				B31D04A1262D97C3006874B2 /* win32acl.cpp */,
+				B31D04A2262D97C3006874B2 /* getbits.cpp */,
+				B31D04A3262D97C3006874B2 /* rarpch.cpp */,
+				B31D04A4262D97C3006874B2 /* secpassword.cpp */,
+				B31D04A5262D97C3006874B2 /* readme.txt */,
+				B31D04A6262D97C3006874B2 /* smallfn.cpp */,
+				B31D04A7262D97C3006874B2 /* scantree.hpp */,
+				B31D04A8262D97C3006874B2 /* threadpool.cpp */,
+				B31D04A9262D97C3006874B2 /* filcreat.hpp */,
+				B31D04AA262D97C3006874B2 /* rardefs.hpp */,
+				B31D04AB262D97C3006874B2 /* ui.hpp */,
+				B31D04AC262D97C3006874B2 /* suballoc.cpp */,
+				B31D04AD262D97C3006874B2 /* filestr.cpp */,
+				B31D04AE262D97C3006874B2 /* qopen.hpp */,
+				B31D04AF262D97C3006874B2 /* crypt.hpp */,
+				B31D04B0262D97C3006874B2 /* crc.hpp */,
+				B31D04B1262D97C3006874B2 /* hash.cpp */,
+				B31D04B2262D97C3006874B2 /* unpack50mt.cpp */,
+				B31D04B3262D97C3006874B2 /* strlist.cpp */,
+				B31D04B4262D97C3006874B2 /* license.txt */,
+				B31D04B5262D97C3006874B2 /* global.cpp */,
+				B31D04B6262D97C3006874B2 /* recvol3.cpp */,
+				B31D04B7262D97C3006874B2 /* headers.cpp */,
+				B31D04B8262D97C3006874B2 /* uisilent.cpp */,
+				B31D04B9262D97C3006874B2 /* log.hpp */,
+				B31D04BA262D97C3006874B2 /* cmdmix.cpp */,
+				B31D04BB262D97C3006874B2 /* errhnd.hpp */,
+				B31D04BC262D97C3006874B2 /* os.hpp */,
+				B31D04BD262D97C3006874B2 /* win32stm.cpp */,
+				B31D04BE262D97C3006874B2 /* strfn.hpp */,
+				B31D04BF262D97C3006874B2 /* cmddata.cpp */,
+				B31D04C0262D97C3006874B2 /* rdwrfn.hpp */,
+				B31D04C1262D97C3006874B2 /* extract.cpp */,
+				B31D04C2262D97C3006874B2 /* dll.cpp */,
+				B31D04C3262D97C3006874B2 /* unicode.cpp */,
+				B31D04C4262D97C3006874B2 /* unpack15.cpp */,
+				B31D04C5262D97C3006874B2 /* archive.cpp */,
+				B31D04C6262D97C3006874B2 /* recvol5.cpp */,
+				B31D04C7262D97C3006874B2 /* rarvm.hpp */,
+				B31D04C8262D97C3006874B2 /* resource.hpp */,
+				B31D04C9262D97C3006874B2 /* volume.cpp */,
+				B31D04CA262D97C3006874B2 /* coder.cpp */,
+				B31D04CB262D97C3006874B2 /* arcread.cpp */,
+			);
+			path = unrar;
+			sourceTree = "<group>";
+		};
 		B31FBBC026035E630031B2C4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +604,7 @@
 		B3E72E5826021ECF00E4DAEE /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				B31D0423262D97B2006874B2 /* Libs */,
 				B31A67AB25FEA2620052DCB7 /* Adapters */,
 			);
 			path = Infra;
@@ -234,11 +695,98 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31D0520262D97C3006874B2 /* dll.cpp in Sources */,
+				B31D04DB262D97C3006874B2 /* blake2sp.cpp in Sources */,
+				B31D04FB262D97C3006874B2 /* encname.cpp in Sources */,
+				B31D0519262D97C3006874B2 /* recvol3.cpp in Sources */,
+				B31D0521262D97C3006874B2 /* unicode.cpp in Sources */,
+				B31D0506262D97C3006874B2 /* hardlinks.cpp in Sources */,
+				B31D04D9262D97C3006874B2 /* crypt1.cpp in Sources */,
+				B31D04EE262D97C3006874B2 /* makefile in Sources */,
+				B31D04E4262D97C3006874B2 /* unpack50frag.cpp in Sources */,
+				B31D04F5262D97C3006874B2 /* options.cpp in Sources */,
+				B31D0501262D97C3006874B2 /* sha256.cpp in Sources */,
+				B31D0515262D97C3006874B2 /* hash.cpp in Sources */,
+				B31D04E0262D97C3006874B2 /* log.cpp in Sources */,
+				B31D04FA262D97C3006874B2 /* consio.cpp in Sources */,
+				B31D050B262D97C3006874B2 /* model.cpp in Sources */,
+				B31D051D262D97C3006874B2 /* win32stm.cpp in Sources */,
+				B31D0509262D97C3006874B2 /* ulinks.cpp in Sources */,
+				B31D04D6262D97C3006874B2 /* crypt.cpp in Sources */,
+				B31D04F1262D97C3006874B2 /* unpack50.cpp in Sources */,
+				B31D04F3262D97C3006874B2 /* sha1.cpp in Sources */,
+				B31D051E262D97C3006874B2 /* cmddata.cpp in Sources */,
+				B31D0522262D97C3006874B2 /* unpack15.cpp in Sources */,
+				B31D0514262D97C3006874B2 /* filestr.cpp in Sources */,
+				B31D04FD262D97C3006874B2 /* file.cpp in Sources */,
+				B31D04D4262D97C3006874B2 /* scantree.cpp in Sources */,
+				B31D0516262D97C3006874B2 /* unpack50mt.cpp in Sources */,
+				B31D04F4262D97C3006874B2 /* match.cpp in Sources */,
+				B31D04FF262D97C3006874B2 /* rs.cpp in Sources */,
+				B31D04DC262D97C3006874B2 /* crypt3.cpp in Sources */,
+				B31D051A262D97C3006874B2 /* headers.cpp in Sources */,
 				B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */,
+				B31D0507262D97C3006874B2 /* rs16.cpp in Sources */,
+				B31D0502262D97C3006874B2 /* unpackinline.cpp in Sources */,
+				B31D04E9262D97C3006874B2 /* unpack20.cpp in Sources */,
+				B31D050D262D97C3006874B2 /* win32acl.cpp in Sources */,
+				B31D0504262D97C3006874B2 /* rawread.cpp in Sources */,
+				B31D0500262D97C3006874B2 /* pathfn.cpp in Sources */,
+				B31D0513262D97C3006874B2 /* suballoc.cpp in Sources */,
 				B3E730662602331300E4DAEE /* Compatibility.swift in Sources */,
+				B31D0510262D97C3006874B2 /* secpassword.cpp in Sources */,
+				B31D051C262D97C3006874B2 /* cmdmix.cpp in Sources */,
+				B31D050C262D97C3006874B2 /* rar.cpp in Sources */,
+				B31D0523262D97C3006874B2 /* archive.cpp in Sources */,
+				B31D04E5262D97C3006874B2 /* rdwrfn.cpp in Sources */,
+				B31D04DA262D97C3006874B2 /* ui.cpp in Sources */,
+				B31D051F262D97C3006874B2 /* extract.cpp in Sources */,
+				B31D04F9262D97C3006874B2 /* isnt.cpp in Sources */,
+				B31D04D3262D97C3006874B2 /* NSString+UnrarKit.mm in Sources */,
+				B31D04D8262D97C3006874B2 /* filcreat.cpp in Sources */,
+				B31D04EB262D97C3006874B2 /* resource.cpp in Sources */,
+				B31D0524262D97C3006874B2 /* recvol5.cpp in Sources */,
+				B31D04EA262D97C3006874B2 /* blake2s_sse.cpp in Sources */,
+				B31D0508262D97C3006874B2 /* rijndael.cpp in Sources */,
 				B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */,
+				B31D04E8262D97C3006874B2 /* cmdfilter.cpp in Sources */,
+				B31D04E7262D97C3006874B2 /* uowners.cpp in Sources */,
+				B31D0503262D97C3006874B2 /* list.cpp in Sources */,
+				B31D0517262D97C3006874B2 /* strlist.cpp in Sources */,
+				B31D04D1262D97C3006874B2 /* URKArchive.mm in Sources */,
+				B31D0511262D97C3006874B2 /* smallfn.cpp in Sources */,
+				B31D04ED262D97C3006874B2 /* threadmisc.cpp in Sources */,
+				B31D04D5262D97C3006874B2 /* unpack30.cpp in Sources */,
+				B31D0505262D97C3006874B2 /* system.cpp in Sources */,
+				B31D04F7262D97C3006874B2 /* filefn.cpp in Sources */,
+				B31D04E2262D97C3006874B2 /* errhnd.cpp in Sources */,
+				B31D04D7262D97C3006874B2 /* qopen.cpp in Sources */,
+				B31D04E6262D97C3006874B2 /* crypt5.cpp in Sources */,
+				B31D051B262D97C3006874B2 /* uisilent.cpp in Sources */,
+				B31D0518262D97C3006874B2 /* global.cpp in Sources */,
+				B31D04EC262D97C3006874B2 /* rarvm.cpp in Sources */,
+				B31D0527262D97C3006874B2 /* arcread.cpp in Sources */,
 				B31DD4D92626FC7A00C777C6 /* ExtractUseCase.swift in Sources */,
+				B31D0525262D97C3006874B2 /* volume.cpp in Sources */,
+				B31D04FE262D97C3006874B2 /* unpack.cpp in Sources */,
+				B31D04E3262D97C3006874B2 /* strfn.cpp in Sources */,
+				B31D04FC262D97C3006874B2 /* uiconsole.cpp in Sources */,
+				B31D04F8262D97C3006874B2 /* recvol.cpp in Sources */,
+				B31D0512262D97C3006874B2 /* threadpool.cpp in Sources */,
+				B31D04DF262D97C3006874B2 /* win32lnk.cpp in Sources */,
+				B31D04F0262D97C3006874B2 /* timefn.cpp in Sources */,
 				B3E7306A2602333300E4DAEE /* UseCaseFactory.swift in Sources */,
+				B31D050E262D97C3006874B2 /* getbits.cpp in Sources */,
+				B31D04E1262D97C3006874B2 /* crypt2.cpp in Sources */,
+				B31D04DE262D97C3006874B2 /* uicommon.cpp in Sources */,
+				B31D050A262D97C3006874B2 /* extinfo.cpp in Sources */,
+				B31D04EF262D97C3006874B2 /* find.cpp in Sources */,
+				B31D04D2262D97C3006874B2 /* URKFileInfo.m in Sources */,
+				B31D04F6262D97C3006874B2 /* blake2s.cpp in Sources */,
+				B31D0526262D97C3006874B2 /* coder.cpp in Sources */,
+				B31D04F2262D97C3006874B2 /* arccmt.cpp in Sources */,
+				B31D04DD262D97C3006874B2 /* crc.cpp in Sources */,
+				B31D050F262D97C3006874B2 /* rarpch.cpp in Sources */,
 				B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
