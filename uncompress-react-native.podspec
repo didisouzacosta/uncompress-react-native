@@ -13,14 +13,11 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/didisouzacosta/uncompress-react-native.git", :tag => "#{s.version}" }
 
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
   s.dependency "Zip", "~> 2.1"
   s.dependency "UnrarKit"
-  
-  s.pod_target_xcconfig = {
-      'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/UnrarKit',
-      'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
-  }
 end
