@@ -61,12 +61,12 @@ end
 import Uncompress from 'uncompress-react-native';
 
 // ...
-
 await Uncompress.extract({
   filePath: 'temp/sample_comic.cbr',
   destination: 'data/comic',
+  override: true,
+  password: '123'
 });
-
 // ...
 ```
 
