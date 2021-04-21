@@ -64,8 +64,30 @@ import Uncompress from 'uncompress-react-native';
 await Uncompress.extract({
   filePath: 'temp/sample_comic.cbr',
   destination: 'data/comic',
+});
+// ...
+```
+
+## Extract protected file
+
+```js
+// ...
+await Uncompress.extract({
+  filePath: 'temp/sample_protected_comic.cbr',
+  destination: 'data/comic',
+  password: '123',
+});
+// ...
+```
+
+## Override files after extraction if successful
+
+```js
+// ...
+await Uncompress.extract({
+  filePath: 'temp/sample_protected_comic.cbr',
+  destination: 'data/comic',
   override: true,
-  password: '123'
 });
 // ...
 ```
@@ -74,6 +96,13 @@ await Uncompress.extract({
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
+## Credits
+
+1. [UnrarKit](https://github.com/abbeycode/UnrarKit)
+2. [Zip](https://github.com/marmelroy/Zip)
+3. [slf4j](https://github.com/qos-ch/slf4j)
+4. [junrar](https://github.com/junrar/junrar)
+
 ## License
 
-MIT
+[MIT](LICENSE)
