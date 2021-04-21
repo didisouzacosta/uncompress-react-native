@@ -96,6 +96,13 @@ await Uncompress.extract({
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
+## Credits
+
+1. [UnrarKit](https://github.com/abbeycode/UnrarKit)
+2. [Zip](https://github.com/marmelroy/Zip)
+3. [slf4j](https://github.com/qos-ch/slf4j)
+4. [junrar](https://github.com/junrar/junrar)
+
 ## License
 
-MIT
+[MIT](LICENSE)
