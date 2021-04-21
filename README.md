@@ -64,8 +64,30 @@ import Uncompress from 'uncompress-react-native';
 await Uncompress.extract({
   filePath: 'temp/sample_comic.cbr',
   destination: 'data/comic',
+});
+// ...
+```
+
+## Extract protected file
+
+```js
+// ...
+await Uncompress.extract({
+  filePath: 'temp/sample_protected_comic.cbr',
+  destination: 'data/comic',
+  password: '123',
+});
+// ...
+```
+
+## Override files after extraction if successful
+
+```js
+// ...
+await Uncompress.extract({
+  filePath: 'temp/sample_protected_comic.cbr',
+  destination: 'data/comic',
   override: true,
-  password: '123'
 });
 // ...
 ```
