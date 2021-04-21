@@ -7,7 +7,7 @@
 
 import XCTest
 import Nimble
-import uncompress
+import Uncompress
 
 class RarExtractorTests: XCTestCase {
 

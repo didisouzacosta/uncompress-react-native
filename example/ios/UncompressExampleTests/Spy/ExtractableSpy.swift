@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import uncompress
+import Uncompress
 
 final class ExtractableSpy: Extractable {
 
