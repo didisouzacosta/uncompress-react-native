@@ -90,7 +90,7 @@ describe('Uncompress', () => {
       expect(isProtected).toBe(false);
     });
 
-    it('Throw error is isProtected fails', async () => {
+    it('Throw error if isProtected fails', async () => {
       const isProtectedMock = jest.spyOn(
         NativeModules.Uncompress,
         'isProtected'
