@@ -67,6 +67,7 @@ describe('Uncompress', () => {
         NativeModules.Uncompress,
         'isProtected'
       );
+
       isProtectedMock.mockResolvedValueOnce(true);
 
       const isProtected = await Uncompress.isProtected({
@@ -81,6 +82,7 @@ describe('Uncompress', () => {
         NativeModules.Uncompress,
         'isProtected'
       );
+
       isProtectedMock.mockResolvedValueOnce(false);
 
       const isProtected = await Uncompress.isProtected({
@@ -95,6 +97,7 @@ describe('Uncompress', () => {
         NativeModules.Uncompress,
         'isProtected'
       );
+
       isProtectedMock.mockRejectedValueOnce('Simulation Error');
 
       await expect(
