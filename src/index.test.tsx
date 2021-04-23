@@ -95,11 +95,11 @@ describe('Uncompress', () => {
         NativeModules.Uncompress,
         'isProtected'
       );
-      isProtectedMock.mockRejectedValueOnce('Simulation error');
+      isProtectedMock.mockRejectedValueOnce('Simulation Error');
 
       await expect(
         Uncompress.isProtected({ filePath: 'test_file.cbz' })
-      ).rejects.toEqual('Simulation error');
+      ).rejects.toEqual('Simulation Error');
     });
   });
 });
