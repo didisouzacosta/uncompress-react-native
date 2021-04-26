@@ -47,6 +47,16 @@ class RarExtractorTests: XCTestCase {
     let compatibilities = rarExtractor.compatibilities
     expect(compatibilities) == [.rar, .cbr]
   }
+  
+  func testShouldReturnTrueIfFileIsProtected() throws {
+    let isProctected = try rarExtractor.isProtected(protectedRarFilePath)
+    expect(isProctected) == true
+  }
+  
+  func testShouldReturnFalseIfFileNotIsProtected() throws {
+    let isProctected = try rarExtractor.isProtected(rarFilePath)
+    expect(isProctected) == false
+  }
 
   func testDecompressFileIfExtractSuccessful() throws {
     try rarExtractor.extract(

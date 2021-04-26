@@ -18,4 +18,6 @@ public protocol Extractable {
         password: String?
     ) throws
     
+    func isProtected(_ filePath: URL) throws -> Bool
+    
 }

@@ -31,7 +31,7 @@ public extension ExtractUseCaseProtocol {
             throw "The destination path is invalid"
         }
 
-        let engine = try selectEngineAt(fileExtension: filePathUrl.pathExtension)
+        let engine = try engines.selectAt(filePathUrl.pathExtension)
 
         try engine.extract(
             filePathUrl,
@@ -39,17 +39,6 @@ public extension ExtractUseCaseProtocol {
             overwrite: overwrite,
             password: password
         )
-    }
-
-    private func selectEngineAt(fileExtension: String) throws -> Extractable {
-        if let compatibility = Compatibility(rawValue: fileExtension),
-           let engine = engines.first(where: { (engine) -> Bool in
-            return engine.compatibilities.contains(compatibility)
-        }) {
-            return engine
-        }
-
-        throw "Does not have a \(fileExtension) extension engine"
     }
 
 }

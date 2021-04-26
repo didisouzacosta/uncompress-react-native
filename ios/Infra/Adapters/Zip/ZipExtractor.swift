@@ -30,4 +30,28 @@ public final class ZipExtractor: Extractable {
         )
     }
     
+    public func isProtected(_ filePath: URL) throws -> Bool {
+        
+//        NSInteger chunkSize = 1024     //Read 1KB chunks.
+//        NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:path];
+//        NSData *fileData = [handle readDataOfLength:chunkSize];
+//        NSData* generalBitFlag = [fileData subdataWithRange:NSMakeRange(6, 2)];
+//        NSString* genralBitFlgStr = [generalBitFlag description];
+//
+//
+//        if ([genralBitFlgStr characterAtIndex:2]!='0')
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+        
+//        let chunkSize = 1024
+//        let handle = NSFilehandle
+        
+        return true
+    }
+    
 }

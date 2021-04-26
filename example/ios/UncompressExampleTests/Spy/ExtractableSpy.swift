@@ -9,12 +9,13 @@ import Foundation
 import Uncompress
 
 final class ExtractableSpy: Extractable {
-
+  
   var compatibilities: [Compatibility] = []
   var filePath: URL?
   var destination: URL?
   var overwrite: Bool?
   var password: String?
+  var isProtected: Bool?
   var error: Error?
 
   func extract(
@@ -31,6 +32,14 @@ final class ExtractableSpy: Extractable {
     self.destination = destination
     self.overwrite = overwrite
     self.password = password
+  }
+  
+  func isProtected(_ filePath: URL) throws -> Bool {
+    if let error = error {
+      throw error
+    }
+    
+    return isProtected ?? false
   }
 
 }
