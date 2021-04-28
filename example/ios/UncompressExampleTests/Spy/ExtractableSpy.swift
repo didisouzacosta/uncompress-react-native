@@ -24,17 +24,19 @@ final class ExtractableSpy: Extractable {
     overwrite: Bool,
     password: String?
   ) throws {
-    if let error = error {
-      throw error
-    }
-
     self.filePath = filePath
     self.destination = destination
     self.overwrite = overwrite
     self.password = password
+    
+    if let error = error {
+      throw error
+    }
   }
   
   func isProtected(_ filePath: URL) throws -> Bool {
+    self.filePath = filePath
+    
     if let error = error {
       throw error
     }
