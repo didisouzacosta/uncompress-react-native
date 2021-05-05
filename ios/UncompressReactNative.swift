@@ -1,10 +1,9 @@
-@objc(Uncompress)
-class Uncompress: NSObject {
+@objc(UncompressReactNative)
+class UncompressReactNative: NSObject {
     
     // MARK: - Private Properties
     
-    private let extractUseCase = UseCaseFactory.extractUseCase()
-    private let isProctedUseCase = UseCaseFactory.isProtectedUseCase()
+    private let uncompress = ComponentFactory.uncompressUseCase()
     
     // MARK: - Public Methods
 
@@ -18,7 +17,7 @@ class Uncompress: NSObject {
         rejecter reject: RCTPromiseRejectBlock
     ) {
         do {
-            try extractUseCase.run(
+            try uncompress.extract(
                 filePath,
                 to: destination,
                 overwrite: overwrite,
@@ -37,7 +36,7 @@ class Uncompress: NSObject {
         rejecter reject: RCTPromiseRejectBlock
     ) {
         do {
-            let isProtected = try isProctedUseCase.run(filePath)
+            let isProtected = try uncompress.isProtected(filePath)
             resolve(isProtected)
         } catch {
             reject("IS_PROTECTED_THROW", error.localizedDescription, error)

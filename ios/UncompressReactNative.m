@@ -1,6 +1,6 @@
 #import <React/RCTBridgeModule.h>
 
-@interface RCT_EXTERN_MODULE(Uncompress, NSObject)
+@interface RCT_EXTERN_MODULE(UncompressReactNative, NSObject)
 
 RCT_EXTERN_METHOD(
                   extract:(nonnull NSString *)filePath

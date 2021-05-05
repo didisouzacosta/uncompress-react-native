@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Zip
+import SSZipArchive
 
 public final class ZipExtractor: Extractable {
     
@@ -22,36 +22,29 @@ public final class ZipExtractor: Extractable {
         overwrite: Bool = false,
         password: String? = nil
     ) throws {
-        try Zip.unzipFile(
-            filePath,
-            destination: destination,
+        var error: NSError?
+        
+        let status = SSZipArchive.unzipFile(
+            atPath: filePath.path,
+            toDestination: destination.absoluteString,
+            preserveAttributes: true,
             overwrite: overwrite,
-            password: password
+            password: password,
+            error: &error,
+            delegate: nil
         )
+        
+        if let error = error {
+            throw error
+        }
+        
+        if !status {
+            throw "Unable to extract file \(filePath.absoluteString)"
+        }
     }
     
     public func isProtected(_ filePath: URL) throws -> Bool {
-        
-//        NSInteger chunkSize = 1024     //Read 1KB chunks.
-//        NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:path];
-//        NSData *fileData = [handle readDataOfLength:chunkSize];
-//        NSData* generalBitFlag = [fileData subdataWithRange:NSMakeRange(6, 2)];
-//        NSString* genralBitFlgStr = [generalBitFlag description];
-//
-//
-//        if ([genralBitFlgStr characterAtIndex:2]!='0')
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-        
-//        let chunkSize = 1024
-//        let handle = NSFilehandle
-        
-        return true
+        return SSZipArchive.isFilePasswordProtected(atPath: filePath.path)
     }
     
 }

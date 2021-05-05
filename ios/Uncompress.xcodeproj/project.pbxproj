@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B31DD4D92626FC7A00C777C6 /* ExtractUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31DD4D82626FC7A00C777C6 /* ExtractUseCase.swift */; };
+		B3245C5F2642BD3A008ED890 /* UncompressReactNative.m in Sources */ = {isa = PBXBuildFile; fileRef = B3245C5D2642BD3A008ED890 /* UncompressReactNative.m */; };
+		B3245C602642BD3A008ED890 /* UncompressReactNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3245C5E2642BD3A008ED890 /* UncompressReactNative.swift */; };
+		B3245C622642BD4E008ED890 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3245C612642BD4E008ED890 /* ComponentFactory.swift */; };
+		B3245C662642BD8E008ED890 /* Uncompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3245C652642BD8E008ED890 /* Uncompress.swift */; };
 		B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */; };
 		B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6726020E2E00E4DAEE /* Extractable.swift */; };
 		B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E72C6926020E2E00E4DAEE /* ZipExtractor.swift */; };
@@ -30,9 +34,11 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libUncompress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUncompress.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31DD4D82626FC7A00C777C6 /* ExtractUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractUseCase.swift; sourceTree = "<group>"; };
-		B31FBBBE26035E400031B2C4 /* Uncompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
-		B31FBBBF26035E400031B2C4 /* Uncompress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Uncompress.m; sourceTree = "<group>"; };
 		B31FBBC226035E630031B2C4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B3245C5D2642BD3A008ED890 /* UncompressReactNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncompressReactNative.m; sourceTree = "<group>"; };
+		B3245C5E2642BD3A008ED890 /* UncompressReactNative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UncompressReactNative.swift; sourceTree = "<group>"; };
+		B3245C612642BD4E008ED890 /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
+		B3245C652642BD8E008ED890 /* Uncompress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uncompress.swift; sourceTree = "<group>"; };
 		B3B8D3872636DE2700C79AC1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B3E72C6626020E2E00E4DAEE /* RarExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RarExtractor.swift; sourceTree = "<group>"; };
 		B3E72C6726020E2E00E4DAEE /* Extractable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extractable.swift; sourceTree = "<group>"; };
@@ -64,9 +70,10 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				B3245C632642BD8E008ED890 /* Presentation */,
+				B3245C5D2642BD3A008ED890 /* UncompressReactNative.m */,
+				B3245C5E2642BD3A008ED890 /* UncompressReactNative.swift */,
 				B31FBBC026035E630031B2C4 /* Utils */,
-				B31FBBBF26035E400031B2C4 /* Uncompress.m */,
-				B31FBBBE26035E400031B2C4 /* Uncompress.swift */,
 				B3E72FF42602301200E4DAEE /* Data */,
 				B3E72E5826021ECF00E4DAEE /* Infra */,
 				B3E72E5726021EC800E4DAEE /* Domain */,
@@ -109,6 +116,22 @@
 				B31FBBC226035E630031B2C4 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B3245C632642BD8E008ED890 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B3245C642642BD8E008ED890 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B3245C642642BD8E008ED890 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B3245C652642BD8E008ED890 /* Uncompress.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B3E72C6526020E2E00E4DAEE /* Rar */ = {
@@ -154,6 +177,7 @@
 		B3E72EF12602210D00E4DAEE /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				B3245C612642BD4E008ED890 /* ComponentFactory.swift */,
 				B3E730692602333300E4DAEE /* UseCaseFactory.swift */,
 			);
 			path = Factories;
@@ -236,11 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3245C5F2642BD3A008ED890 /* UncompressReactNative.m in Sources */,
 				B3E72C6C26020E2E00E4DAEE /* ZipExtractor.swift in Sources */,
+				B3245C662642BD8E008ED890 /* Uncompress.swift in Sources */,
 				B3E730662602331300E4DAEE /* Compatibility.swift in Sources */,
+				B3245C602642BD3A008ED890 /* UncompressReactNative.swift in Sources */,
 				B3E72C6A26020E2E00E4DAEE /* RarExtractor.swift in Sources */,
 				B31DD4D92626FC7A00C777C6 /* ExtractUseCase.swift in Sources */,
 				B3E7306A2602333300E4DAEE /* UseCaseFactory.swift in Sources */,
+				B3245C622642BD4E008ED890 /* ComponentFactory.swift in Sources */,
 				B3E72C6B26020E2E00E4DAEE /* Extractable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
