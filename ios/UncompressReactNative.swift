@@ -1,5 +1,5 @@
-@objc(UncompressModuleManager)
-class UncompressModuleManager: NSObject {
+@objc(UncompressReactNative)
+class UncompressReactNative: NSObject {
     
     // MARK: - Private Properties
     

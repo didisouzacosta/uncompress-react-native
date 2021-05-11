@@ -1,0 +1,8 @@
+Bom dia pessoal, tudo joia?
+Não consegui passar nada nos dias anteriores, mas hoje consegui me organizar e separa algumas coisas.
+Nesse fim de semana vamos ver a base da parte front end usando NextJS e se sobrar um tempinho, vamos passar um pouco sobre o que é API, com isso gostaria que vocês dessem uma olhada nesse link aqui por favor https://nextjs.org.
+
+Para o NextJS rodar nas máquinas, vamos precisar de ter o Node e Visual Studio certinho, então se puderem conferir se os mesmos estão instalados.
+O NextJS tem como base o ReactJS, quem puder ir dando uma olhada em https://pt-br.reactjs.org vai ajudar demais.
+
+Um programa que gostaria que vocês instalassem é o https://insomnia.rest/download, ele vai servir para testarmos nossa API.
