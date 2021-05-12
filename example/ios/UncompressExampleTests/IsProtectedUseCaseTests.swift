@@ -11,8 +11,6 @@ import Uncompress
 
 class IsProtectedUseCaseTests: XCTestCase {
 
-  private let engine = ExtractableSpy()
-
   func testShouldUseCorrectlyEngineAtFileExtension() throws {
     let rarEngine = ExtractableSpy()
     let zipEngine = ExtractableSpy()

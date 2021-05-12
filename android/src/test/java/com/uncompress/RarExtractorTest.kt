@@ -1,17 +1,14 @@
 package com.uncompress
 
 import com.google.common.truth.Truth
+import com.google.common.truth.Truth.assertThat
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.rar.RarExtractor
-import junit.framework.Assert
 import org.junit.After
 import org.junit.Assert.fail
 import org.junit.Before
 import org.junit.Test
-import org.junit.rules.TemporaryFolder
 import java.io.File
-import java.io.IOException
-import java.lang.Exception
 
 
 class RarExtractorTest {
@@ -39,7 +36,19 @@ class RarExtractorTest {
   @Test
   fun `ensure compatibilities`() {
     val compatibilities = rarExtractor.compatibilities
-    Truth.assertThat(compatibilities).isEqualTo(listOf(Compatibility.CBR, Compatibility.RAR))
+    assertThat(compatibilities).isEqualTo(listOf(Compatibility.CBR, Compatibility.RAR))
+  }
+
+  @Test
+  fun `should return true if file is protected`() {
+    val isProtected = rarExtractor.isProtected(protectedRarFile.path)
+    assertThat(isProtected).isTrue()
+  }
+
+  @Test
+  fun `should return false if file is not protected`() {
+    val isProtected = rarExtractor.isProtected(rarFile.path)
+    assertThat(isProtected).isFalse()
   }
 
   @Test
