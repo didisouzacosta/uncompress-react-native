@@ -64,7 +64,7 @@ class RarExtractorTest {
     val filePath = protectedRarFile.path
     val directory = tempDirectory.path
 
-    rarExtractor.extract(filePath, directory, true, "123");
+    rarExtractor.extract(filePath, directory, true, "do");
   }
 
   @Test
