@@ -10,7 +10,7 @@ abstract class IExtractUseCase {
 
   val compatibilities: List<Compatibility> get() = engines.flatMap { it.compatibilities }
 
-  @Throws(Error::class)
+  @Throws(Throwable::class)
   fun run(
     filePath: String,
     destination: String,
@@ -34,7 +34,7 @@ abstract class IExtractUseCase {
     return File(filePath).extension
   }
 
-  @Throws(Error::class)
+  @Throws(Throwable::class)
   private fun selectEngineAt(fileExtension: String): Extractable {
     val compatibility = Compatibility.compatibilityWith(fileExtension)
     val engine = engines.singleOrNull { e -> e.compatibilities.contains(compatibility) }
