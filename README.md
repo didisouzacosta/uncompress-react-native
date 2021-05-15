@@ -92,6 +92,18 @@ await Uncompress.extract({
 // ...
 ```
 
+## Make sure the file is password protected
+
+```js
+// ...
+const isProtected = await Uncompress.isProtected({
+  filePath: 'temp/sample_protected_comic.cbr',
+});
+
+console.log(isProtected);
+// ...
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
