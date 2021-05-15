@@ -5,7 +5,6 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Promise
 import com.uncompress.main.factories.ComponentsFactory
-import com.uncompress.main.factories.UseCaseFactory
 
 class UncompressModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
