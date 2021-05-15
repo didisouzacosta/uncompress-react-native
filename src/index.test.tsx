@@ -1,7 +1,7 @@
 jest.mock('react-native', () => {
   return {
     NativeModules: {
-      Uncompress: {
+      UncompressReactNative: {
         extract: jest.fn(),
         isProtected: jest.fn(),
       },
@@ -19,7 +19,10 @@ describe('Uncompress', () => {
 
   describe('Extract', () => {
     it('ensure default values', async () => {
-      const extractMock = jest.spyOn(NativeModules.Uncompress, 'extract');
+      const extractMock = jest.spyOn(
+        NativeModules.UncompressReactNative,
+        'extract'
+      );
 
       await Uncompress.extract({
         filePath: 'test_file.cbz',
@@ -35,7 +38,10 @@ describe('Uncompress', () => {
     });
 
     it('should decompress files if extract successful', async () => {
-      const extractMock = jest.spyOn(NativeModules.Uncompress, 'extract');
+      const extractMock = jest.spyOn(
+        NativeModules.UncompressReactNative,
+        'extract'
+      );
 
       await Uncompress.extract({
         filePath: 'test_file.cbz',
@@ -49,7 +55,10 @@ describe('Uncompress', () => {
     });
 
     it('throw error if extract fails', async () => {
-      const extractMock = jest.spyOn(NativeModules.Uncompress, 'extract');
+      const extractMock = jest.spyOn(
+        NativeModules.UncompressReactNative,
+        'extract'
+      );
       extractMock.mockRejectedValueOnce('Simulation Error');
 
       await expect(
@@ -64,7 +73,7 @@ describe('Uncompress', () => {
   describe('IsProtected', () => {
     it('Return true if the file is protected', async () => {
       const isProtectedMock = jest.spyOn(
-        NativeModules.Uncompress,
+        NativeModules.UncompressReactNative,
         'isProtected'
       );
 
@@ -79,7 +88,7 @@ describe('Uncompress', () => {
 
     it('Return false if the file is not protected', async () => {
       const isProtectedMock = jest.spyOn(
-        NativeModules.Uncompress,
+        NativeModules.UncompressReactNative,
         'isProtected'
       );
 
@@ -94,7 +103,7 @@ describe('Uncompress', () => {
 
     it('Throw error if isProtected fails', async () => {
       const isProtectedMock = jest.spyOn(
-        NativeModules.Uncompress,
+        NativeModules.UncompressReactNative,
         'isProtected'
       );
 
