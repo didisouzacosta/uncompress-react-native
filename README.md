@@ -92,7 +92,7 @@ await Uncompress.extract({
 // ...
 ```
 
-## Make sure the file is password protected
+## Checks whether the file is password protected
 
 ```js
 // ...
