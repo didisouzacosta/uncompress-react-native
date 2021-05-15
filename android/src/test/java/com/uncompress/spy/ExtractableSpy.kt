@@ -9,6 +9,7 @@ class ExtractableSpy() : Extractable {
   var destination: String? = null
   var override: Boolean? = null
   var password: String? = null
+  var isProtected: Boolean = false
   var error: Error? = null
 
   @Throws
@@ -21,5 +22,15 @@ class ExtractableSpy() : Extractable {
     error?.let {
       throw it
     }
+  }
+
+  override fun isProtected(filePath: String): Boolean {
+    this.filePath = filePath
+
+    error?.let {
+      throw it
+    }
+
+    return isProtected
   }
 }

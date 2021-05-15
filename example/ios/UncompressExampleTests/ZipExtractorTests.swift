@@ -47,6 +47,16 @@ class ZipExtractorTests: XCTestCase {
     let compatibilities = zipExtractor.compatibilities
     expect(compatibilities) == [.zip, .cbz]
   }
+  
+  func testShouldReturnTrueIfFileIsProtected() throws {
+    let isProctected = try zipExtractor.isProtected(protectedZipFilePath)
+    expect(isProctected) == true
+  }
+  
+  func testShouldReturnFalseIfFileNotIsProtected() throws {
+    let isProctected = try zipExtractor.isProtected(zipFilePath)
+    expect(isProctected) == false
+  }
 
   func testExtractFileIfDecompressSucessful() throws {
     try zipExtractor.extract(

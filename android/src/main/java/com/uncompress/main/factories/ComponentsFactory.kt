@@ -4,18 +4,18 @@ import com.uncompress.data.usecase.ExtractUseCase
 import com.uncompress.data.usecase.IsProtectedUseCase
 import com.uncompress.infra.adapters.rar.RarExtractor
 import com.uncompress.infra.adapters.zip.ZipExtractor
+import com.uncompress.presentation.components.Uncompress
 
-class UseCaseFactory {
+final class ComponentsFactory {
 
   companion object {
     private val engines = listOf(ZipExtractor(), RarExtractor())
 
-    fun makeExtractUseCase(): ExtractUseCase {
-      return ExtractUseCase(engines)
-    }
+    fun makeUncompress(): Uncompress {
+      val isProtectedUseCase = IsProtectedUseCase(engines)
+      val extractable = ExtractUseCase(engines)
 
-    fun makeIsProtectedUseCase(): IsProtectedUseCase {
-      return IsProtectedUseCase(engines)
+      return Uncompress(extractable, isProtectedUseCase)
     }
   }
 

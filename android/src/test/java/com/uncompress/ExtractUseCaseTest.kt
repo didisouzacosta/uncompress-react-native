@@ -1,6 +1,6 @@
 package com.uncompress
 
-import com.google.common.truth.Truth
+import com.google.common.truth.Truth.assertThat
 import com.uncompress.data.usecase.ExtractUseCase
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.spy.ExtractableSpy
@@ -19,7 +19,7 @@ class ExtractUseCaseTest {
 
     val useCase = ExtractUseCase(listOf(rarEngine, zipEngine))
 
-    Truth.assertThat(useCase.compatibilities).isEqualTo(listOf(Compatibility.CBR, Compatibility.RAR, Compatibility.ZIP, Compatibility.CBZ))
+    assertThat(useCase.compatibilities).isEqualTo(listOf(Compatibility.CBR, Compatibility.RAR, Compatibility.ZIP, Compatibility.CBZ))
   }
 
   @Test
@@ -34,15 +34,15 @@ class ExtractUseCaseTest {
 
     useCase.run("test.rar", "temp/fake", true, "123")
 
-    Truth.assertThat(rarEngine.filePath).isEqualTo("test.rar")
-    Truth.assertThat(rarEngine.destination).isEqualTo("temp/fake")
-    Truth.assertThat(rarEngine.override).isEqualTo(true)
-    Truth.assertThat(rarEngine.password).isEqualTo("123")
+    assertThat(rarEngine.filePath).isEqualTo("test.rar")
+    assertThat(rarEngine.destination).isEqualTo("temp/fake")
+    assertThat(rarEngine.override).isEqualTo(true)
+    assertThat(rarEngine.password).isEqualTo("123")
 
-    Truth.assertThat(zipEngine.filePath).isNull()
-    Truth.assertThat(zipEngine.destination).isNull()
-    Truth.assertThat(zipEngine.override).isNull()
-    Truth.assertThat(zipEngine.password).isNull()
+    assertThat(zipEngine.filePath).isNull()
+    assertThat(zipEngine.destination).isNull()
+    assertThat(zipEngine.override).isNull()
+    assertThat(zipEngine.password).isNull()
   }
 
   @Test
@@ -57,7 +57,7 @@ class ExtractUseCaseTest {
       useCase.run("test.rar", "temp/fake", true, "123")
       fail()
     } catch(e: Throwable) {
-      Truth.assertThat(e.message).isEqualTo("Error Simulation")
+      assertThat(e.message).isEqualTo("Error Simulation")
     }
   }
 
@@ -72,7 +72,7 @@ class ExtractUseCaseTest {
       useCase.run("", "temp/fake", true, "123")
       fail()
     } catch(e: Throwable) {
-      Truth.assertThat(e.message).isEqualTo("The file path is invalid")
+      assertThat(e.message).isEqualTo("The file path is invalid")
     }
   }
 
@@ -87,7 +87,7 @@ class ExtractUseCaseTest {
       useCase.run("test.rar", "", true, "123")
       fail()
     } catch(e: Throwable) {
-      Truth.assertThat(e.message).isEqualTo("The destination path is invalid")
+      assertThat(e.message).isEqualTo("The destination path is invalid")
     }
   }
 
@@ -102,7 +102,7 @@ class ExtractUseCaseTest {
       useCase.run("test.7zip", "temp/fake", true, "123")
       fail()
     } catch(e: Throwable) {
-      Truth.assertThat(e.message).isEqualTo("7zip is not supported")
+      assertThat(e.message).isEqualTo("7zip is not supported")
     }
   }
 

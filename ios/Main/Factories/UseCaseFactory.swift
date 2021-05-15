@@ -9,11 +9,17 @@ import Foundation
 
 final class UseCaseFactory {
     
+    private static let engines: [Extractable] = [
+        ZipExtractor(),
+        RarExtractor()
+    ]
+    
     static func extractUseCase() -> ExtractUseCase {
-        return ExtractUseCase(engines: [
-            ZipExtractor(),
-            RarExtractor()
-        ])
+        return ExtractUseCase(engines: engines)
+    }
+    
+    static func isProtectedUseCase() -> IsProctectedUseCase {
+        return IsProctectedUseCase(engines: engines)
     }
     
 }

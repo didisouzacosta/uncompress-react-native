@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Zip
+import SSZipArchive
 
 public final class ZipExtractor: Extractable {
     
@@ -22,12 +22,29 @@ public final class ZipExtractor: Extractable {
         overwrite: Bool = false,
         password: String? = nil
     ) throws {
-        try Zip.unzipFile(
-            filePath,
-            destination: destination,
+        var error: NSError?
+        
+        let status = SSZipArchive.unzipFile(
+            atPath: filePath.path,
+            toDestination: destination.absoluteString,
+            preserveAttributes: true,
             overwrite: overwrite,
-            password: password
+            password: password,
+            error: &error,
+            delegate: nil
         )
+        
+        if let error = error {
+            throw error
+        }
+        
+        if !status {
+            throw "Unable to extract file \(filePath.absoluteString)"
+        }
+    }
+    
+    public func isProtected(_ filePath: URL) throws -> Bool {
+        return SSZipArchive.isFilePasswordProtected(atPath: filePath.path)
     }
     
 }

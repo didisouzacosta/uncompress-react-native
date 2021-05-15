@@ -1,33 +1,20 @@
 package com.uncompress.data.intefaces
 
-import android.webkit.URLUtil
 import com.uncompress.domain.enum.Compatibility
 import java.io.File
-import java.io.IOException
 
-abstract class IExtractUseCase {
+abstract class IIsProtectedUseCase {
   abstract val engines: List<Extractable>
 
-  val compatibilities: List<Compatibility> get() = engines.flatMap { it.compatibilities }
-
   @Throws(Throwable::class)
-  fun run(
-    filePath: String,
-    destination: String,
-    override: Boolean = true,
-    password: String? = null
-  ) {
+  fun run(filePath: String): Boolean {
     if (filePath.isNullOrEmpty()) {
       throw Error("The file path is invalid")
     }
 
-    if (destination.isNullOrEmpty()) {
-      throw Error("The destination path is invalid")
-    }
-
     val extension = getFileExtension(filePath)
     val engine = selectEngineAt(extension)
-    engine.extract(filePath, destination, override, password)
+    return engine.isProtected(filePath)
   }
 
   private fun getFileExtension(filePath: String): String {
