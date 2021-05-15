@@ -17,6 +17,8 @@ interface Extractable {
     resolveOverride(destination, override)
   }
 
+  fun isProtected(filePath: String): Boolean
+
   @Throws(Throwable::class)
   private fun resolveOverride(destination: String, override: Boolean) {
     val file = File(destination)

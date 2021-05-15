@@ -29,7 +29,15 @@ public final class RarExtractor: Extractable {
             archive.password = password
         }
         
-        try archive.extractFiles(to: destination.absoluteString, overwrite: overwrite)
+        try archive.extractFiles(
+            to: destination.absoluteString,
+            overwrite: overwrite
+        )
+    }
+    
+    public func isProtected(_ filePath: URL) throws -> Bool {
+        let archive = try URKArchive(path: filePath.absoluteString)
+        return archive.isPasswordProtected()
     }
     
 }

@@ -1,4 +1,5 @@
 package com.uncompress
+
 import com.google.common.truth.Truth.assertThat
 import com.uncompress.domain.enum.Compatibility
 import com.uncompress.infra.adapters.zip.ZipExtractor
@@ -6,16 +7,14 @@ import junit.framework.Assert.fail
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.junit.internal.runners.statements.Fail
 import java.io.File
-import java.lang.Error
 
 class ZipExtractorTest {
 
   private val zipExtractor = ZipExtractor()
   private val resourcesPath = "src/test/resources/com.uncompress/zip/"
   private val zipFile = File(resourcesPath + "mononoke.zip")
-  private val protectedRarFile = File(resourcesPath + "mononoke_protected.cbz")
+  private val protectedZipFile = File(resourcesPath + "mononoke_protected.cbz")
   private val failZipFile = File(resourcesPath + "zip_fail.zip")
 
   private lateinit var tempDirectory: File
@@ -40,6 +39,18 @@ class ZipExtractorTest {
   }
 
   @Test
+  fun `should return true if file is protected`() {
+    val isProtected = zipExtractor.isProtected(protectedZipFile.path)
+    assertThat(isProtected).isTrue()
+  }
+
+  @Test
+  fun `should return false if file is not protected`() {
+    val isProtected = zipExtractor.isProtected(zipFile.path)
+    assertThat(isProtected).isFalse()
+  }
+
+  @Test
   fun `decompress file if extract successful`() {
     val filePath = zipFile.path
     val directory = tempDirectory.path
@@ -49,7 +60,7 @@ class ZipExtractorTest {
 
   @Test
   fun `decompress file if extract with password successful`() {
-    val filePath = protectedRarFile.path
+    val filePath = protectedZipFile.path
     val directory = tempDirectory.path
 
     zipExtractor.extract(filePath, directory, true, "123")

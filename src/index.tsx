@@ -1,21 +1,37 @@
 import { NativeModules } from 'react-native';
 
-const { Uncompress } = NativeModules;
+const { UncompressReactNative } = NativeModules;
+
+type ExtractParams = {
+  filePath: string;
+  destination: string;
+  overwrite?: boolean;
+  password?: string;
+};
+
+type IsProtectedParams = Pick<ExtractParams, 'filePath'>;
 
 const extract = async ({
   filePath,
   destination,
   overwrite = true,
   password = undefined,
-}: {
-  filePath: string;
-  destination: string;
-  overwrite?: boolean;
-  password?: string;
-}) => {
-  await Uncompress.extract(filePath, destination, overwrite, password);
+}: ExtractParams) => {
+  await UncompressReactNative.extract(
+    filePath,
+    destination,
+    overwrite,
+    password
+  );
+};
+
+const isProtected = async ({
+  filePath,
+}: IsProtectedParams): Promise<boolean> => {
+  return await UncompressReactNative.isProtected(filePath);
 };
 
 export default {
   extract,
+  isProtected,
 };
